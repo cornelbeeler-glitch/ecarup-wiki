@@ -94,6 +94,42 @@
 }
 
 /*
+ * `gross`: der Titel als Überschrift. Grösse, Gewicht und Farbe wie H3 im
+ * Design System — 22/30 in 500, in ink. Darunter etwas mehr Luft, damit der
+ * Titel nicht am ersten Satz klebt.
+ */
+.titelGross {
+  margin-bottom: 0.6rem;
+  font-size: var(--wiki-text-xl);
+  font-weight: var(--ec-h3-weight);
+  line-height: var(--wiki-lh-h3);
+  color: var(--ec-ink);
+}
+
+/*
+ * Passend dazu der Text: In einer Logoreihe steht Kleinkram — Adresse,
+ * Telefon —, dafür sind die 0.9rem oben gedacht. Trägt die Kachel dagegen den
+ * Inhalt der Seite, gilt die Untergrenze des Design Systems von 16px.
+ */
+.inhaltGross {
+  font-size: var(--wiki-text-base);
+  line-height: var(--wiki-lh-base);
+}
+
+.inhaltGross :global(p) {
+  margin-bottom: 0.75rem;
+}
+
+.inhaltGross :global(ul) {
+  margin: 0 0 0.25rem;
+  padding-left: var(--ec-space-5);
+}
+
+.inhaltGross :global(li) {
+  margin: 0.25rem 0;
+}
+
+/*
  * In den Kacheln steht viel Kleinkram: Adresse, Telefon, Mail. Ohne das hier
  * bekäme jeder Absatz den vollen Zeilenabstand der Seite und die Kachel würde
  * doppelt so hoch wie nötig.

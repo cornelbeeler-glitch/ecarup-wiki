@@ -398,37 +398,32 @@
     "message": "Pays"
   },
   "rolle.installateur": {
-    "message": "Installateur",
-    "description": "Rolle im Rollenschalter: sieht alles"
+    "message": "Installateur"
   },
   "rolle.abrechnung": {
-    "message": "Prestataire de décompte",
-    "description": "Rolle im Rollenschalter"
+    "message": "Prestataire de décompte"
   },
   "rolle.verwalter": {
-    "message": "Gérance",
-    "description": "Rolle im Rollenschalter"
+    "message": "Gérance"
   },
   "rolle.fahrer": {
-    "message": "Conducteur",
-    "description": "Rolle im Rollenschalter"
+    "message": "Conducteur"
   },
   "rollenwahl.ueberschrift": {
-    "message": "Rôle",
-    "description": "Beschriftung des Rollenschalters in der Kopfzeile"
+    "message": "Rôle"
   },
   "rollenkarte.titel": {
-    "message": "Limiter la navigation à votre rôle",
-    "description": "Überschrift des Rollenhinweises auf den Einstiegsseiten"
+    "message": "Limiter la navigation à votre rôle"
   },
   "rollenkarte.erklaerung": {
-    "message": "Choisissez votre rôle : la navigation à gauche n’affichera plus que ce dont vous avez besoin pour votre travail — vous cherchez moins longtemps. S’il vous manque quelque chose, passez au rôle supérieur ; l’installateur voit tout. Vous pouvez changer à tout moment en haut à droite.",
-    "description": "Erklärung im Rollenhinweis auf den Einstiegsseiten"
+    "message": "Choisissez votre rôle : la navigation à gauche n’affichera plus que ce dont vous avez besoin pour votre travail — vous cherchez moins longtemps. S’il vous manque quelque chose, passez au rôle supérieur ; l’installateur voit tout. Vous pouvez changer à tout moment en haut à droite."
   },
   "menueweg.titel": {
-    "message": "Navigation dans le logiciel"
+    "message": "Navigation dans le logiciel",
+    "description": "Überschrift über dem Menüweg durch das smart-me Portal"
   },
   "ablauf.bereich": {
-    "message": "Déroulement"
+    "message": "Déroulement",
+    "description": "Beschriftung der Ablaufübersicht auf einer Einstiegsseite"
   }
 }

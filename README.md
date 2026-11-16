@@ -3,9 +3,10 @@
 Das Support-Wiki von eCarUp als [Docusaurus](https://docusaurus.io/)-Site.
 Es dient zugleich als Datenquelle für AI-Tools (Markdown im Repo + `llms.txt`).
 
-Das Repo ist eine Kopie des smart-me Wikis: dieselbe Technik, derselbe
-Arbeitsablauf, aber **noch ohne Inhalt** — es stehen nur die beiden
-Einstiegsseiten und zwei Kontaktseiten darin.
+Das Repo ist aus dem smart-me Wiki hervorgegangen: dieselbe Technik, derselbe
+Arbeitsablauf. Der Inhalt stammt aus dem alten Wiki auf Google Sites
+(`ecarupwiki.smart-me.com`) und wurde mit den Skripten unter
+`scripts/migration/` übernommen.
 
 ## Sprachen
 
@@ -47,10 +48,21 @@ Der Ordner `workflows-vorlage/` enthält `deploy.yml` und `translate.yml`.
 Dateien unter `.github/` lassen sich nicht aus einer Cowork-Sitzung heraus
 schreiben, deshalb liegen sie vorerst daneben.
 
+## Aussehen
+
+Farben, Schrift, Radien und Abstände kommen aus dem **eCarUp Design System**.
+`src/css/tokens.css` ist eine unveränderte Kopie von dessen `tokens.css` und
+wird nicht von Hand angepasst; die Zuordnung auf Docusaurus steht daneben in
+`src/css/custom.css`, zusammen mit den vier begründeten Abweichungen (Linkfarbe,
+H1-Grösse, Farben der Hinweiskästen, Farbe des Fliesstexts).
+
+Poppins liegt als `src/css/fonts/*.woff2` im Repo und wird mitgebaut — die
+Seite fragt nichts bei Google Fonts an. Das Logo steht in drei Zuschnitten in
+`static/img/`: `ecarup-logo.png` für die Kopfzeile, `ecarup-icon.png` als
+Symbol im Browser-Tab, `ecarup-social-card.png` für geteilte Links.
+
 ## Noch zu erledigen
 
-- [ ] **Logo**: `static/img/ecarup-logo.png` ablegen und in `docusaurus.config.ts`
-      als `favicon` und `navbar.logo` eintragen. Solange steht der Name als Text.
 - [ ] **Adresse**: Der Deploy-Workflow veröffentlicht nach
       `https://ecarup.github.io/ecarup-wiki/`. Kommt eine eigene Domain dazu,
       `SITE_URL`/`BASE_URL` in `.github/workflows/deploy.yml` und die Vorgaben
@@ -59,8 +71,5 @@ schreiben, deshalb liegen sie vorerst daneben.
       zeigen auf `ecarup/ecarup-wiki` — anpassen, falls es anders heisst.
 - [ ] **Secret** `CLAUDE_CODE_OAUTH_TOKEN` für den Übersetzungs-Workflow
       hinterlegen (siehe CONTRIBUTING.md).
-- [ ] **Farben und Schrift**: `src/css/tokens.css` und `src/css/custom.css`
-      tragen noch das smart-me Branding (Blau `#28599A`, Noto Sans). Die
-      eCarUp-Farben dort eintragen.
 - [ ] **Glossar** `glossary.md` mit den eCarUp-Begriffen füllen.
 - [ ] **Kontaktseiten** mit echten Ansprechpartnern füllen.

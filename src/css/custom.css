@@ -1,159 +1,193 @@
 /**
- * smart-me Branding für Docusaurus.
+ * eCarUp Branding für Docusaurus.
  *
- * Die Farb- und Schriftwerte selbst stehen in tokens.css und stammen
- * unverändert aus den smart-me Design Guidelines. Diese Datei bildet sie nur
- * auf die Variablen von Infima (dem Design-System von Docusaurus) ab.
+ * Die Farb-, Schrift- und Abstandswerte stehen in tokens.css und stammen
+ * unverändert aus dem eCarUp Design System. Diese Datei bildet sie auf die
+ * Variablen von Infima ab, dem Design-System von Docusaurus.
  *
  * Umgesetzte Vorgaben aus den Guidelines:
- * - Primärfarbe ist smart-me Blau (#28599A), Grün ist unterstützende Farbe.
- * - Weiss als Grundfläche, Blau 5% (#F4F6FA) für ruhige Flächen.
- * - Schrift Noto Sans, Gewichte 400/500/700, höchstens drei pro Ansicht.
- * - Überschriften in smart-me Blau, Fliesstext #272727, linksbündig.
- * - Links im Fliesstext immer unterstrichen.
- * - Semantische Farbquartette für Hinweise und Warnungen.
  *
- * Zu Schriftgrössen, Zeilenhöhen und Abständen schweigen die Guidelines – der
- * offene Punkt steht als TODO in tokens.css. Das Raster dafür stammt deshalb
- * aus einer fremden Quelle und ist unten im Abschnitt "Schrift- und
- * Abstandsraster" beschrieben. Es gehört bewusst nicht in tokens.css: die
- * Datei ist eine unveränderte Kopie der Guidelines.
+ * - celeste (#03A9F4) ist Akzent, nicht Fläche: Buttons, Linien, Symbole,
+ *   aktive Zustände. Keine grossen Flächen, keine Farbverläufe als Schmuck.
+ * - Überschriften in ink (#29384A), Fliesstext in ink-muted (#3B566B).
+ * - Weiss und surface (#F4F6FA) im Wechsel als Rhythmus.
+ * - Poppins, Gewichte 400 Fliesstext / 500 H3 / 600 H2 / 700 H1.
+ * - Radien: Karten und Kacheln 10 px, Panels und Klappzeilen 14 px,
+ *   Symbolfelder 6 px, Schaltflächen und Pillen 99 px.
+ * - Schatten in zwei Stufen, blau getönt; Stufe 2 zusätzlich 6 px angehoben.
+ * - Flattersatz, nie Blocksatz; Zeilenlänge höchstens 70 Zeichen.
  *
- * Einen Dark Mode gibt es nicht: Er ist in den Guidelines nicht beschrieben,
- * und die semantischen Farbquartette sind auf hellen Grund gerechnet.
- * Abgeschaltet wird er in docusaurus.config.ts unter `colorMode`.
+ * Vier begründete Abweichungen, jede unten an ihrer Stelle noch einmal
+ * erklärt:
+ *
+ * 1. Links stehen nicht in celeste, sondern in #0277B6. celeste auf Weiss
+ *    erreicht 2.9:1 und ist laut den Guidelines selbst keine Textfarbe;
+ *    #0277B6 stammt aus derselben Palette (Portal, Status „Verfügbar“) und
+ *    kommt auf 4.9:1.
+ * 2. H1 ist auf 44 px gedeckelt statt auf die 58 px der Guidelines. Die 58
+ *    sind für eine Marketingseite über die volle Breite gerechnet; hier steht
+ *    der Titel in einer rund 800 px schmalen Textspalte.
+ * 3. Hinweis- und Warnkästen nehmen die vier Statusfarben des Portals. Die
+ *    Guidelines verbieten Grün und Rot ausserhalb der Palette — die Palette
+ *    selbst kennt für genau diese Signale „Lädt“, „Offline/Störung“ und die
+ *    negative Pille.
+ * 4. Der Fliesstext steht in ink-muted. Die Karte „Text und Fläche“ sagt das
+ *    so; die Schriftmuster zeigen ihn in ink-strong (#272727). Wer lieber den
+ *    kräftigeren Wert möchte, ändert unten `--ifm-font-color-base`.
+ *
+ * Einen Dark Mode gibt es nicht: Das Design System beschreibt ihn nicht, und
+ * die Statusfarben sind auf hellen Grund gerechnet. Abgeschaltet wird er in
+ * docusaurus.config.ts unter `colorMode`.
  */
 
 /* ==========================================================================
-   Light Mode
+   Farben und Schrift
    ========================================================================== */
 
 :root {
-  /* ---------- Primärfarbe: smart-me Blau ---------- */
-  --ifm-color-primary: var(--sm-blue);
-  --ifm-color-primary-dark: #24508b;
-  --ifm-color-primary-darker: #224c83;
-  --ifm-color-primary-darkest: #1c3e6c;
-  --ifm-color-primary-light: #2c62a9;
-  --ifm-color-primary-lighter: #2e66b1;
-  --ifm-color-primary-lightest: #3576c8;
+  /* ---------- Primärfarbe: celeste ----------
+     Infima braucht eine Treppe um die Primärfarbe herum. Die dunklen Stufen
+     laufen auf primary-hover (#0288D1) zu, die hellen auf das Celeste der
+     Statusfläche. Benutzt wird davon fast nur `dark` (Hover auf Schaltflächen)
+     und `lightest` (Ränder). */
+  --ifm-color-primary: var(--ec-primary);
+  --ifm-color-primary-dark: var(--ec-primary-hover);
+  --ifm-color-primary-darker: #0280c5;
+  --ifm-color-primary-darkest: #0277b6;
+  --ifm-color-primary-light: #1fb4f6;
+  --ifm-color-primary-lighter: #35bcf7;
+  --ifm-color-primary-lightest: #6bcdf9;
+  --ifm-color-primary-contrast-background: var(--ec-status-verfuegbar-flaeche);
+  --ifm-color-primary-contrast-foreground: var(--ec-status-verfuegbar-text);
 
-  /* ---------- Semantische Farben ---------- */
-  --ifm-color-success: var(--sm-success);
-  --ifm-color-success-dark: var(--sm-success-dark);
-  --ifm-color-success-contrast-background: var(--sm-success-light);
-  --ifm-color-warning: var(--sm-warning);
-  --ifm-color-warning-dark: var(--sm-warning-dark);
-  --ifm-color-warning-contrast-background: var(--sm-warning-hover);
-  --ifm-color-danger: var(--sm-error);
-  --ifm-color-danger-dark: var(--sm-error-dark);
-  --ifm-color-danger-contrast-background: var(--sm-error-hover);
-  --ifm-color-info: var(--sm-info);
-  --ifm-color-info-dark: var(--sm-info-dark);
-  --ifm-color-info-contrast-background: var(--sm-info-hover);
+  /* ---------- Hinweiskästen ----------
+     Abweichung 3: die vier Statusfarben des Portals. „Tipp“ bekommt das Mint
+     von „Lädt“, „Warnung“ das Bernstein von „Offline/Störung“, „Achtung“ die
+     negative Pille, „Hinweis“ das Celeste von „Verfügbar“. Jede Schriftfarbe
+     ist in der Palette als Textfarbe ausgewiesen. */
+  --ifm-color-success: var(--ec-status-laedt-text);
+  --ifm-color-success-dark: var(--ec-status-laedt-text);
+  --ifm-color-success-contrast-background: var(--ec-status-laedt-flaeche);
+  --ifm-color-success-contrast-foreground: var(--ec-status-laedt-text);
 
-  /* ---------- Flächen ---------- */
-  --ifm-background-color: var(--sm-bg);
-  --ifm-background-surface-color: var(--sm-bg);
-  --ifm-color-emphasis-100: var(--sm-blue-5pct);
-  --ifm-color-emphasis-200: var(--sm-grey-400);
-  --ifm-color-emphasis-300: var(--sm-grey-500);
-  --ifm-toc-border-color: var(--sm-grey-500);
-  --ifm-hr-border-color: var(--sm-grey-500);
+  --ifm-color-warning: var(--ec-status-offline-text);
+  --ifm-color-warning-dark: var(--ec-status-offline-text);
+  --ifm-color-warning-contrast-background: var(--ec-status-offline-flaeche);
+  --ifm-color-warning-contrast-foreground: var(--ec-status-offline-text);
 
-  /* ---------- Schrift ---------- */
-  --ifm-font-family-base: var(--sm-font);
-  --ifm-heading-font-family: var(--sm-font);
-  --ifm-font-color-base: var(--sm-text);
-  --ifm-font-weight-semibold: var(--sm-fw-medium);
-  --ifm-font-weight-bold: var(--sm-fw-bold);
-  --ifm-heading-font-weight: var(--sm-fw-bold);
-  --ifm-heading-color: var(--sm-blue);
+  --ifm-color-danger: var(--ec-pill-negativ-text);
+  --ifm-color-danger-dark: var(--ec-pill-negativ-text);
+  --ifm-color-danger-contrast-background: var(--ec-pill-negativ-bg);
+  --ifm-color-danger-contrast-foreground: var(--ec-pill-negativ-text);
 
-  /* ---------- Links: im Fliesstext immer unterstrichen ---------- */
-  --ifm-link-color: var(--sm-link);
-  --ifm-link-hover-color: var(--sm-blue-dark);
+  --ifm-color-info: var(--ec-status-verfuegbar-text);
+  --ifm-color-info-dark: var(--ec-status-verfuegbar-text);
+  --ifm-color-info-contrast-background: var(--ec-status-verfuegbar-flaeche);
+  --ifm-color-info-contrast-foreground: var(--ec-status-verfuegbar-text);
+
+  /* ---------- Flächen ----------
+     Weiss als Grund, surface für die ruhigen Flächen, border für Linien.
+     `emphasis-100` ist in Infima die ruhige Fläche, `300` die Linie; die
+     Zwischenstufen hängen daran, damit nichts grau durchschlägt. */
+  --ifm-background-color: var(--ec-base);
+  --ifm-background-surface-color: var(--ec-base);
+  --ifm-color-emphasis-0: var(--ec-base);
+  --ifm-color-emphasis-100: var(--ec-surface);
+  --ifm-color-emphasis-200: var(--ec-portal-linie);
+  --ifm-color-emphasis-300: var(--ec-border);
+  --ifm-color-emphasis-600: var(--ec-ink-muted);
+  --ifm-color-emphasis-700: var(--ec-ink-muted);
+  --ifm-color-emphasis-800: var(--ec-ink);
+  --ifm-color-emphasis-900: var(--ec-ink);
+  --ifm-toc-border-color: var(--ec-border);
+  --ifm-hr-border-color: var(--ec-border);
+
+  /* ---------- Schrift ----------
+     Abweichung 4: ink-muted trägt den Fliesstext (7.6:1), ink die
+     Überschriften (11.8:1). */
+  --ifm-font-family-base: var(--font-ec-font);
+  --ifm-heading-font-family: var(--font-ec-font);
+  --ifm-font-color-base: var(--ec-ink-muted);
+  --ifm-font-weight-light: var(--ec-weight-light);
+  --ifm-font-weight-normal: var(--ec-weight-regular);
+  --ifm-font-weight-semibold: var(--ec-weight-medium);
+  --ifm-font-weight-bold: var(--ec-weight-semibold);
+  --ifm-heading-color: var(--ec-ink);
+  /* Vorgabe für alle Überschriften; H1 bis H3 setzen ihr eigenes Gewicht
+     weiter unten. */
+  --ifm-heading-font-weight: var(--ec-weight-medium);
+
+  /* ---------- Links ----------
+     Abweichung 1: celeste erreicht als Textfarbe nur 2.9:1. */
+  --ifm-link-color: var(--ec-status-verfuegbar-text);
+  --ifm-link-hover-color: var(--ec-status-verbunden-text);
   --ifm-link-decoration: none;
 
   /* ---------- Kanten ---------- */
-  --ifm-global-radius: var(--sm-radius-md);
-  --ifm-button-border-radius: var(--sm-radius-sm);
+  --ifm-global-radius: var(--ec-radius-card);
+  --ifm-card-border-radius: var(--ec-radius-card);
+  --ifm-button-border-radius: var(--ec-radius-pill);
+  --ifm-pagination-nav-border-radius: var(--ec-radius-card);
+  --ifm-alert-border-radius: var(--ec-radius-card);
+  --ifm-alert-border-left-width: 3px;
+
+  /* ---------- Schatten ----------
+     Zwei Stufen, blau getönt. Infima kennt drei Namen; `lw` und `md` nehmen
+     Stufe 1, `tl` (für Angehobenes) Stufe 2. */
+  --ifm-global-shadow-lw: var(--ec-shadow-1);
+  --ifm-global-shadow-md: var(--ec-shadow-1);
+  --ifm-global-shadow-tl: var(--ec-shadow-2);
 
   /* ---------- Navigation ---------- */
-  --ifm-navbar-background-color: var(--sm-bg);
-  --ifm-navbar-link-color: var(--sm-text);
-  --ifm-navbar-link-hover-color: var(--sm-blue);
-  --ifm-navbar-shadow: 0 1px 0 var(--sm-grey-500);
-  --ifm-menu-color: var(--sm-grey-900);
-  --ifm-menu-color-active: var(--sm-blue);
-  --ifm-menu-color-background-active: var(--sm-blue-10pct);
-  --ifm-menu-color-background-hover: var(--sm-blue-5pct);
-  --ifm-breadcrumb-color-active: var(--sm-blue);
-  --ifm-breadcrumb-item-background-active: var(--sm-blue-10pct);
+  --ifm-navbar-background-color: var(--ec-base);
+  --ifm-navbar-link-color: var(--ec-ink);
+  --ifm-navbar-link-hover-color: var(--ec-status-verfuegbar-text);
+  --ifm-navbar-shadow: var(--ec-shadow-1);
+  --ifm-menu-color: var(--ec-ink-muted);
+  --ifm-menu-color-active: var(--ec-status-verfuegbar-text);
+  --ifm-menu-color-background-active: var(--ec-portal-icon-flaeche);
+  --ifm-menu-color-background-hover: var(--ec-surface);
+  --ifm-breadcrumb-color-active: var(--ec-status-verfuegbar-text);
+  --ifm-breadcrumb-item-background-active: var(--ec-portal-icon-flaeche);
+  --ifm-breadcrumb-border-radius: var(--ec-radius-pill);
 
   /* ---------- Code ---------- */
-  /* Grösse, Innenabstand und Kante stehen im Abschnitt "Schrift- und
-     Abstandsraster". */
-  --ifm-code-background: var(--sm-blue-5pct);
-  --ifm-pre-background: var(--sm-blue-5pct);
-  --docusaurus-highlighted-code-line-bg: var(--sm-blue-10pct);
+  --ifm-code-background: var(--ec-surface);
+  --ifm-pre-background: var(--ec-surface);
+  --docusaurus-highlighted-code-line-bg: var(--ec-portal-icon-flaeche);
 }
 
 /* ==========================================================================
    Schrift- und Abstandsraster
 
-   Die Grössen, Zeilenhöhen und Abstände sind aus der Notion-Hilfe übernommen
-   (www.notion.com/help, ausgelesene computed styles, Stand 27.10.2026). Farben
-   und Schriftfamilie bleiben unverändert aus tokens.css.
-
-   Drei bewusste Abweichungen von der Vorlage, alle wegen der Schrift:
-
-   - Notion setzt Inter mit kräftig negativer Laufweite (H1 -0.036em). Noto
-     Sans läuft offener und wirkt damit gedrängt; hier ist es gut die Hälfte.
-     Die Werte stehen in em, damit sie auf kleinen Bildschirmen mitgehen.
-   - Notions Zeilenhöhen für Überschriften (H1 1.143) unterschreiten die
-     natürliche Zeilenbox von Noto Sans von rund 1.36. Bei einzeiligen Titeln
-     fällt das nicht auf, bei zweizeiligen stossen die Unterlängen der
-     deutschen Langwörter aneinander. Deshalb etwas mehr Luft.
-   - H3 setzt Notion in 600. Die Guidelines kennen nur 400/500/700, die
-     Überschriften bleiben hier deshalb durchgehend 700 und unterscheiden sich
-     allein über die Grösse.
-
-   Nicht übernommen ist Notions Textspalte von 804px: die Breite ergibt sich
-   hier aus Navigation und Inhaltsverzeichnis, und die mehrspaltigen Seiten
-   rechnen mit der vollen Spalte.
+   Grössen, Zeilenhöhen und Abstände stammen aus dem Design System selbst
+   (Schriftstufen und die Abstandsleiter 4/8/12/16/24/32/48/64/96).
    ========================================================================== */
 
 :root {
-  /* ---------- Schriftgrössen, Basis 16px ---------- */
-  --wiki-text-xs: 0.75rem;     /* 12px  Label */
-  --wiki-text-sm: 0.875rem;    /* 14px  Kleintext, Bildlegende, Code */
-  --wiki-text-base: 1rem;      /* 16px  Fliesstext */
-  --wiki-text-lg: 1.125rem;    /* 18px  H4 */
-  --wiki-text-xl: 1.625rem;    /* 26px  H3 */
-  --wiki-text-2xl: 2rem;       /* 32px  H2 */
-  --wiki-text-3xl: 2.625rem;   /* 42px  H1 */
+  /* ---------- Schriftgrössen ----------
+     Body 16/24, body 2 14/20 und caption 12/16 bleiben auf allen Geräten
+     gleich; nur die Überschriften skalieren. */
+  --wiki-text-xs: 0.75rem;   /* 12px  caption, Label */
+  --wiki-text-sm: 0.875rem;  /* 14px  body 2, Bildlegende, Code */
+  --wiki-text-base: 1rem;    /* 16px  Fliesstext */
+  --wiki-text-lg: 1.125rem;  /* 18px  H4, entspricht eyebrow */
+  --wiki-text-xl: 1.375rem;  /* 22px  H3 */
+  --wiki-text-2xl: 2rem;     /* 32px  H2, mobil 26px */
+
+  /* Abweichung 2: H1 mit clamp, aber bei 44px gedeckelt statt bei 58px.
+     Die Untergrenze von 32px ist die des Design Systems. */
+  --wiki-text-3xl: clamp(2rem, 4vw, 2.75rem);
 
   /* ---------- Zeilenhöhen ----------
      Einheitslos, damit sie sich als Faktor vererben: kleinerer Text in einer
-     Kachel bekommt so automatisch den passenden Abstand. */
-  --wiki-lh-h1: 1.2;
-  --wiki-lh-h2: 1.28;
-  --wiki-lh-h3: 1.3;
-  --wiki-lh-h4: 1.45;
-  --wiki-lh-base: 1.5;         /* Fliesstext, 16/24 */
-  --wiki-lh-sm: 1.45;          /* Kleintext, 14/20 */
-
-  /* ---------- Abstandsraster ----------
-     Grundmass ist der Absatzabstand von 10.4px. */
-  --wiki-space-1: 0.25rem;     /*  4px  zwischen Listenpunkten */
-  --wiki-space-2: 0.5rem;      /*  8px */
-  --wiki-space-3: 0.65rem;     /* 10px  Absatz, Block, unter Überschriften */
-  --wiki-space-4: 0.75rem;     /* 12px */
-  --wiki-space-5: 1rem;        /* 16px */
-  --wiki-space-6: 1.25rem;     /* 20px  Listeneinzug */
-  --wiki-space-8: 2rem;        /* 32px  vor H3 */
-  --wiki-space-12: 4rem;       /* 64px  vor H2 */
+     Kachel bekommt so von selbst den passenden Abstand. */
+  --wiki-lh-h1: 1.05;   /* Design System: H1 58/1.05 */
+  --wiki-lh-h2: 1.125;  /* 32/36 */
+  --wiki-lh-h3: 1.364;  /* 22/30 */
+  --wiki-lh-h4: 1.444;  /* 18/26 */
+  --wiki-lh-base: 1.5;  /* 16/24 */
+  --wiki-lh-sm: 1.429;  /* 14/20 */
 
   /* ---------- Abbildung auf Infima ---------- */
   --ifm-line-height-base: var(--wiki-lh-base);
@@ -166,30 +200,35 @@
   --ifm-h5-font-size: var(--wiki-text-base);
   --ifm-h6-font-size: var(--wiki-text-sm);
 
-  /* `--ifm-leading` ist Infimas Grundmass für den senkrechten Rhythmus:
-     Absatzabstand, Abstand unter Überschriften und rund um Blöcke. Die
-     Vielfachen davon stehen weiter unten bei `.markdown`. */
-  --ifm-leading-desktop: 0.65; /* 10.4px */
+  /* `--ifm-leading` ist Infimas Grundmass für den senkrechten Rhythmus. Auf
+     8px gesetzt — der zweiten Stufe der Abstandsleiter — gehen alle
+     Vielfachen weiter unten glatt auf. */
+  --ifm-leading-desktop: 0.5;
+  --ifm-paragraph-margin-bottom: var(--ec-space-4);
 
-  --ifm-list-margin: var(--wiki-space-3);
-  --ifm-list-left-padding: var(--wiki-space-6);
-  --ifm-list-item-margin: var(--wiki-space-1);
-  --ifm-list-paragraph-margin: var(--wiki-space-3);
+  --ifm-list-margin: var(--ec-space-4);
+  --ifm-list-left-padding: var(--ec-space-5);
+  --ifm-list-item-margin: var(--ec-space-1);
+  --ifm-list-paragraph-margin: var(--ec-space-2);
 
   --ifm-code-font-size: 87.5%; /* 14px */
-  --ifm-code-padding-vertical: 0.0625rem;
-  --ifm-code-padding-horizontal: var(--wiki-space-1);
-  --ifm-code-border-radius: var(--sm-radius-sm);
+  --ifm-code-padding-vertical: 0.125rem;
+  --ifm-code-padding-horizontal: var(--ec-space-1);
+  --ifm-code-border-radius: var(--ec-radius-small);
+
+  --ifm-alert-padding-vertical: var(--ec-space-4);
+  --ifm-alert-padding-horizontal: var(--ec-space-4);
 }
 
 /* Infima rechnet die Abstände der Überschriften als Vielfache von
-   `--ifm-leading`, also von 10.4px. */
+   `--ifm-leading`, also von 8px. Das Ergebnis sind lauter Stufen der
+   Abstandsleiter: 24, 48, 32, 24 und 12 Pixel. */
 .markdown {
-  --ifm-h1-vertical-rhythm-bottom: 2;        /* 21px unter dem Seitentitel */
-  --ifm-h2-vertical-rhythm-top: 6;           /* 62px vor H2 */
-  --ifm-h3-vertical-rhythm-top: 3;           /* 31px vor H3 */
-  --ifm-heading-vertical-rhythm-top: 2;      /* 21px vor H4 und kleiner */
-  --ifm-heading-vertical-rhythm-bottom: 1;   /* 10px unter jeder Überschrift */
+  --ifm-h1-vertical-rhythm-bottom: 3;        /* 24px unter dem Seitentitel */
+  --ifm-h2-vertical-rhythm-top: 6;           /* 48px vor H2 */
+  --ifm-h3-vertical-rhythm-top: 4;           /* 32px vor H3 */
+  --ifm-heading-vertical-rhythm-top: 3;      /* 24px vor H4 und kleiner */
+  --ifm-heading-vertical-rhythm-bottom: 1.5; /* 12px unter jeder Überschrift */
 }
 
 /* Die obersten Überschriften einer Seite setzt Infima innerhalb von
@@ -207,37 +246,40 @@
   --ifm-h3-font-size: var(--wiki-text-xl);
 }
 
+/* Gewicht, Zeilenhöhe und Laufweite je Stufe, wie im Design System:
+   H1 700 mit −0.03em, H2 600 mit −0.01em, H3 500 ohne Sperrung. */
 h1 {
+  font-weight: var(--ec-weight-bold);
   line-height: var(--wiki-lh-h1);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--ec-h1-tracking);
 }
 
 h2 {
+  font-weight: var(--ec-weight-semibold);
   line-height: var(--wiki-lh-h2);
-  letter-spacing: -0.012em;
+  letter-spacing: var(--ec-h2-tracking);
 }
 
 h3 {
+  font-weight: var(--ec-h3-weight);
   line-height: var(--wiki-lh-h3);
-  letter-spacing: -0.012em;
+  letter-spacing: 0;
 }
 
 h4,
 h5,
 h6 {
+  font-weight: var(--ec-weight-medium);
   line-height: var(--wiki-lh-h4);
   letter-spacing: 0;
 }
 
-/* Auf schmalen Bildschirmen nimmt Notion die Überschriften deutlich zurück
-   (H1 26px, H2 und H3 je 22px). H2 und H3 unterscheidet es dort nur noch über
-   das Schriftgewicht – das geht hier nicht, beide sind 700. Deshalb bleibt H3
-   eine Stufe kleiner. */
-@media (max-width: 996px) {
+/* Mobil nimmt das Design System H2 auf 26/32 zurück. H1 regelt das clamp
+   oben von selbst, H3 bleibt mit 22px schon klein genug. */
+@media (max-width: 767px) {
   :root {
-    --wiki-text-3xl: 1.625rem; /* 26px */
-    --wiki-text-2xl: 1.375rem; /* 22px */
-    --wiki-text-xl: 1.25rem;   /* 20px */
+    --wiki-text-2xl: 1.625rem; /* 26px */
+    --wiki-lh-h2: 1.231;       /* 26/32 */
   }
 }
 
@@ -245,25 +287,26 @@ h6 {
    Feinheiten aus den Guidelines
    ========================================================================== */
 
-/* Die Fusszeile in smart-me Blau dunkel. Infima setzt seine eigenen Werte auf
-   .footer--dark selbst, ein :root-Wert würde deshalb nicht greifen. */
+/* Die Fusszeile auf surface-deep. Infima setzt seine Werte auf .footer--dark
+   selbst, ein :root-Wert würde deshalb nicht greifen. */
 .footer--dark {
-  --ifm-footer-background-color: var(--sm-blue-dark);
-  --ifm-footer-color: var(--sm-grey-200);
-  --ifm-footer-link-color: var(--sm-blue-25pct);
-  --ifm-footer-link-hover-color: var(--sm-grey-200);
-  --ifm-footer-title-color: var(--sm-grey-200);
+  --ifm-footer-background-color: var(--ec-surface-deep);
+  --ifm-footer-color: var(--ec-text-on-deep);
+  --ifm-footer-link-color: var(--ec-text-on-deep);
+  --ifm-footer-link-hover-color: var(--ec-base);
+  --ifm-footer-title-color: var(--ec-base);
 }
 
-/* Links im Fliesstext sind immer unterstrichen. Navigation, Sidebar und
-   Kacheln bleiben ausgenommen – dort ist die Position bereits eindeutig. */
+/* Links im Fliesstext sind unterstrichen — die Farbe allein trägt den
+   Hinweis nicht. Navigation, Sidebar und Kacheln bleiben ausgenommen, dort
+   ist die Position bereits eindeutig. */
 .markdown a:not(.card):not(.button) {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.12em;
 }
 
-/* Fliesstext linksbündig mit Flattersatz, nie Blocksatz. */
+/* Flattersatz, nie Blocksatz. */
 .markdown p,
 .markdown li {
   text-align: left;
@@ -272,10 +315,9 @@ h6 {
 /*
  * Ausnahme: bewusst ausgerichtete Spalten.
  *
- * Die Regel darüber ist gegen Blocksatz gedacht. Sie hat aber auch jedes
- * `text--center` ausgehebelt — auf der Produkte-Seite standen die
- * Bildunterschriften deshalb linksbündig unter mittig gesetzten Bildern,
- * obwohl die Spalte das Gegenteil verlangt. Dasselbe gilt für `text--right`.
+ * Die Regel darüber ist gegen Blocksatz gedacht. Sie hebelt aber auch jedes
+ * `text--center` aus — die Bildunterschriften stünden sonst linksbündig unter
+ * mittig gesetzten Bildern. Dasselbe gilt für `text--right`.
  */
 .markdown .text--center p,
 .markdown .text--center li {
@@ -287,14 +329,27 @@ h6 {
   text-align: right;
 }
 
-/* Hervorhebungen im Fliesstext in smart-me Blau. */
+/* Hervorhebungen im Fliesstext in ink. celeste wäre hier nicht zu lesen. */
 .markdown strong {
-  color: var(--sm-blue);
+  font-weight: var(--ec-weight-semibold);
+  color: var(--ec-ink);
 }
 
-/* Das Logo ist eine Wortmarke und darf nicht verändert werden. */
+/* Der Fokusrahmen des Design Systems, überall gleich. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--ec-focus-ring);
+  border-radius: var(--ec-radius-small);
+}
+
+/* ---------- Logo und Titel ---------- */
+
+/* Bildmarke und Wortmarke gehören zusammen und werden nicht verändert. Der
+   Alt-Text lautet immer „eCarUp“ — er steht in docusaurus.config.ts. */
 .navbar__logo {
-  height: 1.6rem;
+  /* Die Flügel reichen über die Wortmarke hinaus: Bei gleicher Bildhöhe wirkt
+     dieses Logo kleiner als eine reine Wortmarke. Deshalb etwas grösser. */
+  height: 2rem;
   display: flex;
   align-items: center;
 }
@@ -304,17 +359,62 @@ h6 {
   width: auto;
 }
 
-/* Der Seitentitel steht direkt neben der Wortmarke und ergänzt sie zu
-   "smart-me Support" – deshalb nur "Support". */
+/* Der Seitentitel steht neben der Wortmarke und ergänzt sie zu
+   „eCarUp Support“ — deshalb nur „Support“. */
 .navbar__title {
-  font-weight: var(--sm-fw-medium);
+  font-weight: var(--ec-weight-medium);
+  color: var(--ec-ink);
+}
+
+/* ---------- Karten und Kacheln ---------- */
+
+/*
+ * Stufe 1 in Ruhe, Stufe 2 beim Zeigen, dabei 4px angehoben: so beschreibt
+ * das Design System die Bildkachel. Die Karten im Wiki (Kacheln, Ablauf,
+ * Nächster Schritt, Rollen- und Länderwahl) folgen demselben Muster.
+ */
+.card {
+  border-radius: var(--ec-radius-card);
+  box-shadow: var(--ec-shadow-1);
+  transition: box-shadow var(--ec-dur-tile) var(--ec-ease-ui),
+    transform var(--ec-dur-tile) var(--ec-ease-ui);
+}
+
+a.card:hover {
+  box-shadow: var(--ec-shadow-2);
+  transform: translateY(var(--ec-lift-tile));
+}
+
+/* Schaltflächen sind Pillen, halbfett. */
+.button {
+  font-weight: var(--ec-weight-semibold);
+}
+
+/* Die Klappblöcke der FAQ und der Neuigkeiten: Panel-Radius 14px, offen auf
+   surface mit celeste getöntem Rand. */
+.markdown details {
+  border-radius: var(--ec-radius-panel);
+  border-color: var(--ec-border);
+  background: var(--ec-base);
+  box-shadow: none;
+}
+
+.markdown details[open] {
+  background: var(--ec-surface);
+  border-color: rgba(3, 169, 244, 0.35);
+  box-shadow: var(--ec-shadow-1);
+}
+
+.markdown details > summary {
+  font-weight: var(--ec-weight-medium);
+  color: var(--ec-ink);
 }
 
 /**
- * Aus dem Wiki migrierte Bilder.
+ * Aus dem alten Wiki migrierte Bilder.
  *
- * Google Sites steuerte die Anzeigegrösse über eigene Layout-Klassen, die sich
- * nicht rekonstruieren lassen. Ohne Begrenzung würde ein hochformatiges
+ * Google Sites steuerte die Anzeigegrösse über eigene Layout-Klassen, die
+ * sich nicht rekonstruieren lassen. Ohne Begrenzung würde ein hochformatiges
  * Produktfoto die volle Spaltenbreite einnehmen und damit über 700 Pixel hoch.
  * Die Höhenbegrenzung greift nur dort: Die breiten Screenshots, die den
  * Grossteil ausmachen, bleiben unverändert.
@@ -330,7 +430,7 @@ h6 {
      als Platzhalter erhalten und das Bild wird unverzerrt eingepasst. */
   object-fit: contain;
   object-position: left center;
-  border-radius: var(--sm-radius-sm);
+  border-radius: var(--ec-radius-card);
 }
 
 /*
@@ -379,11 +479,23 @@ h6 {
   width: 100%;
 }
 
-/* Migrierte Tabellen sind teilweise breit – horizontal scrollbar statt gequetscht. */
+/* Migrierte Tabellen sind teilweise breit – horizontal scrollbar statt
+   gequetscht. */
 .markdown table {
   display: block;
   overflow-x: auto;
   max-width: 100%;
+  border-radius: var(--ec-radius-card);
+}
+
+.markdown table thead tr {
+  background: var(--ec-surface);
+  border-bottom: 1px solid var(--ec-border);
+}
+
+.markdown table th {
+  font-weight: var(--ec-weight-semibold);
+  color: var(--ec-ink);
 }
 
 /*
@@ -399,7 +511,7 @@ html:has(iframe[data-fuellen]) .pagination-nav {
   display: none;
 }
 
-/* Ruhige Fläche für die Suchergebnisse und die Sidebar-Kopfzeile. */
+/* Ruhige Fläche für die Navigation – Weiss und surface im Wechsel. */
 .theme-doc-sidebar-container {
-  background: var(--sm-blue-5pct);
+  background: var(--ec-surface);
 }

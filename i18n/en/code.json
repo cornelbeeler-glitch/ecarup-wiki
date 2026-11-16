@@ -398,37 +398,32 @@
     "message": "Country"
   },
   "rolle.installateur": {
-    "message": "Installer",
-    "description": "Rolle im Rollenschalter: sieht alles"
+    "message": "Installer"
   },
   "rolle.abrechnung": {
-    "message": "Billing service provider",
-    "description": "Rolle im Rollenschalter"
+    "message": "Billing service provider"
   },
   "rolle.verwalter": {
-    "message": "Property manager",
-    "description": "Rolle im Rollenschalter"
+    "message": "Property manager"
   },
   "rolle.fahrer": {
-    "message": "Driver",
-    "description": "Rolle im Rollenschalter"
+    "message": "Driver"
   },
   "rollenwahl.ueberschrift": {
-    "message": "Role",
-    "description": "Beschriftung des Rollenschalters in der Kopfzeile"
+    "message": "Role"
   },
   "rollenkarte.titel": {
-    "message": "Narrow the navigation to your role",
-    "description": "Überschrift des Rollenhinweises auf den Einstiegsseiten"
+    "message": "Narrow the navigation to your role"
   },
   "rollenkarte.erklaerung": {
-    "message": "Pick your role and the navigation on the left will only list what you need for your work — that saves searching. If something is missing, move up one role; the installer sees everything. You can change it at any time at the top right.",
-    "description": "Erklärung im Rollenhinweis auf den Einstiegsseiten"
+    "message": "Pick your role and the navigation on the left will only list what you need for your work — that saves searching. If something is missing, move up one role; the installer sees everything. You can change it at any time at the top right."
   },
   "menueweg.titel": {
-    "message": "Navigation in the software"
+    "message": "Navigation in the software",
+    "description": "Überschrift über dem Menüweg durch das smart-me Portal"
   },
   "ablauf.bereich": {
-    "message": "Steps"
+    "message": "Steps",
+    "description": "Beschriftung der Ablaufübersicht auf einer Einstiegsseite"
   }
 }

@@ -1,0 +1,1866 @@
+{
+  "docs": {
+    "docs/_neuigkeiten.md": {
+      "fr": {
+        "hash": "523e3bbc67c3d50c",
+        "origin": "translated"
+      },
+      "en": {
+        "hash": "523e3bbc67c3d50c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "523e3bbc67c3d50c",
+        "origin": "translated"
+      }
+    },
+    "docs/anwendungsfaelle/fahrer-flotten-onboarding.md": {
+      "en": {
+        "hash": "ecc893be1b5b70e7",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "ecc893be1b5b70e7",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "ecc893be1b5b70e7",
+        "origin": "translated"
+      }
+    },
+    "docs/anwendungsfaelle/index.md": {
+      "fr": {
+        "hash": "f36238c5aba5c8ba",
+        "origin": "translated"
+      },
+      "en": {
+        "hash": "f36238c5aba5c8ba",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "f36238c5aba5c8ba",
+        "origin": "translated"
+      }
+    },
+    "docs/anwendungsfaelle/laden-im-kmu.md": {
+      "en": {
+        "hash": "6f485538c4e9c5d6",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "6f485538c4e9c5d6",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "6f485538c4e9c5d6",
+        "origin": "translated"
+      }
+    },
+    "docs/anwendungsfaelle/oeffentlich.md": {
+      "en": {
+        "hash": "b2287b29c5b464f2",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "b2287b29c5b464f2",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "b2287b29c5b464f2",
+        "origin": "translated"
+      }
+    },
+    "docs/anwendungsfaelle/privat-billing.md": {
+      "en": {
+        "hash": "de7f49088e7c30e9",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "de7f49088e7c30e9",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "de7f49088e7c30e9",
+        "origin": "translated"
+      }
+    },
+    "docs/anwendungsfaelle/privat-kreditkarte.md": {
+      "en": {
+        "hash": "69accc2b905a0893",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "69accc2b905a0893",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "69accc2b905a0893",
+        "origin": "translated"
+      }
+    },
+    "docs/deutschland.md": {
+      "en": {
+        "hash": "66c8686f1b91cc44",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "66c8686f1b91cc44",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "66c8686f1b91cc44",
+        "origin": "translated"
+      }
+    },
+    "docs/downloads.md": {
+      "en": {
+        "hash": "d9f2d49dc302656f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d9f2d49dc302656f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "d9f2d49dc302656f",
+        "origin": "translated"
+      }
+    },
+    "docs/drittprodukte.md": {
+      "en": {
+        "hash": "e3ccf25de994de2c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e3ccf25de994de2c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e3ccf25de994de2c",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/abrechnungsdienstleister.md": {
+      "en": {
+        "hash": "aa34f2b51934bdc0",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "aa34f2b51934bdc0",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "aa34f2b51934bdc0",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/api-visualisierung.md": {
+      "en": {
+        "hash": "9d2063fb94eb8c59",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "9d2063fb94eb8c59",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "9d2063fb94eb8c59",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/box-proxy-green-motion/index.md": {
+      "en": {
+        "hash": "362b26a4eab7ecad",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "362b26a4eab7ecad",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "362b26a4eab7ecad",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/box-proxy-green-motion/webinar-ecarup-backend-basic-eaton.md": {
+      "en": {
+        "hash": "47a58741a4b9ad04",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "47a58741a4b9ad04",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "47a58741a4b9ad04",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/export-energieversorger.md": {
+      "en": {
+        "hash": "ab776dadd32ea159",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "ab776dadd32ea159",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "ab776dadd32ea159",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/index.md": {
+      "en": {
+        "hash": "1ba154f98717db99",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "1ba154f98717db99",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "1ba154f98717db99",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/lastmanagement/clemap.md": {
+      "en": {
+        "hash": "5bbb05d6feeeaaf7",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "5bbb05d6feeeaaf7",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "5bbb05d6feeeaaf7",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/lastmanagement/flexecharge.md": {
+      "en": {
+        "hash": "7bd40180cd70eb4a",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7bd40180cd70eb4a",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7bd40180cd70eb4a",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/lastmanagement/index.md": {
+      "en": {
+        "hash": "2c7fdde4c1393b6f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "2c7fdde4c1393b6f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "2c7fdde4c1393b6f",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/lastmanagement/solar-manager.md": {
+      "en": {
+        "hash": "33506160fbfd047b",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "33506160fbfd047b",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "33506160fbfd047b",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/provider-sim-karte.md": {
+      "en": {
+        "hash": "2fc07cbf4e035a27",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "2fc07cbf4e035a27",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "2fc07cbf4e035a27",
+        "origin": "translated"
+      }
+    },
+    "docs/drittsysteme/smart-me-api.md": {
+      "en": {
+        "hash": "b643b8864246a223",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "b643b8864246a223",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "b643b8864246a223",
+        "origin": "translated"
+      }
+    },
+    "docs/fahrer/abrechnen-mit-debit-kreditkarte.md": {
+      "en": {
+        "hash": "81bee35562c3a219",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "81bee35562c3a219",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "81bee35562c3a219",
+        "origin": "translated"
+      }
+    },
+    "docs/fahrer/ecarup-app.md": {
+      "en": {
+        "hash": "e0b76988f03eebd1",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e0b76988f03eebd1",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e0b76988f03eebd1",
+        "origin": "translated"
+      }
+    },
+    "docs/fahrer/fahrerstatistik.md": {
+      "en": {
+        "hash": "e4c438138a39718f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e4c438138a39718f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e4c438138a39718f",
+        "origin": "translated"
+      }
+    },
+    "docs/fahrer/fehlgeschlagene-zahlung.md": {
+      "en": {
+        "hash": "deabbf69a9c1a313",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "deabbf69a9c1a313",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "deabbf69a9c1a313",
+        "origin": "translated"
+      }
+    },
+    "docs/fahrer/index.md": {
+      "en": {
+        "hash": "3cde50991403bef0",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "3cde50991403bef0",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "3cde50991403bef0",
+        "origin": "translated"
+      }
+    },
+    "docs/fahrer/rfid-nfc-tags-carid.md": {
+      "en": {
+        "hash": "fceff11103005773",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "fceff11103005773",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "fceff11103005773",
+        "origin": "translated"
+      }
+    },
+    "docs/fahrer/sofort-bezahl-funktion.md": {
+      "en": {
+        "hash": "336b4fa4799af931",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "336b4fa4799af931",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "336b4fa4799af931",
+        "origin": "translated"
+      }
+    },
+    "docs/faq.md": {
+      "en": {
+        "hash": "4b810f3209980631",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "4b810f3209980631",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "4b810f3209980631",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/15-minuten-datenimport.md": {
+      "en": {
+        "hash": "7e1c774fb5c11687",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7e1c774fb5c11687",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7e1c774fb5c11687",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/Passwort-reset.md": {
+      "en": {
+        "hash": "b24f66edc172cd84",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "b24f66edc172cd84",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "b24f66edc172cd84",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/auto-export-user.md": {
+      "en": {
+        "hash": "809aa9ab56e500cd",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "809aa9ab56e500cd",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "809aa9ab56e500cd",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/automatische-auszahlung.md": {
+      "en": {
+        "hash": "78452607df83c629",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "78452607df83c629",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "78452607df83c629",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/dashboard.md": {
+      "en": {
+        "hash": "5eb7966577277aa0",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "5eb7966577277aa0",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "5eb7966577277aa0",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/ecarup-api.md": {
+      "en": {
+        "hash": "3f5af35f4d5783ae",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "3f5af35f4d5783ae",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "3f5af35f4d5783ae",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/erw-nutzerverwaltung.md": {
+      "en": {
+        "hash": "cca22b75020e8de4",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "cca22b75020e8de4",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "cca22b75020e8de4",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/index.md": {
+      "en": {
+        "hash": "cfdef25d496f1517",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "cfdef25d496f1517",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "cfdef25d496f1517",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/preisplaene.md": {
+      "en": {
+        "hash": "bb695b8df1c8c23b",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "bb695b8df1c8c23b",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "bb695b8df1c8c23b",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/qr-codes.md": {
+      "en": {
+        "hash": "e394c1797508091c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e394c1797508091c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e394c1797508091c",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/reports.md": {
+      "en": {
+        "hash": "e50ab60edff141ce",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e50ab60edff141ce",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e50ab60edff141ce",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/roaming.md": {
+      "en": {
+        "hash": "582702c1139f96be",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "582702c1139f96be",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "582702c1139f96be",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/rollen-rechte.md": {
+      "en": {
+        "hash": "e3f04b8cd32d1c52",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e3f04b8cd32d1c52",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e3f04b8cd32d1c52",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/stations-verwaltung.md": {
+      "en": {
+        "hash": "bbc50b86e368d8f0",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "bbc50b86e368d8f0",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "bbc50b86e368d8f0",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/statistiken.md": {
+      "en": {
+        "hash": "70b35ae49406d626",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "70b35ae49406d626",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "70b35ae49406d626",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/wartung/alarme.md": {
+      "en": {
+        "hash": "40407117d1f1e59c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "40407117d1f1e59c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "40407117d1f1e59c",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/wartung/index.md": {
+      "en": {
+        "hash": "d63ff43ec51e2680",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d63ff43ec51e2680",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "d63ff43ec51e2680",
+        "origin": "translated"
+      }
+    },
+    "docs/funktionen/wartung/ocpp-logs.md": {
+      "en": {
+        "hash": "49e4d9e6b98fa5da",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "49e4d9e6b98fa5da",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "49e4d9e6b98fa5da",
+        "origin": "translated"
+      }
+    },
+    "docs/index.md": {
+      "en": {
+        "hash": "13b79937088471d2",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "13b79937088471d2",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "13b79937088471d2",
+        "origin": "translated"
+      }
+    },
+    "docs/kontakt-deutschland.md": {
+      "en": {
+        "hash": "73b710140567fdf4",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "73b710140567fdf4",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "73b710140567fdf4",
+        "origin": "translated"
+      }
+    },
+    "docs/kontakt-schweiz.md": {
+      "en": {
+        "hash": "528834743791fb95",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "528834743791fb95",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "528834743791fb95",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/abb.md": {
+      "en": {
+        "hash": "d555079dfb5e9e7b",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d555079dfb5e9e7b",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "d555079dfb5e9e7b",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/abl.md": {
+      "en": {
+        "hash": "d19c45cccc7e694d",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d19c45cccc7e694d",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "d19c45cccc7e694d",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/alfen.md": {
+      "en": {
+        "hash": "94915560f2cbbe00",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "94915560f2cbbe00",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "94915560f2cbbe00",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/alpitronic.md": {
+      "en": {
+        "hash": "7681fab5ad8f0685",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7681fab5ad8f0685",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7681fab5ad8f0685",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/autel.md": {
+      "en": {
+        "hash": "9e5077555e38a63f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "9e5077555e38a63f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "9e5077555e38a63f",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/bibus.md": {
+      "en": {
+        "hash": "5a77611ba4e5da87",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "5a77611ba4e5da87",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "5a77611ba4e5da87",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/charge-amps.md": {
+      "en": {
+        "hash": "f82b8fddc4ad9d58",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "f82b8fddc4ad9d58",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "f82b8fddc4ad9d58",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/circontrol.md": {
+      "en": {
+        "hash": "59c06160e609dfbe",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "59c06160e609dfbe",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "59c06160e609dfbe",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/compleo.md": {
+      "en": {
+        "hash": "724138361809a64e",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "724138361809a64e",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "724138361809a64e",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/ctek.md": {
+      "en": {
+        "hash": "ad1a34f39b0d893f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "ad1a34f39b0d893f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "ad1a34f39b0d893f",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/daze.md": {
+      "en": {
+        "hash": "03b8e394418e36db",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "03b8e394418e36db",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "03b8e394418e36db",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/easee.md": {
+      "en": {
+        "hash": "57db18e806dfcab7",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "57db18e806dfcab7",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "57db18e806dfcab7",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/eaton.md": {
+      "en": {
+        "hash": "5d7b9e707034632f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "5d7b9e707034632f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "5d7b9e707034632f",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/ebee.md": {
+      "en": {
+        "hash": "7a2e5b2e7b9090b1",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7a2e5b2e7b9090b1",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7a2e5b2e7b9090b1",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/eco-flow.md": {
+      "en": {
+        "hash": "32e1c375c488d401",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "32e1c375c488d401",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "32e1c375c488d401",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/enelion.md": {
+      "en": {
+        "hash": "88de46d7a7cb617c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "88de46d7a7cb617c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "88de46d7a7cb617c",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/ensto.md": {
+      "en": {
+        "hash": "fa9e1709972afc78",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "fa9e1709972afc78",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "fa9e1709972afc78",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/etrel.md": {
+      "en": {
+        "hash": "64e5f2c25ad70bdf",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "64e5f2c25ad70bdf",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "64e5f2c25ad70bdf",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/evtec.md": {
+      "en": {
+        "hash": "60bd67527127a8d7",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "60bd67527127a8d7",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "60bd67527127a8d7",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/fischer-sohn.md": {
+      "en": {
+        "hash": "555ba23936825d3e",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "555ba23936825d3e",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "555ba23936825d3e",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/garo.md": {
+      "en": {
+        "hash": "7ddfda4aca7d8c56",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7ddfda4aca7d8c56",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7ddfda4aca7d8c56",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/gewiss.md": {
+      "en": {
+        "hash": "14399acd11a00476",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "14399acd11a00476",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "14399acd11a00476",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/gl-charge.md": {
+      "en": {
+        "hash": "9362c9e4b29bf076",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "9362c9e4b29bf076",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "9362c9e4b29bf076",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/go-e.md": {
+      "en": {
+        "hash": "d73c149a72bb3ada",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d73c149a72bb3ada",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "d73c149a72bb3ada",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/gresgying.md": {
+      "en": {
+        "hash": "029b1fdb58bba88e",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "029b1fdb58bba88e",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "029b1fdb58bba88e",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/hager.md": {
+      "en": {
+        "hash": "5202ca56b3f13c1e",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "5202ca56b3f13c1e",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "5202ca56b3f13c1e",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/heidelberg-amperfied.md": {
+      "en": {
+        "hash": "0401616d55f01878",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "0401616d55f01878",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "0401616d55f01878",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/hesotec.md": {
+      "en": {
+        "hash": "bb8bea6fded027d6",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "bb8bea6fded027d6",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "bb8bea6fded027d6",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/huawei.md": {
+      "en": {
+        "hash": "6128a1ddc3002c2c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "6128a1ddc3002c2c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "6128a1ddc3002c2c",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/index.md": {
+      "en": {
+        "hash": "0c95d0d8dd6ed521",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "0c95d0d8dd6ed521",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "0c95d0d8dd6ed521",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/juice-technology.md": {
+      "en": {
+        "hash": "1204fef9776614b8",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "1204fef9776614b8",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "1204fef9776614b8",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/keba.md": {
+      "en": {
+        "hash": "ce59227aec6a62f3",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "ce59227aec6a62f3",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "ce59227aec6a62f3",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/kempower.md": {
+      "en": {
+        "hash": "aee15680fbcd5a79",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "aee15680fbcd5a79",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "aee15680fbcd5a79",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/kostad.md": {
+      "en": {
+        "hash": "05868b28518c050c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "05868b28518c050c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "05868b28518c050c",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/kreisel-electric.md": {
+      "en": {
+        "hash": "11cfbf870e6890bf",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "11cfbf870e6890bf",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "11cfbf870e6890bf",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/loxone.md": {
+      "en": {
+        "hash": "fca375c1f6db37e4",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "fca375c1f6db37e4",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "fca375c1f6db37e4",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/mennekes.md": {
+      "en": {
+        "hash": "c704e0d1254a65e9",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "c704e0d1254a65e9",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "c704e0d1254a65e9",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/mybox.md": {
+      "en": {
+        "hash": "7cc193e263d27973",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7cc193e263d27973",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7cc193e263d27973",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/neoom.md": {
+      "en": {
+        "hash": "a3bbc6e474c2ec38",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "a3bbc6e474c2ec38",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "a3bbc6e474c2ec38",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/nexblue.md": {
+      "en": {
+        "hash": "4ad3aaa24172fc8e",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "4ad3aaa24172fc8e",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "4ad3aaa24172fc8e",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/partino.md": {
+      "en": {
+        "hash": "bfefd5e3156bb628",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "bfefd5e3156bb628",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "bfefd5e3156bb628",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/powerjames.md": {
+      "en": {
+        "hash": "3e8d011b6f2dde8b",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "3e8d011b6f2dde8b",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "3e8d011b6f2dde8b",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/ratio-electric.md": {
+      "en": {
+        "hash": "a4d5db38025428b8",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "a4d5db38025428b8",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "a4d5db38025428b8",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/scapo.md": {
+      "en": {
+        "hash": "d610535edcc36584",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d610535edcc36584",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "d610535edcc36584",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/schneider-electric.md": {
+      "en": {
+        "hash": "52ee78edfa15996e",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "52ee78edfa15996e",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "52ee78edfa15996e",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/setec-power.md": {
+      "en": {
+        "hash": "e922d7201f4f4f67",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e922d7201f4f4f67",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e922d7201f4f4f67",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/siemens.md": {
+      "en": {
+        "hash": "f22bbd0f177c471d",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "f22bbd0f177c471d",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "f22bbd0f177c471d",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/spelsberg.md": {
+      "en": {
+        "hash": "cca1e79ad1fc16ae",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "cca1e79ad1fc16ae",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "cca1e79ad1fc16ae",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/sun2wheel.md": {
+      "en": {
+        "hash": "e5752f3cb95dddd3",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e5752f3cb95dddd3",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e5752f3cb95dddd3",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/sungrow.md": {
+      "en": {
+        "hash": "382357f802028456",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "382357f802028456",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "382357f802028456",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/teltonika.md": {
+      "en": {
+        "hash": "a827721d8bdc3e5a",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "a827721d8bdc3e5a",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "a827721d8bdc3e5a",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/ventisei-swiss.md": {
+      "en": {
+        "hash": "dae7169f7bf23d53",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "dae7169f7bf23d53",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "dae7169f7bf23d53",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/webasto.md": {
+      "en": {
+        "hash": "1be556f9598c0724",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "1be556f9598c0724",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "1be556f9598c0724",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/weidmueller.md": {
+      "en": {
+        "hash": "4f88955e79da2670",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "4f88955e79da2670",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "4f88955e79da2670",
+        "origin": "translated"
+      }
+    },
+    "docs/ocpp-ladestationen/zaptec.md": {
+      "en": {
+        "hash": "dc9e4044aea3489d",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "dc9e4044aea3489d",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "dc9e4044aea3489d",
+        "origin": "translated"
+      }
+    },
+    "docs/schweiz.md": {
+      "en": {
+        "hash": "249b36e85db62207",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "249b36e85db62207",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "249b36e85db62207",
+        "origin": "translated"
+      }
+    },
+    "docs/smart-me-pico.md": {
+      "en": {
+        "hash": "a6a05b83b5cfdd35",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "a6a05b83b5cfdd35",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "a6a05b83b5cfdd35",
+        "origin": "translated"
+      }
+    },
+    "docs/sonstige-informationen/afir.md": {
+      "en": {
+        "hash": "7af9444144452798",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7af9444144452798",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7af9444144452798",
+        "origin": "translated"
+      }
+    },
+    "docs/sonstige-informationen/boxproxy-releases.md": {
+      "en": {
+        "hash": "08ac39fc918de76f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "08ac39fc918de76f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "08ac39fc918de76f",
+        "origin": "translated"
+      }
+    },
+    "docs/sonstige-informationen/eichrecht-in-deutschland.md": {
+      "en": {
+        "hash": "f14ff65c5ead2e83",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "f14ff65c5ead2e83",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "f14ff65c5ead2e83",
+        "origin": "translated"
+      }
+    },
+    "docs/sonstige-informationen/index.md": {
+      "en": {
+        "hash": "b7e802cddc5c2d82",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "b7e802cddc5c2d82",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "b7e802cddc5c2d82",
+        "origin": "translated"
+      }
+    },
+    "docs/sonstige-informationen/stripe.md": {
+      "en": {
+        "hash": "405b107c76817bd8",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "405b107c76817bd8",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "405b107c76817bd8",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/abrechnen-auszahlen.md": {
+      "en": {
+        "hash": "364238d3c6001bc2",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "364238d3c6001bc2",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "364238d3c6001bc2",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/account-verifizieren.md": {
+      "en": {
+        "hash": "7c50849be371aad7",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7c50849be371aad7",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7c50849be371aad7",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/allgemeine-informationen.md": {
+      "en": {
+        "hash": "e24f6713d5b3aae4",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "e24f6713d5b3aae4",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "e24f6713d5b3aae4",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/inbetriebnahme-ocpp-station.md": {
+      "en": {
+        "hash": "9f28cdf0e68302af",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "9f28cdf0e68302af",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "9f28cdf0e68302af",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/index.md": {
+      "en": {
+        "hash": "76af05024d6e5c8a",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "76af05024d6e5c8a",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "76af05024d6e5c8a",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/lizenzen.md": {
+      "en": {
+        "hash": "3f459ee491abb535",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "3f459ee491abb535",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "3f459ee491abb535",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/qr-code.md": {
+      "en": {
+        "hash": "4921f35326e841e3",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "4921f35326e841e3",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "4921f35326e841e3",
+        "origin": "translated"
+      }
+    },
+    "docs/stationsbetreiber/webportal.md": {
+      "en": {
+        "hash": "2c5d22fc4a45fc5b",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "2c5d22fc4a45fc5b",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "2c5d22fc4a45fc5b",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/auto-export.md": {
+      "en": {
+        "hash": "57ba75b275d6ca9b",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "57ba75b275d6ca9b",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "57ba75b275d6ca9b",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/index.md": {
+      "en": {
+        "hash": "7fb11889637b8d9d",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "7fb11889637b8d9d",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "7fb11889637b8d9d",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/kontrolle-erstkonfiguration.md": {
+      "en": {
+        "hash": "c4f4db2d9f213f71",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "c4f4db2d9f213f71",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "c4f4db2d9f213f71",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/ladeleistung-falsch-angezeigt.md": {
+      "en": {
+        "hash": "02326c4fc0c1238c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "02326c4fc0c1238c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "02326c4fc0c1238c",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/mwst-nummer-ist-nicht-im-auszahlungsbeleg-enthalten.md": {
+      "en": {
+        "hash": "9879d927aa86074a",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "9879d927aa86074a",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "9879d927aa86074a",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/ocpp-fehleranalyse.md": {
+      "en": {
+        "hash": "f62cff8d5b1aed8f",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "f62cff8d5b1aed8f",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "f62cff8d5b1aed8f",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/pico-fehler.md": {
+      "en": {
+        "hash": "ea015b00438ad2a4",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "ea015b00438ad2a4",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "ea015b00438ad2a4",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/registrierungs-probleme.md": {
+      "en": {
+        "hash": "421921a679078fb1",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "421921a679078fb1",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "421921a679078fb1",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/report-fehler.md": {
+      "en": {
+        "hash": "714435240da0ceae",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "714435240da0ceae",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "714435240da0ceae",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/report-mit-auszahlungsverlauf-vergleichen.md": {
+      "en": {
+        "hash": "07157b202c55c520",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "07157b202c55c520",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "07157b202c55c520",
+        "origin": "translated"
+      }
+    },
+    "docs/stoerungsbehebung/roaming-probleme.md": {
+      "en": {
+        "hash": "93382b071c204c19",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "93382b071c204c19",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "93382b071c204c19",
+        "origin": "translated"
+      }
+    },
+    "docs/support-ki-agent.md": {
+      "en": {
+        "hash": "a37032afe139c601",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "a37032afe139c601",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "a37032afe139c601",
+        "origin": "translated"
+      }
+    }
+  }
+}

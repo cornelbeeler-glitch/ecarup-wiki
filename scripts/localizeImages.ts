@@ -21,6 +21,12 @@
  * bleibt das deutsche Bild stehen. Es muss also niemand irgendwo eintragen,
  * dass es eine Übersetzung gibt; die Datei im Ordner genügt.
  *
+ * Ausgegangen wird dabei vom Bildpfad der **deutschen Vorlage**, nicht von
+ * dem, der in der Übersetzung steht. Der Pfad in `i18n/` wird also vollständig
+ * hergeleitet, aus `docs/` und dem Ordnerinhalt. Damit heilt dieser Lauf auch
+ * einen Dateinamen, den die Übersetzung verändert hat – etwa `05.jpg`, das auf
+ * einer Seite voller `.png` als `05.png` wieder herauskam.
+ *
  * Der Lauf richtet sich **in beide Richtungen** nach dem Ordnerinhalt: Wird
  * eine Variante wieder gelöscht, verweist die Übersetzung beim nächsten Lauf
  * wieder auf das deutsche Bild. Ohne das bliebe der Verweis auf eine Datei
@@ -52,7 +58,7 @@ import {readFile, readdir, writeFile} from 'node:fs/promises';
 import {existsSync, readdirSync, statSync} from 'node:fs';
 import {join, sep} from 'node:path';
 import {pathToFileURL} from 'node:url';
-import {TARGET_LOCALES, docsRootFor, type Locale} from './translate';
+import {DOCS_ROOT, TARGET_LOCALES, docsRootFor, type Locale} from './translate';
 
 /** Wurzel der ausgelieferten Dateien: `/img/…` liegt unter `static/img/…`. */
 export const STATIC_ROOT = 'static';
@@ -206,13 +212,36 @@ export async function localizeImages(
   let changed = 0;
 
   for (const locale of locales) {
+    const wurzel = `${toPosix(docsRootFor(locale))}/`;
+
     for (const target of (await walk(docsRootFor(locale))).map(toPosix)) {
       const original = await readFile(target, 'utf8');
 
+      // Die Bildpfade der deutschen Vorlage, in Dokumentreihenfolge. Sie sind
+      // die Grundlage, nicht der Pfad in der Übersetzung: Ein Modell, das über
+      // eine Seite voller `.png` läuft, schreibt irgendwann auch das eine
+      // `.jpg` als `.png` — ein Zeichen, das niemand beim Lesen bemerkt und an
+      // dem Wochen später der Build abbricht. Von der Vorlage aus gelesen kann
+      // das gar nicht erst in die Veröffentlichung geraten.
+      const quelle = `${DOCS_ROOT}/${target.slice(wurzel.length)}`;
+      const ausQuelle = existsSync(quelle)
+        ? [...(await readFile(quelle, 'utf8')).matchAll(IMAGE_PATTERN)].map((m) => m[2])
+        : null;
+      const inDatei = [...original.matchAll(IMAGE_PATTERN)].map((m) => m[2]);
+
+      // Nur bei gleicher Anzahl lässt sich Bild für Bild zuordnen. Fehlt oder
+      // doppelt sich eines, ist das kein Fall für ein stilles Zurechtbiegen:
+      // Die Strukturprüfung (`npm run translate:check`) meldet es als
+      // Abweichung, und bis dahin bleibt alles so stehen, wie es dasteht.
+      const vorlage = ausQuelle?.length === inDatei.length ? ausQuelle : null;
+
+      let n = -1;
       const updated = original.replace(
         IMAGE_PATTERN,
         (match, alt: string, imagePath: string) => {
-          const gewollt = resolveImage(imagePath, locale, index);
+          n += 1;
+          const basis = vorlage ? vorlage[n] : imagePath;
+          const gewollt = resolveImage(basis, locale, index);
           if (!gewollt || gewollt === imagePath) return match;
           replacements.push({file: target, from: imagePath, to: gewollt});
           return `![${alt}](${gewollt})`;

@@ -34,11 +34,11 @@
   min-height: 5rem;
   padding: 1rem 1.25rem;
   border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: var(--ifm-card-border-radius, 0.4rem);
+  border-radius: var(--ec-radius-card);
   background: var(--ifm-background-surface-color);
   color: var(--ifm-heading-color);
   font-size: 1.15rem;
-  font-weight: var(--sm-fw-bold);
+  font-weight: var(--ec-weight-semibold);
   text-decoration: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -50,13 +50,14 @@
   text-decoration: none;
 }
 
-/* Die beim letzten Besuch getroffene Wahl. */
+/* Die beim letzten Besuch getroffene Wahl. Schrift in ink: Weiss auf celeste
+   erreicht nur 2.9:1, ink darauf 4.5:1. */
 .gewaehlt {
-  border-color: var(--ifm-color-primary);
-  background: var(--ifm-color-primary);
-  color: var(--ifm-background-surface-color);
+  border-color: var(--ec-primary);
+  background: var(--ec-primary);
+  color: var(--ec-ink);
 }
 
 .gewaehlt:hover {
-  color: var(--ifm-background-surface-color);
+  color: var(--ec-ink);
 }

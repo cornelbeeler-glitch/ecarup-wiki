@@ -40,32 +40,25 @@
     "message": "Land"
   },
   "rolle.installateur": {
-    "message": "Installateur",
-    "description": "Rolle im Rollenschalter: sieht alles"
+    "message": "Installateur"
   },
   "rolle.abrechnung": {
-    "message": "Abrechnungsdienstleister",
-    "description": "Rolle im Rollenschalter"
+    "message": "Abrechnungsdienstleister"
   },
   "rolle.verwalter": {
-    "message": "Verwalter",
-    "description": "Rolle im Rollenschalter"
+    "message": "Verwalter"
   },
   "rolle.fahrer": {
-    "message": "Fahrer",
-    "description": "Rolle im Rollenschalter"
+    "message": "Fahrer"
   },
   "rollenwahl.ueberschrift": {
-    "message": "Rolle",
-    "description": "Beschriftung des Rollenschalters in der Kopfzeile"
+    "message": "Rolle"
   },
   "rollenkarte.titel": {
-    "message": "Navigation auf deine Rolle eingrenzen",
-    "description": "Überschrift des Rollenhinweises auf den Einstiegsseiten"
+    "message": "Navigation auf deine Rolle eingrenzen"
   },
   "rollenkarte.erklaerung": {
-    "message": "Wähle deine Rolle, dann führt die Navigation links nur noch, was du für deine Arbeit brauchst — das spart Suchen. Fehlt dir etwas, nimm die nächsthöhere Rolle; der Installateur sieht alles. Ändern kannst du es jederzeit oben rechts.",
-    "description": "Erklärung im Rollenhinweis auf den Einstiegsseiten"
+    "message": "Wähle deine Rolle, dann führt die Navigation links nur noch, was du für deine Arbeit brauchst — das spart Suchen. Fehlt dir etwas, nimm die nächsthöhere Rolle; der Installateur sieht alles. Ändern kannst du es jederzeit oben rechts."
   },
   "menueweg.titel": {
     "message": "Navigation in der Software",

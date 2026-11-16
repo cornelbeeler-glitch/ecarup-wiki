@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.wikiSidebar.category.Fahrer": {
+    "message": "Fahrer",
+    "description": "The label for category 'Fahrer' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Stationsbetreiber": {
+    "message": "Stationsbetreiber",
+    "description": "The label for category 'Stationsbetreiber' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Funktionen": {
+    "message": "Funktionen",
+    "description": "The label for category 'Funktionen' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Wartung": {
+    "message": "Wartung",
+    "description": "The label for category 'Wartung' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Anwendungsfälle": {
+    "message": "Anwendungsfälle",
+    "description": "The label for category 'Anwendungsfälle' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.OCPP Ladestationen": {
+    "message": "OCPP Ladestationen",
+    "description": "The label for category 'OCPP Ladestationen' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Drittsysteme": {
+    "message": "Drittsysteme",
+    "description": "The label for category 'Drittsysteme' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Box-Proxy Green Motion": {
+    "message": "Box-Proxy Green Motion",
+    "description": "The label for category 'Box-Proxy Green Motion' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Lastmanagement": {
+    "message": "Lastmanagement",
+    "description": "The label for category 'Lastmanagement' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Störungsbehebung": {
+    "message": "Störungsbehebung",
+    "description": "The label for category 'Störungsbehebung' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Sonstige Informationen": {
+    "message": "Sonstige Informationen",
+    "description": "The label for category 'Sonstige Informationen' in sidebar 'wikiSidebar'"
+  }
+}

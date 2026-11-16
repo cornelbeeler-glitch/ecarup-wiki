@@ -1,8 +1,16 @@
 /*
  * Der Rollenhinweis steht mitten auf der Einstiegsseite, zwischen Einleitung
  * und „Hilfe und Kontakt". Damit er dort nicht untergeht, sind die vier
- * Schalter gross und blau — sie sollen auffallen wie eine Wahl und nicht wie
- * eine Einstellung.
+ * Schalter gross und celeste — sie sollen auffallen wie eine Wahl und nicht
+ * wie eine Einstellung.
+ *
+ * Die Schrift steht in ink, nicht in Weiss: Weiss auf celeste erreicht nur
+ * 2.9:1, ink darauf 4.5:1. Das Design System führt genau diese Kombination
+ * als AA-Variante seiner primären Schaltfläche.
+ *
+ * Die Kante bleibt die der Kachel (10px) statt der Pille (99px): Die vier
+ * Schalter sind über 5rem hoch und stehen in einem Raster nebeneinander —
+ * sie lesen sich als Kacheln, nicht als Schaltflächenreihe.
  */
 .karte {
   margin: 2rem 0;
@@ -36,13 +44,13 @@
      und braucht dann mehr. */
   min-height: 5.25rem;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--ifm-color-primary);
-  border-radius: var(--ifm-card-border-radius, 0.4rem);
-  background: var(--ifm-background-surface-color);
-  color: var(--ifm-color-primary);
+  border: 1px solid var(--ec-primary);
+  border-radius: var(--ec-radius-card);
+  background: var(--ec-base);
+  color: var(--ec-ink);
   font: inherit;
   font-size: 1.05rem;
-  font-weight: var(--sm-fw-bold);
+  font-weight: var(--ec-weight-semibold);
   line-height: 1.3;
   text-align: center;
   cursor: pointer;
@@ -54,11 +62,9 @@
   box-shadow: var(--ifm-global-shadow-lw);
 }
 
-/* Die geltende Rolle – ohne Wahl ist das der Installateur. Weiss statt der
-   Hintergrundfarbe: Das Blau bleibt in der dunklen Ansicht dasselbe, und
-   dunkle Schrift darauf wäre nicht zu lesen. */
+/* Die geltende Rolle – ohne Wahl ist das der Installateur. */
 .gewaehlt,
 .gewaehlt:hover {
-  background: var(--ifm-color-primary);
-  color: #fff;
+  background: var(--ec-primary);
+  color: var(--ec-ink);
 }

@@ -465,8 +465,13 @@ export async function translateFile(job: Job, glossary: string): Promise<void> {
  *
  * Diese Texte stammen nicht aus `docs/`, sondern aus `sidebars.ts` und
  * `docusaurus.config.ts`. Nach einer neuen Kategorie also erst
- * `npm run write-translations` laufen lassen (das ergänzt die neuen Schlüssel
- * auf Deutsch) und danach `npm run translate -- --ui`.
+ * `npm run write-translations:all` laufen lassen und danach
+ * `npm run translate -- --ui`.
+ *
+ * Der erste Schritt ist nicht wegzulassen und auch nicht durch das blosse
+ * `npm run write-translations` zu ersetzen: Dieses schreibt nur die Dateien
+ * der Standardsprache. Die Beschriftungen entstehen je Sprache in einer
+ * eigenen Datei, und was dort nicht steht, kann hier nicht übersetzt werden.
  *
  * `code.json` bleibt bewusst aussen vor: das sind die eingebauten Texte des
  * Docusaurus-Themes, die für en/fr/it bereits mitgeliefert werden.
@@ -477,6 +482,19 @@ export async function translateUi(locales: readonly Locale[], glossary: string):
     const files = (await walk(jsonRootFor(locale), '.json'))
       .map(toPosix)
       .filter((f) => !f.endsWith('/code.json'));
+
+    // Die Beschriftungen der Sidebar-Kategorien – „Fahrer", „Funktionen",
+    // „Störungsbehebung" – stehen in `current.json`. Die Datei entsteht nicht
+    // von selbst, sondern erst durch `write-translations`; fehlt sie, bleibt
+    // die ganze Navigation deutsch, und zwar lautlos: Hier gäbe es dann
+    // schlicht nichts zu übersetzen. Deshalb der Hinweis statt der Stille.
+    const kategorien = `${jsonRootFor(locale)}/docusaurus-plugin-content-docs/current.json`;
+    if (!files.includes(kategorien)) {
+      console.log(
+        `  [${locale}] ${kategorien} fehlt – die Kategorien der Navigation bleiben\n` +
+          `        deutsch. Erzeugen mit:  npm run write-translations:all`,
+      );
+    }
 
     for (const file of files) {
       const content = await readFile(file, 'utf8');
@@ -697,7 +715,44 @@ ${(err as Error).message}`);
     console.log(`  Sprungmarke ohne Ziel: ${item.file} -> #${item.anchor}`);
   }
 
+  // Sprachspezifische Bilder noch einmal: Die eben erzeugten Übersetzungen hat
+  // der Lauf von oben noch nicht gesehen.
+  const nachher = await localizeImages(options.locales);
+  if (nachher.replacements.length > 0) {
+    console.log(`${nachher.replacements.length} Bildverweise an die Vorlage angeglichen.`);
+  }
+
   console.log(`\n${done} übersetzt, ${failed} fehlgeschlagen.`);
+
+  // Zum Schluss die Strukturprüfung. Sie vergleicht jede Übersetzung mit ihrer
+  // deutschen Vorlage – Überschriften, Bilder, Linkziele, Codeblöcke – und
+  // findet damit die Fehler, die eine einzelne Übersetzung nicht bemerken
+  // kann: ein vertippter Bildname, ein abgeschnittener Abschnitt, ein Link,
+  // der ins Leere zeigt. Ohne sie fällt so etwas erst beim Bauen auf, und dann
+  // mit einem Stapeltrace statt mit einem Satz.
+  //
+  // Sie steht bewusst nach der Zusammenfassung und bewusst ohne Einfluss auf
+  // den Rückgabewert: Ein Befund gehört vor Augen, aber er soll nicht den
+  // Veröffentlichungs-Workflow anhalten – der Build stolpert ohnehin selbst
+  // über alles, was ihn wirklich aufhält.
+  //
+  // Geladen wird die Prüfung erst hier: Sie holt sich ihrerseits Bausteine aus
+  // dieser Datei, und ein gegenseitiger Import gleich beim Start ist eine
+  // Fehlerquelle, die niemand braucht.
+  const {checkAll} = await import('./checkTranslations');
+  const {findings} = await checkAll();
+  if (findings.length > 0) {
+    const dateien = new Set(findings.map((f) => f.file)).size;
+    console.log(
+      `\n${dateien} Übersetzungen weichen von der Vorlage ab ` +
+        `(${findings.length} Befunde). Im Einzelnen:\n`,
+    );
+    for (const finding of findings) {
+      console.log(`  [${finding.locale}] ${finding.file}\n      ${finding.problem}`);
+    }
+    console.log('\nNachsehen und beheben: npm run translate:check');
+  }
+
   return failed > 0 ? 1 : 0;
 }
 

@@ -15,9 +15,9 @@ const baseUrl = process.env.BASE_URL ?? '/ecarup-wiki/';
 const config: Config = {
   title: 'eCarUp Support',
   tagline: 'Dokumentation und Support für eCarUp',
-  // TODO: Sobald es ein Logo gibt, als static/img/ecarup-logo.png ablegen und
-  // hier sowie in navbar.logo eintragen.
-  // favicon: 'img/ecarup-logo.png',
+  // Im Tab ist für die Wortmarke kein Platz – dort steht die Bildmarke
+  // allein. Die Kopfzeile zeigt beide zusammen (siehe navbar.logo).
+  favicon: 'img/ecarup-icon.png',
 
   url,
   baseUrl,
@@ -78,11 +78,10 @@ const config: Config = {
         blog: false,
         theme: {
           customCss: [
-            // Noto Sans wird selbst ausgeliefert – keine Anfragen an Google Fonts.
-            require.resolve('@fontsource/noto-sans/400.css'),
-            require.resolve('@fontsource/noto-sans/500.css'),
-            require.resolve('@fontsource/noto-sans/700.css'),
             // Unveraenderte Design Tokens, danach die Zuordnung auf Docusaurus.
+            // Poppins bringt tokens.css selbst mit: die @font-face-Angaben am
+            // Dateiende zeigen auf src/css/fonts/ und werden mitgebaut – keine
+            // Anfragen an Google Fonts.
             './src/css/tokens.css',
             './src/css/custom.css',
           ],
@@ -129,7 +128,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // TODO: Social-Card hinterlegen (static/img/…) und hier eintragen.
+    // Das Bild, das beim Teilen eines Links erscheint: die Wortmarke in Weiss
+    // auf surface-deep, wie es die Guidelines auf der Karte „Logo" zeigen.
+    image: 'img/ecarup-social-card.png',
     // Kein Dark Mode. Die Guidelines beschreiben ihn nicht, und die
     // semantischen Farbquartette (Hinweise, FAQ-Klappblöcke) sind auf hellen
     // Grund gerechnet: Auf dunklem Grund stand dort weisse Schrift auf
@@ -142,9 +143,14 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      // Ohne Wortmarke steht der volle Name als Text. Kommt ein Logo dazu,
-      // wird daraus wieder `title: 'Support'` plus `logo`.
-      title: 'eCarUp Support',
+      // Bildmarke und Wortmarke gehören zusammen und werden nicht verändert;
+      // der Alt-Text lautet immer „eCarUp". Der Titel daneben ergänzt sie zu
+      // „eCarUp Support" – deshalb nur „Support".
+      title: 'Support',
+      logo: {
+        alt: 'eCarUp',
+        src: 'img/ecarup-logo.png',
+      },
       items: [
         {
           type: 'docSidebar',

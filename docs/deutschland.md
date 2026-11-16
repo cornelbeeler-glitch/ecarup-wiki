@@ -7,19 +7,31 @@ sidebar_label: 'Start Deutschland'
 
 import Neuigkeiten from './_neuigkeiten.md';
 
-Diese Einstiegsseite gilt für Deutschland. In der Navigation links steht, was hier gilt; alles Länderunabhängige steht überall gleich.
+Deine Support-Plattform für Antworten, Anleitungen und Lösungen rund um E-Ladestationen, Installation, Betrieb und Abrechnung.
+
+Diese Einstiegsseite gilt für Deutschland; Vertrieb und Support laufen über smartRED.
 
 <Rollenwahl />
 
 ## Hilfe und Kontakt
 
-{/* Weitere Kacheln kommen hier dazu, sobald es die Seiten gibt. */}
-
 <Kacheln min="15rem">
+
+<Kachel titel="Häufige Fragen" href="/faq">
+
+Die Fragen, die uns am häufigsten erreichen — zu Konto, App und Abrechnung.
+
+</Kachel>
+
+<Kachel titel="Billy – KI-Support" href="/support-ki-agent">
+
+Fragen in eigenen Worten stellen; Billy antwortet aus diesem Wiki.
+
+</Kachel>
 
 <Kachel titel="Kontakt Deutschland" href="/kontakt-deutschland">
 
-Vertrieb und Support für Deutschland.
+Vertrieb und technischer Support für Deutschland über smartRED.
 
 </Kachel>
 

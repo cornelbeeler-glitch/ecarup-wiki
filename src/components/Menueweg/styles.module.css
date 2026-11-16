@@ -16,8 +16,8 @@
   margin: 0 0 1.5rem;
   padding: 0.7rem 0.9rem;
   border-left: 3px solid var(--ifm-color-primary);
-  border-radius: 0 var(--ifm-card-border-radius, 0.4rem)
-    var(--ifm-card-border-radius, 0.4rem) 0;
+  border-radius: 0 var(--ec-radius-card)
+    var(--ec-radius-card) 0;
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-900);
   font-size: 0.95rem;
@@ -38,7 +38,7 @@
   grid-column: 2;
   font-size: var(--wiki-text-xs, 0.75rem);
   line-height: 1.35;
-  font-weight: var(--sm-fw-medium, 500);
+  font-weight: var(--ec-weight-medium);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-700);
@@ -54,7 +54,7 @@
 }
 
 .stufe {
-  font-weight: var(--sm-fw-bold, 600);
+  font-weight: var(--ec-weight-semibold);
 }
 
 .pfeil {

@@ -69,6 +69,13 @@ type KachelProps = {
   bildhoehe?: string;
   /** Bild und Text mittig statt linksbündig. Für Produktkacheln. */
   mittig?: boolean;
+  /**
+   * Titel als Überschrift statt als fettes Wort. Für die wenigen Kacheln, die
+   * nicht einer von vielen in einer Reihe sind, sondern selbst die Aussage —
+   * zwei Lizenzen nebeneinander etwa. Bei einer Reihe aus zwölf Logos wäre das
+   * zu laut, deshalb ist es nicht die Voreinstellung.
+   */
+  gross?: boolean;
   /** Beschreibender Text für das Bild. Ohne Angabe: `Logo <titel>`. */
   bildtext?: string;
   children?: React.ReactNode;
@@ -80,6 +87,7 @@ export function Kachel({
   href,
   bildhoehe,
   mittig,
+  gross,
   bildtext,
   children,
 }: KachelProps): React.ReactElement {
@@ -89,7 +97,9 @@ export function Kachel({
   // ohne das hier jedes Logo ins Leere.
   const bildUrl = useBaseUrl(bild ?? '');
 
-  const beschriftung = titel && <strong className={styles.titel}>{titel}</strong>;
+  const beschriftung = titel && (
+    <strong className={clsx(styles.titel, gross && styles.titelGross)}>{titel}</strong>
+  );
 
   return (
     <div className={clsx(styles.kachel, href && styles.verlinkt)}>
@@ -109,7 +119,7 @@ export function Kachel({
           )}
         </div>
       )}
-      <div className={clsx(styles.inhalt, mittig && styles.mittig)}>
+      <div className={clsx(styles.inhalt, mittig && styles.mittig, gross && styles.inhaltGross)}>
         {/*
           Verlinkt wird der Titel, nicht die ganze Kachel. Anklickbar ist
           trotzdem die ganze Fläche: `.ziel` legt sich unsichtbar darüber

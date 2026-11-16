@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.wikiSidebar.category.Fahrer": {
+    "message": "Conducteurs",
+    "description": "The label for category 'Fahrer' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Stationsbetreiber": {
+    "message": "Exploitants de stations",
+    "description": "The label for category 'Stationsbetreiber' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Funktionen": {
+    "message": "Fonctions",
+    "description": "The label for category 'Funktionen' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Wartung": {
+    "message": "Maintenance",
+    "description": "The label for category 'Wartung' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Anwendungsfälle": {
+    "message": "Cas d'utilisation",
+    "description": "The label for category 'Anwendungsfälle' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.OCPP Ladestationen": {
+    "message": "Bornes de recharge OCPP",
+    "description": "The label for category 'OCPP Ladestationen' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Drittsysteme": {
+    "message": "Systèmes tiers",
+    "description": "The label for category 'Drittsysteme' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Box-Proxy Green Motion": {
+    "message": "Box-Proxy Green Motion",
+    "description": "The label for category 'Box-Proxy Green Motion' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Lastmanagement": {
+    "message": "Gestion de la charge",
+    "description": "The label for category 'Lastmanagement' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Störungsbehebung": {
+    "message": "Dépannage",
+    "description": "The label for category 'Störungsbehebung' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Sonstige Informationen": {
+    "message": "Autres informations",
+    "description": "The label for category 'Sonstige Informationen' in sidebar 'wikiSidebar'"
+  }
+}

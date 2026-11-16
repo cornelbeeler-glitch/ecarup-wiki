@@ -7,17 +7,27 @@ sidebar_label: 'Start Schweiz'
 
 import Neuigkeiten from './_neuigkeiten.md';
 
-Diese Einstiegsseite gilt für die Schweiz. In der Navigation links steht, was hier gilt; alles Länderunabhängige steht überall gleich.
+Deine Support-Plattform für Antworten, Anleitungen und Lösungen rund um E-Ladestationen, Installation, Betrieb und Abrechnung.
+
+Diese Einstiegsseite gilt für die Schweiz.
 
 <Rollenwahl />
 
 ## Hilfe und Kontakt
 
-{/* Weitere Kacheln kommen hier dazu, sobald es die Seiten gibt — zum Beispiel
-    häufige Fragen oder eine Statusseite. Wie eine Kachel aufgebaut ist, steht
-    in CONTRIBUTING.md. */}
-
 <Kacheln min="15rem">
+
+<Kachel titel="Häufige Fragen" href="/faq">
+
+Die Fragen, die uns am häufigsten erreichen — zu Konto, App und Abrechnung.
+
+</Kachel>
+
+<Kachel titel="Billy – KI-Support" href="/support-ki-agent">
+
+Fragen in eigenen Worten stellen; Billy antwortet aus diesem Wiki.
+
+</Kachel>
 
 <Kachel titel="Kontakt Schweiz" href="/kontakt-schweiz">
 

@@ -1,102 +1,305 @@
 /* ============================================================
-   smart-me Design Tokens
+   eCarUp Design Tokens
    ============================================================
-   Unveraendert uebernommen aus den smart-me Design Guidelines
-   (C:/git/design-guidelines/smart-me/tokens.css), Quelle ist das
-   interne smart-me Design Wiki (Product Design).
+   Unveraendert uebernommen aus dem eCarUp Design System,
+   Datei project/tokens.css (Fassung vom 15.11.2026).
 
    Diese Datei nicht anpassen. Die Zuordnung der Tokens auf die
-   Docusaurus-Variablen steht in custom.css.
+   Docusaurus-Variablen steht in custom.css; dort stehen auch die
+   wenigen begruendeten Abweichungen.
 
-   Design-Kontakt: design@smart-me.com
+   Die Poppins-Dateien liegen daneben in src/css/fonts/ — deshalb
+   bleiben die url()-Angaben am Ende unveraendert relativ.
    ============================================================ */
 
-:root {
-  /* ---------- Brand / Primary ---------- */
-  --sm-blue:        #28599A;  /* primary brand color  rgb(40,89,154)   */
-  --sm-blue-dark:   #003061;  /* rgb(0,48,97)    */
-  --sm-blue-50pct:  #93ACCC;  /* blue 50%  rgb(147,172,204) */
-  --sm-blue-25pct:  #C9D5E6;  /* blue 25%  rgb(201,213,230) */
-  --sm-blue-10pct:  #E9EEF5;  /* blue 10%  rgb(233,238,245) */
-  --sm-blue-5pct:   #F4F6FA;  /* blue 5% – primary light background  rgb(244,246,250) */
-
-  /* ---------- Secondary (green) ---------- */
-  --sm-green:        #52AE32;  /* rgb(82,174,50)  */
-  --sm-green-dark:   #21570F;  /* rgb(33,87,15)   */
-  --sm-green-light:  #A8D698;  /* rgb(168,214,152)*/
-  --sm-green-hover:  #EEF7EB;  /* rgb(238,247,235)*/
-
-  /* ---------- Neutral grey ---------- */
-  --sm-ci-grey:     #F0F0F0;  /* corporate identity grey */
-  --sm-grey-200:    #FFFFFF;
-  --sm-grey-400:    #F2F2F2;
-  --sm-grey-500:    #DDDDDD;
-  --sm-grey-600:    #CCCCCC;
-  --sm-grey-800:    #666666;
-  --sm-grey-900:    #434343;
-  --sm-grey-1000:   #272727;  /* near-black text */
-
-  /* ---------- Semantic ---------- */
-  --sm-success:        #52AE32;  --sm-success-dark: #3E722B;  --sm-success-light: #EEF7EB;  --sm-success-hover: #D3EACB;
-  --sm-warning:        #FF9800;  --sm-warning-dark: #D68100;  --sm-warning-light: #FFCB7F;  --sm-warning-hover: #FFF0D9;
-  --sm-error:          #D12604;  --sm-error-dark:   #AA1F04;  --sm-error-light:   #E79281;  --sm-error-hover:   #F8DFDA;
-  --sm-info:           #2196F3;  --sm-info-dark:    #0E6CB9;  --sm-info-light:    #F2F9FF;  --sm-info-hover:    #DEEFFD;
-
-  /* ---------- Multi-energy (energy-type accent colors) ----------
-     Each has: base / dark / light / hover                          */
-  --sm-energy-yellow:        #F2CB47;  --sm-energy-yellow-dark:  #DDAE13;  --sm-energy-yellow-light:  #F9E5A3;  --sm-energy-yellow-hover:  #FDF7E4;
-  --sm-energy-lime:          #B4D23B;  --sm-energy-lime-dark:    #7DA638;  --sm-energy-lime-light:    #D9E89C;  --sm-energy-lime-hover:    #F4F8E2;
-  --sm-energy-celeste:       #7DCDEB;  --sm-energy-celeste-dark: #41A7CD;  --sm-energy-celeste-light: #BDE5F4;  --sm-energy-celeste-hover: #ECF8FC;
-  --sm-energy-orange:        #F29844;  --sm-energy-orange-dark:  #C9720E;  --sm-energy-orange-light:  #F8CBA1;  --sm-energy-orange-hover:  #FDF0E3;
-  --sm-energy-red:           #D55700;  --sm-energy-red-dark:     #AD4C00;  --sm-energy-red-light:     #E9AE7F;  --sm-energy-red-hover:     #F9E7D9;
-  --sm-energy-mint:          #00C28D;  --sm-energy-mint-dark:    #037354;  --sm-energy-mint-light:    #7FE0C5;  --sm-energy-mint-hover:    #D9F6EE;
-  --sm-energy-purple:        #8574F2;  --sm-energy-purple-dark:  #3A2BA1;  --sm-energy-purple-light:  #C1B9F8;  --sm-energy-purple-hover:  #EDEAFD;
-
-  /* ---------- Illustration blue ramp (for illustrations/diagrams) ---------- */
-  --sm-illu-blue-900: #112541;
-  --sm-illu-blue-800: #163155;
-  --sm-illu-blue-700: #1C3F6D;
-  --sm-illu-blue-600: #24518C;
-  --sm-illu-blue-500: #28599A;
-  --sm-illu-blue-400: #537AAE;
-  --sm-illu-blue-300: #6F90BB;
-  --sm-illu-blue-200: #9CB3D1;
-  --sm-illu-blue-100: #BCCCE0;
-  --sm-illu-blue-50:  #EAEEF5;
-
-  /* ---------- Semantic aliases (adjust to taste) ---------- */
-  --sm-bg:            var(--sm-grey-200);   /* white primary background        */
-  --sm-bg-tint:       var(--sm-blue-5pct);  /* light-blue background for space  */
-  --sm-text:          var(--sm-grey-1000);  /* body text (near-black)           */
-  --sm-text-muted:    var(--sm-grey-800);
-  --sm-primary:       var(--sm-blue);
-  --sm-primary-hover: var(--sm-blue-dark);
-  --sm-link:          var(--sm-blue);
-  --sm-border:        var(--sm-grey-500);
-
-  /* ---------- Typography ---------- */
-  --sm-font: 'Noto Sans', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --sm-fw-regular: 400;  /* body text, input fields, labels            */
-  --sm-fw-medium:  500;  /* emphasis, buttons, form labels             */
-  --sm-fw-bold:    700;  /* headings, key figures, highlights          */
-  /* Rule: max 2–3 weights per view.                                   */
-  /* TODO confirm in Figma: full size/line-height scale (the wiki      */
-  /* "Text sizes" table was incomplete/placeholder at extraction).     */
-
-  /* ---------- Icons ---------- */
-  --sm-icon-size: 24px;   /* default 24×24 for UI elements */
-
-  /* ---------- Corner radius (icons/UI use a rounded style; exact tokens TODO) ---------- */
-  --sm-radius-sm: 4px;
-  --sm-radius-md: 8px;
-  --sm-radius-pill: 9999px;
+/* eCarUp Design System — generated from tokens.json */
+:root, [data-theme="default"] {
+  --ec-blue-1: #03a9f4;
+  --ec-blue-1-dark: #0288d1;
+  --ec-blue-2: #3b566b;
+  --ec-blue-3: #29384a;
+  --ec-blue-4: #0d2035;
+  --ec-blue-5pct: #f4f6fa;
+  --ec-neutral-100: #ffffff;
+  --ec-neutral-blue-400: #ced5da;
+  --ec-neutral-almost-1000: #272727;
+  --ec-primary: var(--ec-blue-1);
+  --ec-primary-hover: var(--ec-blue-1-dark);
+  --ec-ink: var(--ec-blue-3);
+  --ec-ink-muted: var(--ec-blue-2);
+  --ec-ink-strong: var(--ec-neutral-almost-1000);
+  --ec-base: var(--ec-neutral-100);
+  --ec-surface: var(--ec-blue-5pct);
+  --ec-surface-deep: var(--ec-blue-4);
+  --ec-border: var(--ec-neutral-blue-400);
+  --ec-text-on-primary: var(--ec-neutral-100);
+  --ec-text-on-deep: var(--ec-neutral-blue-400);
+  --ec-link: var(--ec-blue-1);
+  --ec-link-hover: var(--ec-blue-1-dark);
+  --ec-status-verfuegbar-rand1: #05e2f7; /* Portal · Status Verfügbar: Rand-Verlauf 135°, Start */
+  --ec-status-verfuegbar-rand2: #03a9f4; /* Portal · Status Verfügbar: Rand-Verlauf 135°, Ende */
+  --ec-status-verfuegbar-text: #0277b6; /* Portal · Status Verfügbar: Schrift */
+  --ec-status-verfuegbar-flaeche: #f3fafe; /* Portal · Status Verfügbar: Fläche */
+  --ec-status-verfuegbar-schein: rgba(3,169,244,.18); /* Portal · Status Verfügbar: Schein */
+  --ec-status-verfuegbar-voll: #03a9f4; /* Portal · Status Verfügbar: Vollton, Legendenpunkt */
+  --ec-status-laedt-rand1: #00d09c; /* Portal · Status Lädt: Rand-Verlauf 135°, Start */
+  --ec-status-laedt-rand2: #05e2f7; /* Portal · Status Lädt: Rand-Verlauf 135°, Ende */
+  --ec-status-laedt-text: #00865f; /* Portal · Status Lädt: Schrift */
+  --ec-status-laedt-flaeche: #f0fcf8; /* Portal · Status Lädt: Fläche */
+  --ec-status-laedt-schein: rgba(0,208,156,.18); /* Portal · Status Lädt: Schein */
+  --ec-status-laedt-voll: #00d09c; /* Portal · Status Lädt: Vollton, Legendenpunkt */
+  --ec-status-verbunden-rand1: #1f587b; /* Portal · Status Verbunden: Rand-Verlauf 135°, Start */
+  --ec-status-verbunden-rand2: #03a9f4; /* Portal · Status Verbunden: Rand-Verlauf 135°, Ende */
+  --ec-status-verbunden-text: #1f587b; /* Portal · Status Verbunden: Schrift */
+  --ec-status-verbunden-flaeche: #f2f6f9; /* Portal · Status Verbunden: Fläche */
+  --ec-status-verbunden-schein: rgba(31,88,123,.15); /* Portal · Status Verbunden: Schein */
+  --ec-status-verbunden-voll: #1f587b; /* Portal · Status Verbunden: Vollton, Legendenpunkt */
+  --ec-status-offline-rand1: #ffc857; /* Portal · Status Offline / Störung: Rand-Verlauf 135°, Start */
+  --ec-status-offline-rand2: #f59e0b; /* Portal · Status Offline / Störung: Rand-Verlauf 135°, Ende */
+  --ec-status-offline-text: #9a5b00; /* Portal · Status Offline / Störung: Schrift */
+  --ec-status-offline-flaeche: #fff8eb; /* Portal · Status Offline / Störung: Fläche */
+  --ec-status-offline-schein: rgba(245,158,11,.20); /* Portal · Status Offline / Störung: Schein */
+  --ec-status-offline-voll: #f59e0b; /* Portal · Status Offline / Störung: Vollton, Legendenpunkt */
+  --ec-pill-positiv-text: #00664b; /* Portal · Pille Positiv („+18 %“): Schrift */
+  --ec-pill-positiv-bg: #d6faef; /* Portal · Pille Positiv: Hintergrund */
+  --ec-pill-negativ-text: #831843; /* Portal · Pille Negativ / Störung („−3 % ggü. Vormonat“): Schrift */
+  --ec-pill-negativ-bg: #fdf2f8; /* Portal · Pille Negativ / Störung: Hintergrund */
+  --ec-pill-neutral-text: #01579b; /* Portal · Pille Neutral („Ø 5.9 pro Tag“): Schrift */
+  --ec-pill-neutral-bg: #e1f4fd; /* Portal · Pille Neutral: Hintergrund */
+  --ec-pill-offline-text: #8a5300; /* Portal · Hinweis Offline („1 offline“): Schrift */
+  --ec-pill-offline-bg: #fff3dc; /* Portal · Hinweis Offline: Hintergrund */
+  --ec-chart-standort1-oben: #1f587b; /* Portal · Balken Standort 1 (Riedstrasse), Verlauf oben */
+  --ec-chart-standort1-unten: #8fb4cc; /* Portal · Balken Standort 1 (Riedstrasse), Verlauf unten */
+  --ec-chart-standort2-oben: #03a9f4; /* Portal · Balken Standort 2 (Suurstoffi), Verlauf oben */
+  --ec-chart-standort2-unten: #a8eef8; /* Portal · Balken Standort 2 (Suurstoffi), Verlauf unten */
+  --ec-chart-kurve-start: #0288d1; /* Portal · Kurven in Kennzahlen, links */
+  --ec-chart-kurve-ende: #05e2f7; /* Portal · Kurven in Kennzahlen, rechts */
+  --ec-chart-ring-start: #03a9f4; /* Portal · Ring „Gerade aktiv“, Start */
+  --ec-chart-ring-ende: #05e2f7; /* Portal · Ring „Gerade aktiv“, Ende */
+  --ec-chart-aktiv-oben: #324861; /* Portal · Karte „Gerade aktiv“, Verlauf oben (blauer Schimmer oben rechts) */
+  --ec-chart-aktiv-unten: #1e2b39; /* Portal · Karte „Gerade aktiv“, Verlauf unten */
+  --ec-chart-live: #00d09c; /* Portal · Live-Punkt */
+  --ec-heat-hell-1: #f8fafb; /* Portal · Heatmap Stufe 1 (unter 10 %): helle Variante, Verlauf 160° */
+  --ec-heat-hell-2: #d3f4ee; /* Portal · Heatmap Stufe 2 (10–25 %): helle Variante, Verlauf 160° */
+  --ec-heat-hell-3: #a6eedd; /* Portal · Heatmap Stufe 3 (25–40 %): helle Variante, Verlauf 160° */
+  --ec-heat-hell-4: #7ae8cc; /* Portal · Heatmap Stufe 4 (40–55 %): helle Variante, Verlauf 160° */
+  --ec-heat-hell-5: #4de0bc; /* Portal · Heatmap Stufe 5 (ab 55 %): helle Variante, Verlauf 160° */
+  --ec-heat-grund-1: #eef3f6; /* Portal · Heatmap Stufe 1 (unter 10 %): Grundfarbe */
+  --ec-heat-grund-2: #b3eae0; /* Portal · Heatmap Stufe 2 (10–25 %): Grundfarbe */
+  --ec-heat-grund-3: #77e2c9; /* Portal · Heatmap Stufe 3 (25–40 %): Grundfarbe */
+  --ec-heat-grund-4: #3cd9b3; /* Portal · Heatmap Stufe 4 (40–55 %): Grundfarbe */
+  --ec-heat-grund-5: #00d09c; /* Portal · Heatmap Stufe 5 (ab 55 %): Grundfarbe */
+  --ec-portal-icon-flaeche: #e1f4fd; /* Portal · Icon-Fläche und aktiver Navigationseintrag */
+  --ec-portal-linie: #e8edf1; /* Portal · Linien und Schalter */
+  --ec-portal-feld: #f8fafc; /* Portal · Felder und Kacheln innerhalb von Karten */
+  --ec-social-pink: #ff007a; /* Social Media · Pink/Magenta: Akzentstriche an Kartenecken, Häkchen in Vorteil-Pillen, Highlight-Pille, Schritt 3 */
+  --ec-social-tuerkis: #05e2f7; /* Social Media · Türkis: Start der Schleife, Lichtfleck */
+  --ec-social-celeste: var(--ec-blue-1); /* Social Media · celeste: zweiter Headline-Satz, Begrüssung, Ende der Schleife, Status Verfügbar */
+  --ec-social-mint: #00d09c; /* Social Media · Mint: gemalter Marker unter einem Headline-Wort, Status Lädt */
+  --ec-social-mint-licht: #7febcf; /* Social Media · Lichtkante im Marker-Pinselstrich */
+  --ec-social-mint-hell: #2dd4a8; /* Social Media · Mint hell: weicher Lichtfleck im Hintergrund */
+  --ec-social-ink: var(--ec-blue-4); /* Social Media · Headline und Kennzahlen */
+  --ec-social-ink-muted: var(--ec-blue-2); /* Social Media · Labels, Fusszeile „ecarup.com“ */
+  --ec-social-karte-dunkel-start: var(--ec-blue-3); /* Social Media · dunkle App-Karte, Verlauf oben */
+  --ec-social-karte-dunkel-ende: var(--ec-blue-4); /* Social Media · dunkle App-Karte, Verlauf unten */
+  --ec-social-karte-icon: #e3f5fe; /* Social Media · Icon-Fläche und helle celeste Pille in Karten */
+  --ec-social-status-laedt: #14a88a; /* Social Media · Status-Label Lädt in App-Karten: Rand und Schrift */
+  --ec-social-pill-positiv-text: #0e8a70; /* Social Media · Pille Positiv („+2 ggü. gestern“): Schrift */
+  --ec-social-pill-positiv-bg: #ddf7ef; /* Social Media · Pille Positiv: Hintergrund */
+  --ec-social-pill-offline-text: #d10065; /* Social Media · Pille und Label Offline („1 offline“, „P02“): Schrift */
+  --ec-social-pill-offline-bg: #ffe0ef; /* Social Media · Pille Offline: Hintergrund */
+  --ec-social-heat-0: #eef2f6; /* Social Media · Heatmap leer */
+  --ec-social-heat-1: #c9f2e5; /* Social Media · Heatmap Stufe 1 */
+  --ec-social-heat-2: #8fe6cc; /* Social Media · Heatmap Stufe 2 */
+  --ec-social-heat-3: #4fd6b0; /* Social Media · Heatmap Stufe 3 */
+  --ec-social-heat-4: #22c49b; /* Social Media · Heatmap Stufe 4 (viel) */
+  --ec-social-bg-air: #f7fafc; /* Social Media · Hintergrund Serie Air */
+  --ec-social-bg-layer: #eef3f7; /* Social Media · Hintergrund Serie Layer */
+  --ec-social-bg-linie: #dce5ec; /* Social Media · Kreislinien im Hintergrund (Layer) */
+  --ec-focus-ring: 0 0 0 3px rgba(3,169,244,.22);
+  --ec-shadow-1: 0 6px 24px rgba(41,56,74,.08);
+  --ec-shadow-2: 0 16px 40px rgba(41,56,74,.14);
+  --ec-shadow-panel: 0 12px 34px rgba(41,56,74,.16);
+  --ec-social-shadow-karte: 0 30px 70px rgba(13,32,53,.12); /* Social Media · schwebende App-Karten */
 }
-
-/* ---- Suggested base type rules (confirm sizes in Figma) ---- */
-/*
-body         { font-family: var(--sm-font); font-weight: var(--sm-fw-regular); color: var(--sm-text); background: var(--sm-bg); }
-h1,h2,h3,h4  { font-family: var(--sm-font); font-weight: var(--sm-fw-bold); color: var(--sm-blue); }
-a            { color: var(--sm-link); text-decoration: underline; }   // links in body text are always underlined
-strong       { font-weight: var(--sm-fw-bold); color: var(--sm-blue); }
-button       { font-family: var(--sm-font); font-weight: var(--sm-fw-medium); }
-*/
+:root {
+  --ec-h2-size: 32px;
+  --ec-h2-line: 36px;
+  --ec-h2-size-mobile: 26px;
+  --ec-h2-line-mobile: 32px;
+  --ec-h3-size: 22px;
+  --ec-h3-line: 30px;
+  --ec-h3-size-on-photo: 24px;
+  --ec-eyebrow-size: 18px;
+  --ec-eyebrow-line: 26px;
+  --ec-body-size: 16px;
+  --ec-body-line: 24px;
+  --ec-body-line-on-deep: 26px;
+  --ec-body2-size: 14px;
+  --ec-body2-line: 20px;
+  --ec-caption-size: 12px;
+  --ec-caption-line: 16px;
+  --ec-label-size: 12px;
+  --ec-label-line: 16px;
+  --ec-badge-size: 11px;
+  --ec-space-1: 4px;
+  --ec-space-2: 8px;
+  --ec-space-3: 12px;
+  --ec-space-4: 16px;
+  --ec-space-5: 24px;
+  --ec-space-6: 32px;
+  --ec-space-7: 48px;
+  --ec-space-8: 64px;
+  --ec-space-9: 96px;
+  --ec-content-max: 1440px;
+  --ec-gutter-desktop: 56px;
+  --ec-gutter-mobile: 22px;
+  --ec-bp-mobile: 767px;
+  --ec-bp-tablet: 980px;
+  --ec-card-padding: 28px;
+  --ec-card-gap: 16px;
+  --ec-tap-min: 44px;
+  --ec-lift: -6px;
+  --ec-lift-tile: -4px;
+  --ec-border-width: 1px;
+  --ec-border-width-strong: 1.5px;
+  --ec-radius-card: 10px;
+  --ec-radius-panel: 14px;
+  --ec-radius-small: 6px;
+  --ec-radius-pill: 99px;
+  --ec-ease-ui: cubic-bezier(.4,0,.2,1);
+  --ec-ease-out: cubic-bezier(.16,1,.3,1);
+  --ec-dur-press: 0.12s;
+  --ec-dur-tile: 0.18s;
+  --ec-dur-panel: 0.35s;
+  --ec-dur-header: 0.48s;
+  --ec-overlay-image: linear-gradient(180deg,rgba(13,32,53,.30) 0%,rgba(13,32,53,0) 45%,rgba(13,32,53,.78) 100%);
+  --ec-overlay-hero: linear-gradient(96deg,rgba(13,32,53,.94) 0%,rgba(13,32,53,.72) 40%,rgba(13,32,53,.15) 100%);
+  --ec-glow: radial-gradient(closest-side,rgba(3,169,244,.22),rgba(3,169,244,0));
+  --ec-text-protect: 0 1px 12px rgba(13,32,53,.45);
+  --ec-measure-body: 70ch;
+  --ec-measure-lead: 64ch;
+  --ec-measure-centered: 34ch;
+  --ec-container-max: 1440px;
+  --ec-container-pad: clamp(22px,4vw,56px);
+  --ec-columns-desktop: 12;
+  --ec-columns-tablet: 8;
+  --ec-columns-mobile: 4;
+  --ec-press-transform: translateY(1px) scale(.985);
+  --ec-weight-light: 300;
+  --ec-weight-regular: 400;
+  --ec-weight-medium: 500;
+  --ec-weight-semibold: 600;
+  --ec-weight-bold: 700;
+  --ec-h3-weight: 500;
+  --ec-display-line: 1.02;
+  --ec-h1-line: 1.05;
+  --ec-display-tracking: -0.03em;
+  --ec-h1-tracking: -0.03em;
+  --ec-h2-tracking: -0.01em;
+  --ec-label-tracking: 0.12em;
+  --ec-badge-tracking: 0.04em;
+  --font-ec-font: 'Poppins',sans-serif;
+  --text-body: 400 16px/24px var(--font-ec-font); /* From `body` in tokens/base.css. */
+  --text-h1: 700 58px/1.05 var(--font-ec-font); /* From `h1,h2,h3,h4` · `h1` in tokens/base.css — size is var(--ec-h1-size) in CSS; the largest bound is shown. */
+  --text-h2: 600 32px/36px var(--font-ec-font); /* From `h1,h2,h3,h4` · `h2` in tokens/base.css. */
+  --text-h3: 500 22px/30px var(--font-ec-font); /* From `h1,h2,h3,h4` · `h3` in tokens/base.css. */
+}
+.body {
+  font-family: var(--font-ec-font);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.h1 {
+  font-family: var(--font-ec-font);
+  font-size: 58px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.h2 {
+  font-family: var(--font-ec-font);
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.h3 {
+  font-family: var(--font-ec-font);
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-300-latin-ext.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-300-latin.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-400-latin-ext.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-500-latin-ext.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-500-latin.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-600-latin-ext.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-600-latin.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-700-latin-ext.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-700-latin.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
