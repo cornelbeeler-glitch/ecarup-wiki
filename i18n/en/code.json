@@ -3,7 +3,7 @@
     "message": "Where are you looking for answers?"
   },
   "landkarte.erklaerung": {
-    "message": "Billing and metering concepts differ from country to country. Pick one and the navigation shows only what applies there — you can change it at any time in the top right."
+    "message": "Some things apply in one country only — regulations, billing and contacts. Your choice takes you to the matching start page and the navigation then shows only what applies there; you can change it at any time in the top right."
   },
   "naechsterSchritt.einer": {
     "message": "Next step"

@@ -3,7 +3,7 @@
     "message": "Pour quel pays cherchez-vous des réponses ?"
   },
   "landkarte.erklaerung": {
-    "message": "La facturation et les concepts de mesure diffèrent d'un pays à l'autre. En choisissant un pays, la navigation n'affiche que ce qui s'y applique — vous pouvez le modifier à tout moment en haut à droite."
+    "message": "Certaines choses ne valent que dans un pays — prescriptions, facturation et interlocuteurs. Votre choix vous mène à la page d'accueil correspondante et la navigation n'affiche plus que ce qui s'y applique ; vous pouvez le modifier à tout moment en haut à droite."
   },
   "naechsterSchritt.einer": {
     "message": "Étape suivante"

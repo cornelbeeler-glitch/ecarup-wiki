@@ -1,6 +1,6 @@
 {
   "title": {
-    "message": "Support",
+    "message": "eCarUp Support",
     "description": "The title in the navbar"
   },
   "logo.alt": {
@@ -10,9 +10,5 @@
   "item.label.Wiki": {
     "message": "Wiki",
     "description": "Navbar item with label Wiki"
-  },
-  "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
   }
 }
