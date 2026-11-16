@@ -122,9 +122,15 @@ const DEUTSCHE_STAEMME = [
 /**
  * Titel, die in jeder Sprache gleich lauten, obwohl sie deutsch aussehen.
  * Kleingeschrieben eintragen; verglichen wird der ganze Titel.
+ *
+ * Hierher gehören vor allem Herstellernamen: Die Seiten unter
+ * `ocpp-ladestationen/` heissen wie die Firma, und eine Firma mit Umlaut im
+ * Namen heisst auf Französisch genauso. Die Heuristik kann das nicht wissen —
+ * sie sieht nur den Umlaut.
  */
 const EIGENNAMEN = new Set<string>([
   'zählerfreunde',
+  'weidmüller',
 ]);
 
 const deutschGeblieben = (text: string): boolean => {
