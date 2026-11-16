@@ -1,0 +1,88 @@
+{
+  "docs": {
+    "docs/_neuigkeiten.md": {
+      "it": {
+        "hash": "d0afa6ca97a3e6d3",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d0afa6ca97a3e6d3",
+        "origin": "translated"
+      },
+      "en": {
+        "hash": "d0afa6ca97a3e6d3",
+        "origin": "translated"
+      }
+    },
+    "docs/deutschland.md": {
+      "en": {
+        "hash": "8d9a19762d7a875c",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "8d9a19762d7a875c",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "8d9a19762d7a875c",
+        "origin": "translated"
+      }
+    },
+    "docs/index.md": {
+      "en": {
+        "hash": "a02fd83d58291574",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "a02fd83d58291574",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "a02fd83d58291574",
+        "origin": "translated"
+      }
+    },
+    "docs/kontakt-deutschland.md": {
+      "en": {
+        "hash": "c9c8b6103a60d91d",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "c9c8b6103a60d91d",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "c9c8b6103a60d91d",
+        "origin": "translated"
+      }
+    },
+    "docs/kontakt-schweiz.md": {
+      "en": {
+        "hash": "d478f0f7f92c3483",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "d478f0f7f92c3483",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "d478f0f7f92c3483",
+        "origin": "translated"
+      }
+    },
+    "docs/schweiz.md": {
+      "en": {
+        "hash": "5bdda248dfea1e81",
+        "origin": "translated"
+      },
+      "it": {
+        "hash": "5bdda248dfea1e81",
+        "origin": "translated"
+      },
+      "fr": {
+        "hash": "5bdda248dfea1e81",
+        "origin": "translated"
+      }
+    }
+  }
+}
