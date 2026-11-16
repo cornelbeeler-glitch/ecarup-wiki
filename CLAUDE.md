@@ -1,0 +1,229 @@
+# Hinweise für Claude Code
+
+> **Dieses Repo ist eine Kopie des smart-me Wikis** und der Anfang des eCarUp
+> Wikis. Technik, Bausteine und Arbeitsablauf sind dieselben; Inhalte gibt es
+> noch keine. Wo unten Beispiele aus dem smart-me Wiki stehen (ZEV, Mieterstrom,
+> Pico, Telstar), sind sie als Muster zu lesen, nicht als Inhalte dieses Wikis.
+> Die vierte Rolle heisst hier **Fahrer** statt Mieter.
+
+Dieses Repository ist das Support-Wiki der smart-me AG (Docusaurus, viersprachig).
+
+## Die wichtigste Regel
+
+**Deutsch ist die Master-Sprache. Inhalte werden ausschliesslich unter `docs/`
+gepflegt.**
+
+Die Ordner unter `i18n/` sind generiert. Sie werden **nie** von Hand bearbeitet —
+weder von Menschen noch von dir. Jede manuelle Änderung dort geht beim nächsten
+Übersetzungslauf verloren.
+
+Wenn du an einer Seite etwas änderst:
+
+1. Ändere nur die deutsche Datei unter `docs/`.
+2. Übersetze anschliessend nach: `npm run translate`
+3. Prüfe mit `npm run build`, dass alle vier Sprachen bauen.
+
+Wirst du gebeten, einen Text in einer anderen Sprache zu korrigieren, dann ist
+fast immer der deutsche Master gemeint oder das Glossar. Frage im Zweifel nach,
+statt in `i18n/` zu schreiben.
+
+## Übersetzung
+
+`scripts/translate.ts` übersetzt von Deutsch nach `en`, `fr` und `it`. Es nutzt
+**keinen API-Key**, sondern ruft die Claude-Code-CLI im Headless-Modus auf
+(`claude -p`). Lokal reicht damit die normale Anmeldung:
+
+```bash
+npm install -g @anthropic-ai/claude-code
+claude   # einmalig anmelden
+```
+
+| Befehl | Wirkung |
+| --- | --- |
+| `npm run translate` | nur geänderte und fehlende Seiten |
+| `npm run translate -- --all` | alles neu übersetzen (nach Glossar-Änderungen) |
+| `npm run translate -- --locale fr --limit 5` | gezielt einzelne Seiten |
+| `npm run translate -- --list` | nur anzeigen, was zu tun wäre |
+| `npm run translate -- --adopt` | vorhandene Dateien als aktuell verbuchen |
+| `npm run translate -- --concurrency 6` | mehr Seiten gleichzeitig (Standard 4) |
+| `npm run translate:check` | prüft die Struktur gegen die deutschen Seiten |
+| `npm run translate:anchors` | zieht Sprungmarken nach (läuft automatisch mit) |
+
+Welche Seite fällig ist, entscheidet `.translation-state.json`: dort steht je
+Sprache der Hash der deutschen Datei, aus der die Fassung entstanden ist, und
+woher sie stammt. Die Datei gehört ins Repository und wird von den Scripts
+gepflegt — nicht von Hand ändern.
+
+`origin: 'translated'` heisst: von dieser Pipeline erzeugt.
+`origin: 'adopted'` heisst: eigenständig geschriebener Bestandsinhalt aus dem
+alten englischen Wiki. Solche Seiten dürfen strukturell von der deutschen
+abweichen und sind von `translate:check` und `translate:anchors` ausgenommen.
+
+### Sprungmarken
+
+Docusaurus bildet den Anker einer Überschrift aus deren Text — beim Übersetzen
+ändert er sich also mit. Explizite IDs (`## Titel {#feste-id}`) wären die
+naheliegende Lösung, brechen hier aber den Build: `.md` wird als MDX
+verarbeitet, und dort ist `{…}` ein JavaScript-Ausdruck.
+
+`scripts/fixAnchors.ts` zieht die Sprungmarken deshalb nach dem Übersetzen
+positionsweise nach: Die n-te Überschrift der deutschen Seite entspricht der
+n-ten der übersetzten. Das läuft am Ende jedes Übersetzungslaufs automatisch
+mit und ist mehrfach ausführbar.
+
+### Was beim Übersetzen unverändert bleibt
+
+- `slug` im Frontmatter — das ist die URL und in allen Sprachen dieselbe
+- URLs, Linkziele, Bildpfade, Dateinamen
+- Code-Blöcke und Inline-Code
+- HTML- und JSX-Elemente samt Attributen, insbesondere `<Video src="…" />`
+- HTML-Entities wie `&lt;`, `&#123;`, `&#125;` — sie schützen Zeichen, an denen
+  sich MDX sonst verschluckt
+- Zahlen, Einheiten, Artikelnummern, Produktnamen
+
+Übersetzt werden dagegen `title`, `description`, `sidebar_label`, der Fliesstext,
+die sichtbaren Linktexte und die Alt-Texte der Bilder.
+
+### Glossar
+
+`glossary.md` steuert die Terminologie und ist verbindlich: Abschnitt 1 listet
+Begriffe, die nie übersetzt werden (Produktnamen, Protokolle), Abschnitt 2 die
+festen Fachbegriffs-Übersetzungen (ZEV → RCP und so weiter). Ändert sich das
+Glossar, müssen die betroffenen Seiten mit `--all` neu übersetzt werden.
+
+## Design
+
+Die Gestaltung folgt den smart-me Design Guidelines: Primärfarbe ist
+smart-me Blau `#28599A` (nicht Grün – Grün ist die unterstützende Farbe),
+Schrift ist Noto Sans, Überschriften stehen in Blau, Links im Fliesstext sind
+unterstrichen.
+
+`src/css/tokens.css` ist eine **unveränderte Kopie** aus den Guidelines. Farben
+dort nicht anpassen – wird ein Wert gebraucht, der fehlt, gehört er zuerst in
+die Guidelines. Die Abbildung auf die Docusaurus-Variablen steht in
+`src/css/custom.css`.
+
+## Schreibweise
+
+Schweizer Rechtschreibung: **ss statt ß**. Das gilt für Inhalte, Kommentare und
+Commit-Nachrichten.
+
+## Aufbau
+
+| Pfad | Inhalt |
+| --- | --- |
+| `docs/` | Alle Inhalte auf Deutsch (Master) |
+| `i18n/<locale>/` | Generierte Übersetzungen — nicht von Hand pflegen |
+| `static/img/<seiten-slug>/` | Bilder, nach Seite gruppiert |
+| `static/img/_en/` | Rest aus dem alten englischen Wiki — siehe unten |
+| `src/components/Video/` | Video-Einbettung, global in MDX verfügbar |
+| `src/css/tokens.css` | Design Tokens, unveränderte Kopie aus den Guidelines |
+| `src/css/custom.css` | Zuordnung der Tokens auf Docusaurus |
+| `sidebars.ts` | Navigationsstruktur (generiert, siehe unten) |
+| `redirects.ts` | Weiterleitungen von den alten Google-Sites-URLs |
+| `scripts/translate.ts` | Übersetzungs-Pipeline |
+| `scripts/migration/` | Einmalige Migration von Google Sites |
+| `glossary.md` | Terminologie für die Übersetzung |
+| `migration-report.md` | Protokoll der Migration inkl. offener Punkte |
+
+`sidebars.ts` und `redirects.ts` stammen aus der Migration
+(`scripts/migration/convert.ts`). Für neue Seiten werden sie ab jetzt von Hand
+gepflegt — ein erneuter Migrationslauf würde manuelle Änderungen überschreiben.
+
+Nicht jede Seite steht in der Navigation. Die sieben eingestellten Produkte
+(Plug, smart-eye, Kamstrup- und Landis+Gyr-Modul, 1-Phasen Zähler 32A,
+3-Phasen Zähler, Pico Ladestation exA) sind nur von
+`docs/produkte/eingestellte-produkte.md` aus verlinkt und tragen dafür
+`displayed_sidebar: wikiSidebar` im Frontmatter — ohne diese Zeile öffnete
+sich die Seite ohne linke Navigation. `normalizeFrontmatter` in
+`scripts/translate.ts` übernimmt den Schlüssel wie den `slug` unverändert aus
+der deutschen Quelle (`AUS_DER_QUELLE`), damit er einen Übersetzungslauf
+übersteht. Wer eine Seite aus der Navigation nimmt, prüft zuerst, dass eine
+andere Seite auf sie verlinkt.
+
+## Markdown-Konventionen
+
+- Docusaurus verarbeitet `.md` als MDX. `<` und `{` im Fliesstext müssen als
+  `&lt;` bzw. `&#123;` geschrieben werden, sonst bricht der Build.
+- Überschriften brauchen keine expliziten `{#id}` — die Anker entstehen
+  automatisch aus dem Text. Explizite IDs vertragen sich hier nicht mit MDX.
+- Bilder liegen unter `static/img/…` und werden als `/img/…` referenziert.
+  Soll eine Sprache ein anderes Bild zeigen, wird es mit Suffix danebengelegt
+  (`03.png` deutsch, `03_EN.png`, `03_FR.png`, `03_IT.png`) — die Seite unter
+  `docs/` bleibt unverändert, `scripts/localizeImages.ts` setzt die Variante
+  beim Übersetzen ein. Rückfallkette: Französisch und Italienisch nehmen das
+  englische Bild, wenn sie keine eigene Fassung haben; fehlt auch die, bleibt
+  das deutsche stehen. Der Bildpfad unter `i18n/` ist **abgeleitet, nicht
+  gepflegt**: `localizeImages` löst jeden Verweis vom deutschen Namen aus neu
+  auf und biegt ihn auch zurück, wenn eine Variante gelöscht wurde. Deshalb
+  läuft der Schritt in `deploy.yml` vor dem Build — sonst zeigte eine
+  Übersetzung auf eine verschwundene Datei und der Build bräche ab
+  (`onBrokenMarkdownImages: 'throw'`), ohne dass jemand Text angefasst hat.
+- `static/img/_en/` ist ein Rest aus der Migration und wächst nicht mehr. Dort
+  liegen nur noch die Bilder jener englischen Bestandsseiten, deren Aufbau vom
+  deutschen Master abweicht und für die sich deshalb kein Paar bilden liess.
+  Für **neue** Bilder gilt ausschliesslich die Suffix-Konvention oben.
+- Videos über `<Video src="<YouTube-ID>" title="…" />`, nicht als roher iframe.
+- FAQ-Fragen sind aufklappbar: `<details id="…"><summary>Frage</summary>` und
+  die Antwort darunter, mit Leerzeilen davor und danach. Die `id` ist der
+  Anker der Frage und in allen Sprachen dieselbe — Attribute werden nicht
+  übersetzt. Sie bleibt stehen, auch wenn die Frage umformuliert wird.
+  `src/clientModules/openAnchorDetails.ts` klappt eine verlinkte Antwort beim
+  Aufruf auf; `scripts/fixAnchors.ts` kennt diese IDs und lässt sie in Ruhe.
+
+## Länderzuordnung
+
+Inhalte, die nur in einem Land gelten, werden am Eintrag in `sidebars.ts`
+gekennzeichnet: `customProps: {laender: ['ch']}` (oder `['de']`, oder beides).
+Ohne Kennzeichnung gilt ein Eintrag überall — so bleiben die gemeinsamen Seiten
+unberührt.
+
+`src/theme/DocSidebarItem/` blendet im Browser aus, was nicht zur Wahl passt,
+`src/components/LandWahl/` ist der Schalter in der Kopfzeile, `src/laender/`
+hält die Wahl (Reihenfolge: `?land=…` in der Adresse, dann der gespeicherte
+Wert, sonst „alle"). Gefiltert wird nur die Navigation: über Suche und direkte
+Links bleibt jede Seite erreichbar. Länderspezifische Seiten sagen deshalb im
+ersten Absatz selbst, für welches Land sie gelten.
+
+Die Kennzeichnung steht in `sidebars.ts` und damit **nicht** im Seitentext. Wer
+nur das Markdown liest — etwa ein KI-Werkzeug über `llms-full.txt` — sähe sie
+also nie. `plugins/llms-txt/` schreibt sie deshalb beim Bauen als Zeile
+`Länder: ch` unter `Quelle:`. Gelesen wird sie mit **`leseLaender()` aus
+`plugins/schrittkette`** — dieselbe Funktion, die auch die Schrittketten
+benutzen. Eine zweite Umsetzung davon wäre ein Fehler in Wartung: sie vereinigt
+die Kennzeichnungen einer Seite, die in zwei Kategorien steht (siehe den
+Kommentar bei `konfiguration/billing/zaehler-zuweisen` in `sidebars.ts`), und
+das ist leicht zu übersehen. Keine Zeile heisst wie überall sonst: gilt für alle
+Länder.
+
+**Nur was in der Navigation steht, lässt sich kennzeichnen.** Eine Seite ohne
+Eintrag in `sidebars.ts` gilt damit zwangsläufig für alle Länder — auch dann,
+wenn ihr Inhalt es nicht tut. Wer eine länderspezifische Seite aus der
+Navigation nimmt, nimmt ihr still die Kennzeichnung.
+
+`<Embed mitKontext …>` gibt einer eingebetteten Anwendung (Billy) weiter, worin
+sie steckt: die Länderwahl des Besuchers und ob diese Seite hell oder dunkel ist.
+Beides als `postMessage` und nicht in der Adresse, weil ein geänderter `src` den
+Rahmen neu lädt und ein angefangenes Gespräch verloren wäre. Das Aussehen muss
+mitgehen, weil der Rahmen es nicht sehen kann und sich sonst nach dem
+Betriebssystem des Besuchers richtet — wer das Wiki hell liest, aber ein dunkles
+System hat, bekäme sonst einen schwarzen Kasten in eine weisse Seite.
+
+`src/components/LandKarte/` ist die Karte auf der Startseite; eingehängt wird
+sie über `src/theme/DocItem/Content/`, nicht im Markdown, damit sie in allen
+vier Sprachen steht. Sie erscheint nur, solange nichts gewählt ist. Ein Land
+mit `filtert: false` (heute „Anderes Land") zählt als getroffene Wahl, blendet
+aber nichts aus — so kommt die Karte nicht wieder, ohne dass etwas verschwindet.
+
+Die Ländernamen und die Texte der Karte stehen als `translate({id, message})`
+im Quelltext und werden über `i18n/<sprache>/code.json` übersetzt. Diese drei
+Dateien fasst `scripts/translate.ts` **nicht** an. Nach einer Änderung an einem
+Komponententext: `npm run write-translations -- --locale <en|fr|it>`, dann die
+neuen Schlüssel von Hand übersetzen. `write-translations` liest die Vorgabetexte
+statisch aus dem Quelltext — deshalb steht in `landName()` eine ausgeschriebene
+Fallunterscheidung und keine Schleife über `LAENDER`.
+
+## Build
+
+`npm run build` baut alle vier Sprachen und bricht bei defekten internen Links
+ab (`onBrokenLinks: 'throw'`). Vor jedem Commit einmal durchlaufen lassen.

@@ -1,0 +1,26 @@
+/*
+ * Die Einträge im Menü sind Knöpfe, keine Links — sie führen nirgendwohin,
+ * sondern schalten um. Ohne diese Zurücksetzung malt der Browser sie als
+ * graue Kästchen und sie passen nicht zur Sprachauswahl daneben.
+ */
+.eintrag {
+  width: 100%;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/*
+ * Die Weltkugel sitzt mitten in einer Textzeile, neben dem Pfeil des
+ * Aufklappmenüs. `vertical-align` statt Flexbox: Docusaurus hängt diesen Pfeil
+ * als `::after` an den Link, und der verschöbe sich, wenn der Link plötzlich
+ * eine Flexbox wäre.
+ */
+.welt {
+  display: inline-block;
+  vertical-align: -0.2em;
+  margin-right: 0.4rem;
+  color: var(--ifm-color-primary);
+}

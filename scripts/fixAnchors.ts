@@ -1,0 +1,212 @@
+/**
+ * Biegt Sprungmarken in den Übersetzungen auf die übersetzten Anker um.
+ *
+ *   npm run translate:anchors
+ *
+ * Docusaurus bildet den Anker einer Überschrift aus deren Text. Übersetzt man
+ * die Überschrift, ändert sich der Anker mit – ein Link wie
+ * `[…](/produkte/m-bus-gateway#m-bus-gateway-sirius)` zeigt in der
+ * französischen Fassung deshalb ins Leere.
+ *
+ * Explizite IDs (`## Titel {#feste-id}`) wären die naheliegende Lösung, sind
+ * hier aber keine: Docusaurus verarbeitet `.md` als MDX, und dort ist `{…}`
+ * ein JavaScript-Ausdruck – der Build bricht ab.
+ *
+ * Stattdessen wird positionsweise zugeordnet: Die Strukturprüfung
+ * (scripts/checkTranslations.ts) garantiert, dass jede Übersetzung dieselbe
+ * Überschriftenfolge hat wie ihre deutsche Vorlage. Die n-te Überschrift der
+ * deutschen Seite entspricht also der n-ten der übersetzten – und damit lässt
+ * sich jeder deutsche Anker auf seinen übersetzten Gegenpart abbilden.
+ *
+ * Umgebogen werden Markdown-Links (`[…](/seite#anker)`) und Sprungmarken in
+ * JSX-Attributen (`<Kachel href="/seite#anker">`). Letztere kommen vor, seit
+ * Navigationskacheln die früheren Linklisten ersetzen.
+ */
+import {readFile, readdir, writeFile} from 'node:fs/promises';
+import {existsSync} from 'node:fs';
+import {join, sep} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import matter from 'gray-matter';
+import GithubSlugger from 'github-slugger';
+import {DOCS_ROOT, TARGET_LOCALES, docsRootFor, loadState, type Locale} from './translate';
+
+/** Die Anker einer Seite in Dokumentreihenfolge – so wie Docusaurus sie vergibt. */
+export function headingSlugs(content: string): string[] {
+  const body = matter(content).content;
+  const slugger = new GithubSlugger();
+  const slugs: string[] = [];
+  let inFence = false;
+
+  for (const line of body.split('\n')) {
+    if (/^\s*```/.test(line)) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+    const heading = line.match(/^#{1,6}\s+(.*)$/);
+    if (!heading) continue;
+    // Inline-Auszeichnung zählt für den Anker nicht mit.
+    const text = heading[1]
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+      .replace(/[*_`]/g, '')
+      .trim();
+    slugs.push(slugger.slug(text));
+  }
+  return slugs;
+}
+
+/**
+ * Ausdrücklich vergebene Sprungziele, etwa `<details id="…">` im FAQ.
+ *
+ * Sie stehen in einem JSX-Attribut und werden deshalb nicht übersetzt – ein
+ * Anker darauf gilt in allen Sprachen unverändert. Ohne diese Liste hielte der
+ * Lauf ihn für eine verwaiste Marke und schnitte ihn vom Link ab.
+ */
+export function explicitIds(content: string): string[] {
+  return [...matter(content).content.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
+}
+
+async function walk(dir: string): Promise<string[]> {
+  if (!existsSync(dir)) return [];
+  const out: string[] = [];
+  for (const entry of await readdir(dir, {withFileTypes: true})) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...(await walk(full)));
+    else if (full.endsWith('.md')) out.push(full);
+  }
+  return out;
+}
+
+const toPosix = (p: string) => p.split(sep).join('/');
+
+export async function fixAnchors(
+  locales: readonly Locale[] = TARGET_LOCALES,
+): Promise<{changed: number; unresolved: {file: string; anchor: string}[]}> {
+  const sources = (await walk(DOCS_ROOT)).map(toPosix).sort();
+  const state = await loadState();
+
+  // slug im Frontmatter -> Pfad relativ zu docs/, damit sich ein Linkziel der
+  // Form /produkte/nimbus der zugehörigen Datei zuordnen lässt.
+  const pathBySlug = new Map<string, string>();
+  const slugsBySource = new Map<string, string[]>();
+  const idsBySource = new Map<string, string[]>();
+  for (const source of sources) {
+    const content = await readFile(source, 'utf8');
+    const slug = (matter(content).data as {slug?: string}).slug;
+    const relativePath = source.slice(`${DOCS_ROOT}/`.length);
+    if (slug) pathBySlug.set(slug.replace(/\/$/, '') || '/', relativePath);
+    slugsBySource.set(relativePath, headingSlugs(content));
+    idsBySource.set(relativePath, explicitIds(content));
+  }
+
+  let changed = 0;
+  const unresolved: {file: string; anchor: string}[] = [];
+
+  for (const locale of locales) {
+    const root = docsRootFor(locale);
+    const targets = (await walk(root)).map(toPosix);
+
+    // Anker der übersetzten Seiten, damit Verweise darauf umgebogen werden können.
+    const slugsByTarget = new Map<string, string[]>();
+    const idsByTarget = new Map<string, string[]>();
+    for (const target of targets) {
+      const inhalt = await readFile(target, 'utf8');
+      const rel = target.slice(`${root}/`.length);
+      slugsByTarget.set(rel, headingSlugs(inhalt));
+      idsByTarget.set(rel, explicitIds(inhalt));
+    }
+
+    for (const target of targets) {
+      const self = target.slice(`${root}/`.length);
+      const original = await readFile(target, 'utf8');
+
+      /**
+       * Der passende Anker der Zielseite in dieser Sprache.
+       *
+       * `null` heisst: nichts zu tun, der Anker bleibt stehen. Ein leerer
+       * String heisst: der Anker kommt nirgends vor und entfällt.
+       */
+      const umbiegen = (
+        linkPath: string | undefined,
+        anchor: string,
+      ): string | null => {
+        // Ohne Pfad meint der Link eine Stelle auf derselben Seite.
+        const relativePath = linkPath
+          ? pathBySlug.get(linkPath.replace(/\/$/, '') || '/')
+          : self;
+        if (!relativePath) return null;
+
+        const deSlugs = slugsBySource.get(relativePath);
+        const localeSlugs = slugsByTarget.get(relativePath);
+        if (!deSlugs || !localeSlugs) return null;
+
+        // Der Anker trifft bereits eine Überschrift der Zielseite – nichts zu
+        // tun. Damit ist der Lauf auch mehrfach ausführbar.
+        if (localeSlugs.includes(anchor)) return null;
+
+        // Ein ausdrücklich vergebenes Sprungziel (`<details id="…">`) heisst
+        // in jeder Sprache gleich und bleibt deshalb unangetastet.
+        // Geprüft wird gegen beide Seiten: Solange die Übersetzung noch nicht
+        // neu erzeugt ist, trägt nur die deutsche Vorlage die ID.
+        const ids = [
+          ...(idsByTarget.get(relativePath) ?? []),
+          ...(idsBySource.get(relativePath) ?? []),
+        ];
+        if (ids.includes(anchor)) return null;
+
+        const index = deSlugs.indexOf(anchor);
+        if (index >= 0 && index < localeSlugs.length) return localeSlugs[index];
+
+        // Weder in dieser Sprache noch im deutschen Master zu finden. Das
+        // passiert bei den aus dem alten englischen Wiki übernommenen Seiten:
+        // Ihre Sprungmarken zeigen auf die damaligen englischen
+        // Überschriften, und sobald die Zielseite neu übersetzt wurde, gibt
+        // es die nicht mehr. Eine Zuordnung wäre geraten, deshalb bleibt der
+        // Link auf die Seite – ohne Sprungmarke – statt ins Leere zu zeigen.
+        if (deSlugs.length > 0) {
+          unresolved.push({file: target, anchor});
+          return '';
+        }
+        return null;
+      };
+
+      let updated = original.replace(
+        /\]\((\/[^)\s#]*)?#([^)\s]+)\)/g,
+        (match, linkPath: string | undefined, anchor: string) => {
+          const ziel = umbiegen(linkPath, anchor);
+          if (ziel === null) return match;
+          return ziel ? `](${linkPath ?? ''}#${ziel})` : `](${linkPath ?? ''})`;
+        },
+      );
+
+      // Sprungmarken in JSX-Attributen, etwa `<Kachel href="/seite#anker">`.
+      updated = updated.replace(
+        /href="(\/[^"\s#]*)?#([^"\s]+)"/g,
+        (match, linkPath: string | undefined, anchor: string) => {
+          const ziel = umbiegen(linkPath, anchor);
+          if (ziel === null) return match;
+          if (ziel) return `href="${linkPath ?? ''}#${ziel}"`;
+          // Ohne Pfad bliebe ein leeres href übrig – dann lieber stehen lassen.
+          return linkPath ? `href="${linkPath}"` : match;
+        },
+      );
+
+      if (updated !== original) {
+        await writeFile(target, updated, 'utf8');
+        changed += 1;
+      }
+    }
+  }
+
+  return {changed, unresolved};
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  void (async () => {
+    const {changed, unresolved} = await fixAnchors();
+    for (const item of unresolved) {
+      console.log(`  offen: ${item.file} -> #${item.anchor}`);
+    }
+    console.log(`${changed} Dateien angepasst, ${unresolved.length} Sprungmarken offen.`);
+  })();
+}

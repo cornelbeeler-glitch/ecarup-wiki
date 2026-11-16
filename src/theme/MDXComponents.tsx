@@ -1,0 +1,31 @@
+import MDXComponents from '@theme-original/MDXComponents';
+import Ablauf, {Schritt} from '@site/src/components/Ablauf';
+import Embed from '@site/src/components/Embed';
+import Menueweg from '@site/src/components/Menueweg';
+import Unterseiten from '@site/src/components/Unterseiten';
+import Video from '@site/src/components/Video';
+import {Kachel, Kacheln} from '@site/src/components/Kacheln';
+import Knopf from '@site/src/components/Knopf';
+import NurFuer from '@site/src/components/NurFuer';
+import RollenKarte from '@site/src/components/RollenKarte';
+
+/**
+ * Global in allen Markdown-Dateien verfügbare Komponenten – so brauchen die
+ * migrierten Wiki-Seiten keine Import-Zeilen.
+ */
+export default {
+  ...MDXComponents,
+  Ablauf,
+  Schritt,
+  Embed,
+  Menueweg,
+  Unterseiten,
+  Video,
+  Kacheln,
+  Kachel,
+  Knopf,
+  NurFuer,
+  // Im Markdown steht `<Rollenwahl />`: Dort geht es um die Wahl,
+  // nicht um den Kasten, in dem sie steckt.
+  Rollenwahl: RollenKarte,
+};

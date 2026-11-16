@@ -1,0 +1,1018 @@
+# Am Wiki mitarbeiten
+
+> **Diese Anleitung stammt aus dem smart-me Wiki.** Sie gilt hier genauso —
+> gleiche Bausteine, gleicher Ablauf. Nur die Beispiele verweisen noch auf
+> Seiten und Begriffe des smart-me Wikis (ZEV, Mieterstrom, Pico): als Muster
+> gemeint, nicht als Inhalte dieses Wikis. Die vierte Rolle heisst hier
+> **Fahrer** statt Mieter.
+
+Diese Anleitung richtet sich an **alle bei smart-me** — Programmierkenntnisse
+sind nicht nötig. Alles läuft im Browser auf GitHub. Wer lieber lokal in einem
+Editor arbeitet, findet den Weg dazu weiter unten unter
+[Lokal mit VS Code arbeiten](#lokal-mit-vs-code-arbeiten).
+
+## Das Wichtigste in drei Sätzen
+
+1. Geschrieben wird **nur auf Deutsch**, im Ordner `docs`.
+2. Englisch, Französisch und Italienisch werden **automatisch übersetzt** —
+   darum musst du dich nicht kümmern.
+3. Änderungen sind nach wenigen Minuten online.
+
+---
+
+## Eine Seite korrigieren
+
+### 1. Die Seite im Wiki öffnen
+
+Ganz unten auf jeder Seite steht **„Edit this page"**. Ein Klick darauf öffnet
+genau die richtige Datei auf GitHub. Das ist der bequemste Weg — du musst nichts
+suchen.
+
+Alternativ: [Repository öffnen](https://github.com/ecarup/smart-me-wiki) und im
+Ordner `docs` zur gewünschten Datei navigieren. Die Ordnerstruktur entspricht
+der Navigation im Wiki.
+
+### 2. In den Bearbeitungsmodus wechseln
+
+Oben rechts über dem Text ist ein **Stift-Symbol** (✏️). Klick darauf. Falls du
+noch nicht angemeldet bist, fragt GitHub jetzt nach deinem Login.
+
+### 3. Text ändern
+
+Du siehst den Text mit ein paar Sonderzeichen drumherum. Das ist Markdown:
+
+| Was du schreibst | Was rauskommt |
+| --- | --- |
+| `## Überschrift` | eine Überschrift |
+| `### Kleinere Überschrift` | eine Unterüberschrift |
+| `**fett**` | **fett** |
+| `*kursiv*` | *kursiv* |
+| `- Punkt` | ein Aufzählungspunkt |
+| `1. Punkt` | ein nummerierter Punkt |
+| `[Text](https://beispiel.ch)` | ein Link |
+
+Ganz oben zwischen den beiden `---`-Zeilen steht der sogenannte Kopfbereich:
+
+```
+---
+title: 'VEWA - Abrechnung'
+slug: '/konfiguration/billing/vewa-abrechnung'
+description: 'Kurzbeschreibung in einem Satz.'
+sidebar_label: 'VEWA - Abrechnung'
+---
+```
+
+- `title` — die Überschrift der Seite. Darfst du ändern.
+- `description` — ein Satz für Suchmaschinen und die Suche. Darfst du ändern.
+- `sidebar_label` — der Eintrag in der Navigation links. Darfst du ändern.
+- `slug` — **nicht ändern.** Das ist die Adresse der Seite. Änderst du sie,
+  laufen alle bestehenden Links ins Leere.
+
+Über dem Textfeld kannst du auf **„Preview"** klicken und sehen, wie es aussehen
+wird.
+
+### 4. Änderung speichern
+
+Oben rechts auf den grünen Knopf **„Commit changes…"**. Es öffnet sich ein
+kleines Fenster:
+
+- Ins erste Feld schreibst du kurz, was du geändert hast — zum Beispiel
+  *„Telefonnummer im Support korrigiert"*.
+- Darunter wählst du **„Create a new branch for this commit and start a pull
+  request"**. Das ist der sichere Weg: deine Änderung wird erst geprüft.
+- Dann auf **„Propose changes"** und auf der nächsten Seite auf
+  **„Create pull request"**.
+
+Fertig. Jemand aus dem Team schaut drüber und klickt auf „Merge". Danach ist die
+Änderung online und wird automatisch übersetzt.
+
+> Wenn du dir sicher bist und Schreibrechte hast, kannst du auch
+> **„Commit directly to the main branch"** wählen. Dann ist es sofort online.
+
+---
+
+## Überschriften
+
+Eine Überschrift schreibst du mit Rauten am Zeilenanfang, Leerzeichen dahinter,
+und mit einer Leerzeile davor und danach:
+
+```markdown
+## Inbetriebnahme
+
+Einleitender Text zum Abschnitt.
+
+### Station anmelden
+
+Text zum Unterabschnitt.
+```
+
+| Schreibweise | Wofür |
+| --- | --- |
+| `#` | **nie verwenden** — der Seitentitel kommt aus `title` im Kopfbereich |
+| `##` | Hauptabschnitt einer Seite |
+| `###` | Unterabschnitt |
+
+Der Titel der Seite steht im Kopfbereich und wird oben automatisch als grosse
+Überschrift gesetzt. Schreibst du zusätzlich ein `#` in den Text, steht der
+Titel zweimal da. Im ganzen Wiki beginnt deshalb keine Seite mit `#`.
+
+**Keine Ebene überspringen.** Nach `##` kommt `###`, nicht gleich eine tiefere
+Ebene. Reicht `##` und `###` nicht aus, ist die Seite meistens zu lang und
+gehört aufgeteilt.
+
+### Das Inhaltsverzeichnis rechts
+
+Alle `##`- und `###`-Überschriften erscheinen automatisch im
+Inhaltsverzeichnis am rechten Rand. Das ist der Hauptgrund, eine echte
+Überschrift zu schreiben und keinen **fettgedruckten Satz**: Fettschrift sieht
+ähnlich aus, taucht aber in der Navigation nicht auf und lässt sich nicht
+verlinken.
+
+Umgekehrt gilt: nicht jeder Absatz braucht eine Überschrift. Ein
+Inhaltsverzeichnis mit zwanzig Einträgen hilft niemandem.
+
+### Auf eine Überschrift verlinken
+
+Jede Überschrift bekommt automatisch eine Sprungmarke, abgeleitet aus ihrem
+Text: alles klein, Leerzeichen werden zu Bindestrichen, Satzzeichen und
+Klammern fallen weg. Umlaute bleiben erhalten.
+
+| Überschrift | Sprungmarke |
+| --- | --- |
+| `## Konfiguration des Lastabwurfs` | `#konfiguration-des-lastabwurfs` |
+| `### Lastabwurf (externe Eingänge)` | `#lastabwurf-externe-eingänge` |
+| `## Wie deaktiviere ich meinen Zähler?` | `#wie-deaktiviere-ich-meinen-zähler` |
+
+Verlinkt wird mit dem Slug der Zielseite plus Sprungmarke, auf derselben Seite
+reicht die Sprungmarke allein:
+
+```markdown
+[Lastabwurf konfigurieren](/konfiguration/multilevel-lastmanagement/mlm-konfigurieren#konfiguration-des-lastabwurfs)
+
+[weiter unten auf dieser Seite](#technische-daten)
+```
+
+> **Änderst du eine Überschrift, ändert sich ihre Sprungmarke.** Alle Links, die
+> darauf zeigen, laufen danach ins Leere. Vor dem Umbenennen einmal suchen, wer
+> darauf verlinkt — im Repository oben rechts über die Suche nach der alten
+> Sprungmarke.
+
+### Was nicht funktioniert
+
+- **Keine eigenen IDs** wie `## Titel {#feste-id}`. Die geschweiften Klammern
+  haben in unserem System eine besondere Bedeutung und brechen den Build.
+- **Überschriften gehören nicht in ein Spaltenraster.** Steht eine Überschrift
+  innerhalb eines `<div className="row">`, fehlt sie im Inhaltsverzeichnis.
+  Schreib sie über den Block.
+
+---
+
+## Ein Bild hinzufügen
+
+Bilder liegen unter `static/img/<seiten-slug>/`. Der Ordnername entspricht dem
+Pfad der Seite mit Bindestrichen statt Schrägstrichen — die Seite
+`/konfiguration/billing/vewa-abrechnung` hat also den Bildordner
+`static/img/konfiguration-billing-vewa-abrechnung/`.
+
+1. Öffne im Repository den passenden Ordner unter `static/img/`.
+2. Oben rechts **„Add file" → „Upload files"**, Bild hineinziehen.
+3. Unten wie gewohnt „Commit changes".
+4. Öffne dann die Seite unter `docs/` und füge an der richtigen Stelle ein:
+
+   ```
+   ![Was auf dem Bild zu sehen ist](/img/konfiguration-billing-vewa-abrechnung/12.png)
+   ```
+
+Der Text in den eckigen Klammern ist der **Alt-Text**. Er wird vorgelesen, wenn
+jemand die Seite mit einem Screenreader liest, und hilft der Suche. Beschreibe
+kurz, was zu sehen ist — nicht „Screenshot", sondern zum Beispiel
+*„Dialog zum Anlegen einer Abrechnungsperiode"*.
+
+**Bitte vor dem Hochladen verkleinern.** Screenshots brauchen selten mehr als
+1600 Pixel Breite. Grosse Bilder machen die Seite langsam.
+
+### Ein anderes Bild für eine andere Sprache
+
+Ein Screenshot mit deutscher Oberfläche steht sonst auch auf der englischen
+Seite. Soll dort ein anderes Bild erscheinen, legst du es **mit Sprachsuffix
+neben das deutsche**:
+
+```
+static/img/konfiguration-ordnerkonfiguration/03.png      deutsch
+static/img/konfiguration-ordnerkonfiguration/03_EN.png   englisch
+static/img/konfiguration-ordnerkonfiguration/03_FR.png   französisch
+static/img/konfiguration-ordnerkonfiguration/03_IT.png   italienisch
+```
+
+Mehr ist nicht zu tun. Die Seite unter `docs/` verweist unverändert auf
+`03.png` — beim Übersetzen wird der Pfad automatisch umgebogen, sobald die
+Variante existiert. Fehlt sie, bleibt das deutsche Bild stehen. Du kannst also
+mit den zwei, drei Bildern anfangen, bei denen es wirklich stört.
+
+**Englisch gilt als Rückfall.** Legst du nur `03_EN.png` an, erscheint es auch
+auf der französischen und der italienischen Seite. Erst wenn du dort zusätzlich
+`03_FR.png` hinterlegst, geht die französische Fassung eigene Wege. In den
+meisten Fällen genügt also eine einzige englische Variante.
+
+| vorhanden | englische Seite | französische Seite | italienische Seite |
+| --- | --- | --- | --- |
+| nichts | `03.png` | `03.png` | `03.png` |
+| `03_EN.png` | `03_EN.png` | `03_EN.png` | `03_EN.png` |
+| `03_EN.png`, `03_FR.png` | `03_EN.png` | `03_FR.png` | `03_EN.png` |
+
+Drei Regeln:
+
+- Die Datei **ohne** Suffix ist die deutsche. Ein `_DE` gibt es nicht.
+- Die Variante braucht **dieselbe Dateiendung** wie das Original: zu `03.png`
+  gehört `03_EN.png`, nicht `03_EN.jpg`.
+- Das Suffix schreibst du gross: `_EN`, `_FR`, `_IT`.
+
+Wird das deutsche Bild später ersetzt, bleibt die Variante auf dem alten Stand,
+ohne dass es jemandem auffällt. `npm run translate:check` meldet solche Fälle
+als *veraltete Bildvariante*.
+
+> Nicht zu verwechseln mit dem Ordner `static/img/_en/`. Dort liegen Bilder aus
+> dem alten englischen Wiki, die zu den übernommenen Bestandsseiten gehören —
+> ein anderer Mechanismus, der mit dem Sprachsuffix nichts zu tun hat.
+
+---
+
+## Bild neben Text stellen
+
+Standardmässig steht ein Bild über oder unter dem Text, über die volle Breite.
+Soll der Text links und das Bild rechts daneben stehen, setzt du beides in ein
+zweispaltiges Raster. Dafür brauchst du nichts zu installieren — das Raster ist
+in Docusaurus eingebaut.
+
+Das folgende Beispiel funktioniert so, wie es dasteht: der Text nimmt vier
+Spalten ein, das Bild acht, und das Bild sitzt mittig in seinem Rahmen.
+
+```jsx
+<div className="row">
+<div className="col col--4">
+
+Einen Zähler deaktivierst du direkt in der Ordnerkonfiguration. Er bleibt
+erhalten und lässt sich jederzeit wieder aktivieren — seine Messwerte gehen
+nicht verloren.
+
+</div>
+<div className="col col--8 text--center">
+
+![Schalter zum Deaktivieren eines Zählers](/img/konfiguration-ordnerkonfiguration/03.jpg)
+
+</div>
+</div>
+```
+
+### Wie du es anpasst
+
+Die Zahl hinter `col--` ist die Breite in Spalten. Es gibt zwölf davon, und die
+beiden Werte müssen zusammen zwölf ergeben:
+
+| Aufteilung | Schreibweise |
+| --- | --- |
+| schmaler Text, grosses Bild | `col--4` und `col--8` |
+| je zur Hälfte | `col--6` und `col--6` |
+| breiter Text, kleines Bild | `col--8` und `col--4` |
+
+Die Reihenfolge im Text bestimmt links und rechts — was zuerst steht, steht
+links. Willst du das Bild links und den Text rechts, drehst du die beiden
+`<div>`-Blöcke um.
+
+`text--center` zentriert das Bild in seiner Spalte. Lässt du es weg, sitzt das
+Bild am linken Rand der Spalte.
+
+### Worauf du achten musst
+
+1. **`className`, nicht `class`.** Die Seiten werden als MDX verarbeitet, und
+   dort heisst das Attribut so. Schreib es ab wie im Beispiel.
+2. **Jedes `<div>` wieder schliessen.** Im Beispiel sind es drei öffnende und
+   drei schliessende. Fehlt ein `</div>`, bricht der Build mit einer
+   Fehlermeldung ab — die Seite geht also nicht kaputt online, du siehst beim
+   Pull Request ein rotes ✗.
+3. **Leerzeilen um den Inhalt** sind nicht zwingend, machen den Quelltext aber
+   deutlich lesbarer. Halt dich ans Beispiel, dann passt es.
+
+### Wann sich das lohnt
+
+Die Textspalte ist insgesamt rund 800 Pixel breit. Bei `col--8` bleiben dem
+Bild also etwa 520 Pixel, bei `col--4` noch 260.
+
+Für ein Produktfoto, ein Hochformat oder den Ausschnitt eines Dialogs ist das
+genau richtig. Für den Screenshot einer ganzen Oberfläche nicht: auf 260 Pixel
+heruntergerechnet liest niemand mehr eine Beschriftung, und Anklicken zum
+Vergrössern gibt es im Wiki nicht. Solche Screenshots bleiben besser über die
+volle Breite, mit dem Text darüber.
+
+Auf schmalen Fenstern rutschen die beiden Spalten automatisch untereinander —
+zuerst der Text, dann das Bild. Zieh das Browserfenster einmal schmal, dann
+siehst du es.
+
+---
+
+## Tabellen
+
+Eine Tabelle besteht aus drei Teilen: der Kopfzeile, einer **Trennzeile aus
+Bindestrichen** und den Datenzeilen. Die Spalten trennst du mit einem
+senkrechten Strich `|`.
+
+```markdown
+| Wert / Symbol | Beschreibung |
+| --- | --- |
+| 6A | Minimum Ladestrom |
+| 32A | Max. zugelassener Ladestrom |
+```
+
+Daraus wird:
+
+| Wert / Symbol | Beschreibung |
+| --- | --- |
+| 6A | Minimum Ladestrom |
+| 32A | Max. zugelassener Ladestrom |
+
+**Die Trennzeile ist Pflicht.** Lässt du sie weg, erscheinen deine Zeilen als
+Fliesstext mit Strichen dazwischen — das ist der mit Abstand häufigste Fehler.
+Pro Spalte brauchst du mindestens drei Bindestriche.
+
+Die Striche müssen im Quelltext **nicht** untereinander stehen. Ob du sauber
+ausrichtest oder nicht, ändert am Ergebnis nichts — mach es so, wie es sich für
+dich besser liest.
+
+### Spalten ausrichten
+
+Mit Doppelpunkten in der Trennzeile bestimmst du die Ausrichtung. Für Zahlen
+ist rechtsbündig meist besser lesbar:
+
+```markdown
+| Artikel | Anzahl | Preis |
+| :--- | :---: | ---: |
+| Pico | 2 | 1'250.00 |
+| Telstar | 12 | 540.00 |
+```
+
+| Schreibweise in der Trennzeile | Wirkung |
+| --- | --- |
+| `---` | Standard, linksbündig |
+| `:---` | linksbündig |
+| `:---:` | zentriert |
+| `---:` | rechtsbündig |
+
+### Sonderfälle
+
+- **Senkrechter Strich im Text:** schreib `\|`, sonst zerlegt er dir die Zelle.
+- **Zeilenumbruch in einer Zelle:** `<br />` an der Stelle einfügen. Eine
+  Leerzeile geht nicht, die würde die Tabelle beenden.
+- **Leere Zelle:** einfach nichts dazwischen schreiben, `|  |` genügt.
+
+### Wie breit darf sie sein?
+
+Breite Tabellen werden im Wiki nicht gequetscht, sondern lassen sich seitlich
+scrollen. Trotzdem: ab etwa sechs Spalten liest sie niemand mehr gern, und auf
+dem Handy schon gar nicht. Steht die Tabelle in einer schmalen Spalte neben
+einem Bild, bleib bei zwei bis drei Spalten.
+
+Wird es mehr, ist meist eine Aufzählung die bessere Form — oder die Zahlen
+gehören in eine verlinkte Tabelle statt ins Wiki.
+
+---
+
+## Eine Frage ins FAQ aufnehmen
+
+Im FAQ ist jede Frage ein aufklappbarer Block: die Frage steht da, die Antwort
+erscheint beim Klick. So sieht man alle Fragen einer Seite auf einen Blick,
+statt durch zwanzig Antworten zu scrollen.
+
+```jsx
+## FAQ
+
+<details id="wie-kann-ich-ein-geraet-neu-starten">
+<summary>Wie kann ich ein Gerät neu starten?</summary>
+
+Alle Geräte können mit einem Stromunterbruch neu gestartet werden.
+
+3-Phasen-Zähler: T1 und T2 gleichzeitig für 10 Sekunden drücken.
+
+</details>
+```
+
+Die Leerzeilen um die Antwort sind nötig — ohne sie bleibt der Text roh stehen,
+Listen und Links werden nicht erkannt.
+
+### Die ID
+
+`id` ist die Adresse der Frage: `…/konfiguration/inbetriebnahme#wie-kann-ich-ein-geraet-neu-starten`.
+Damit lässt sich eine einzelne Antwort verlinken, und wer dem Link folgt,
+bekommt sie aufgeklappt zu sehen.
+
+Dafür gilt:
+
+- **Kleinbuchstaben, Wörter mit Bindestrich, keine Satzzeichen.** Das Fragezeichen
+  entfällt.
+- **Die ID bleibt, auch wenn die Frage umformuliert wird.** Sie steht
+  möglicherweise schon in einer E-Mail oder einem Ticket. Passt der Text
+  überhaupt nicht mehr, ist das eine neue Frage mit neuer ID — und die alte
+  gehört in `redirects.ts`, falls sie wichtig war.
+- **In allen Sprachen dieselbe ID.** Sie steht in einem Attribut und wird
+  deshalb nicht übersetzt. Genau so ist es gewollt: ein Link auf eine Antwort
+  funktioniert in jeder Sprachfassung.
+
+### Wann ein Akkordeon, wann nicht
+
+Nur für echte Frage-Antwort-Paare. Ein Abschnitt, der nacheinander gelesen
+werden soll, gehört nicht in Klappblöcke — was zugeklappt ist, wird nicht
+gelesen, und die Suche im Browser (Strg+F) findet es nicht.
+
+Aus demselben Grund steht nie etwas nur im Akkordeon, was man zum Arbeiten
+wirklich braucht: Voraussetzungen, Warnungen und die eigentliche Anleitung
+gehören in den sichtbaren Text.
+
+---
+
+## Eine Seite einem Land zuordnen
+
+Manches gilt nur in einem Land: ZEV, vZEV, LEG und die VEWA-Abrechnung sind
+schweizerisch, Mieterstrom ist deutsch. Oben rechts kann der Leser ein Land
+wählen; die Navigation zeigt dann nur noch, was dort gilt.
+
+Die Zuordnung steht **nicht** in der Seite, sondern an ihrem Eintrag in
+`sidebars.ts`:
+
+```ts
+{type: 'doc', id: 'konfiguration/billing/vewa-abrechnung',
+ customProps: {laender: ['ch']}},
+```
+
+Eine ganze Kategorie geht genauso:
+
+```ts
+{
+  type: 'category',
+  label: 'LEG - Lokale Elektrizitätsgemeinschaft',
+  customProps: {laender: ['ch']},
+  link: {type: 'doc', id: 'planung/leg-lokale-elektrizitätsgemeinschaft/index'},
+  items: ['planung/leg-lokale-elektrizitätsgemeinschaft/leg-rechner'],
+},
+```
+
+Gilt eine Seite in mehreren Ländern: `['ch', 'de']`.
+
+**Ohne `customProps` ist eine Seite überall sichtbar.** Das ist der Normalfall
+und der Grund, warum die gut hundert gemeinsamen Seiten nie angefasst werden
+müssen — Hardware, Inbetriebnahme, Schnittstellen und Störungsbehebung gelten
+in jedem Land gleich. Kennzeichne nur, was wirklich länderspezifisch ist.
+
+### Von aussen mit gesetztem Land verlinken
+
+An jede Adresse lässt sich `?land=de` anhängen:
+
+```
+https://dok.smart-me.com/?land=de
+https://dok.smart-me.com/konfiguration/billing?land=ch
+```
+
+Wer darüber kommt, hat das Land gleich eingestellt — praktisch für einen Link
+aus einem deutschen Angebot oder einer Signatur. Die Wahl bleibt beim
+Weiterklicken erhalten und auch beim nächsten Besuch.
+
+### Was der Filter nicht leistet
+
+Er blendet nur die Navigation aus. Die Seiten bleiben über die Suche und über
+direkte Links erreichbar — das ist Absicht, damit kein geteilter Link ins Leere
+führt. **Schreib deshalb in länderspezifische Seiten einen Satz, für welches
+Land sie gelten**, gleich in den ersten Absatz. Wer über die Suche kommt, sieht
+den Filter nicht.
+
+---
+
+## Eine Seite einer Rolle zuordnen
+
+Das Wiki bedient vier sehr verschiedene Leser, und oben rechts steht neben der
+Länderwahl ein zweiter Schalter dafür:
+
+| Rolle | Was sie sieht |
+| --- | --- |
+| **Installateur** (Vorgabe) | alles |
+| **Abrechnungsdienstleister** | alles zum Abrechnen: Ordner, Rechnungsstellung, VHKA-Files, Drittsysteme, Informationssicherheit |
+| **Verwalter** | Mieterwechsel, Benutzer, Tarife, Rechnung erstellen |
+| **Mieter** | seine App-Anleitung, News, Billy, FAQ, Kontakt |
+
+**Die vier sind Stufen, keine Kästchen.** Sie schachteln ineinander: Was der
+Mieter sieht, sieht der Verwalter auch, und so weiter bis zum Installateur.
+Deshalb trägt eine Seite genau eine Angabe — die **niedrigste** Rolle, die sie
+sehen darf — und keine Liste:
+
+```ts
+{type: 'doc', id: 'konfiguration/benutzerkonfiguration',
+ customProps: {rolle: 'verwalter'}},
+```
+
+Erlaubt sind `mieter`, `verwalter`, `abrechnung` und `installateur`. Beides
+zusammen geht auch:
+
+```ts
+{type: 'doc', id: 'konfiguration/billing/vewa-abrechnung',
+ customProps: {laender: ['ch'], rolle: 'abrechnung'}},
+```
+
+### Der Unterschied zur Länderwahl
+
+Hier ist es genau andersherum: **Ohne Angabe gehört eine Seite dem
+Installateur.** Das ist Absicht — die grosse Mehrheit der Seiten ist
+Installationswissen (Hardware, Planung, Inbetriebnahme, Störungen), und die
+müsste man sonst alle kennzeichnen. Eine neue Seite landet damit zunächst beim
+Installateur, bis jemand sie bewusst weiter öffnet.
+
+Zwei Regeln ersparen die Fleissarbeit:
+
+1. **Die Angabe vererbt sich nach unten.** Steht sie am Oberpunkt, gilt sie für
+   alles darin; ein Untereintrag mit eigener Angabe sticht die geerbte. An
+   „Rechnungsstellung Schweiz" steht einmal `verwalter`, und nur die
+   Einrichtungsseiten darin tragen zusätzlich `abrechnung`.
+2. **Ein Oberpunkt erscheint, sobald ein Eintrag darunter für die gewählte
+   Rolle sichtbar ist.** Die Störungsbehebung braucht keine eigene Angabe: Sie
+   taucht für den Abrechnungsdienstleister auf und zeigt ihm genau die fünf
+   Seiten, die für ihn gekennzeichnet sind.
+
+Kennzeichne also nur, was eine Seite **öffnet**, nicht, was sie zumacht.
+
+### Von aussen mit gesetzter Rolle verlinken
+
+An jede Adresse lässt sich `?rolle=verwalter` anhängen:
+
+```
+https://wiki.smart-me.com/nutzeranleitungen/verwalter?rolle=verwalter
+```
+
+Wer darüber kommt, hat die Rolle gleich eingestellt — praktisch für eine Mail
+an eine Verwaltung oder an einen Mieter. Mit `?land=` zusammen: einfach mit `&`
+verbinden.
+
+### Was der Filter nicht leistet
+
+Dasselbe wie beim Land: Er blendet nur die Navigation aus. Jede Seite bleibt
+über die Suche und über direkte Links erreichbar, und die Kachel-Übersichten
+auf den Einstiegsseiten zeigen weiterhin alles. **Der Filter ist Komfort, kein
+Zugriffsschutz** — was nicht für alle Augen bestimmt ist, gehört nicht ins
+Wiki.
+
+### Die Beschriftungen ändern oder eine Rolle ergänzen
+
+Die Rollen stehen in `src/rollen/index.ts`: ein Eintrag in `ROLLEN` mit seiner
+Stufe und ein Fall in `rollenName`. Die Namen in den anderen Sprachen liegen
+wie die Ländernamen in `i18n/en/code.json`, `i18n/fr/code.json` und
+`i18n/it/code.json` — `npm run translate` fasst diese Dateien nicht an.
+
+---
+
+## Eine neue Seite anlegen
+
+1. Im Repository in den passenden Ordner unter `docs/` wechseln.
+2. **„Add file" → „Create new file"**.
+3. Als Dateiname etwas Kurzes ohne Umlaute und ohne Leerzeichen, endend auf
+   `.md` — zum Beispiel `neue-funktion.md`.
+4. Als Erstes den Kopfbereich einfügen:
+
+   ```
+   ---
+   title: 'Titel der Seite'
+   slug: '/bereich/neue-funktion'
+   description: 'Worum es auf dieser Seite geht, in einem Satz.'
+   ---
+
+   Hier beginnt der Text.
+   ```
+
+   Der `slug` ist die spätere Adresse. Er sollte zum Ordner passen.
+5. Speichern wie oben beschrieben.
+
+---
+
+## Eine neue Seite in die Navigation eintragen
+
+Eine neue Seite ist nach dem Speichern sofort unter ihrer Adresse erreichbar —
+sie erscheint aber **nicht** automatisch in der Navigation links. Die
+Navigation steht vollständig von Hand in der Datei `sidebars.ts` im obersten
+Ordner des Repositorys. Nichts daran wird erzeugt.
+
+Dort trägst du die **Doc-ID** deiner Seite ein. Das ist der Dateipfad
+unterhalb von `docs/`, ohne die Endung:
+
+| Datei | Doc-ID |
+| --- | --- |
+| `docs/kontakt.md` | `kontakt` |
+| `docs/stoerungsbehebung/pico-fehler.md` | `stoerungsbehebung/pico-fehler` |
+| `docs/produkte/pico-ladestation/index.md` | `produkte/pico-ladestation/index` |
+
+Such in `sidebars.ts` die passende Gruppe und setz die ID als neue Zeile in
+deren `items`-Liste:
+
+```ts
+{
+  type: 'category',
+  label: 'Stoerungsbehebung',
+  link: {type: 'doc', id: 'stoerungsbehebung/index'},
+  items: [
+    'stoerungsbehebung/zaehler-offline',
+    'stoerungsbehebung/neue-seite',          // <-- neu eingefügt
+    'stoerungsbehebung/pico-fehler',
+    'stoerungsbehebung/billing-fehlermeldungen',
+  ],
+},
+```
+
+Die Reihenfolge in der Liste ist die Reihenfolge in der Navigation. Sortiert
+wird nach Nutzungsreihenfolge — was am häufigsten gebraucht wird, steht oben,
+nicht das alphabetisch Erste.
+
+Soll deine Seite eine eigene Gruppe mit Unterseiten werden, legst du einen
+Ordner mit einer `index.md` darin an und schreibst statt der einzelnen Zeile
+einen `category`-Block nach dem Muster oben.
+
+Arbeitest du über GitHub im Browser und traust dir das nicht zu: schreib
+einfach in die Beschreibung deines Pull Requests, wo die Seite hingehört.
+Jemand aus dem Entwicklungsteam trägt sie ein.
+
+---
+
+## Eine Seite an eine andere Stelle verschieben
+
+Zieht eine Seite in einen anderen Bereich um, zieht ihre Adresse mit. Eine
+Seite, die unter „Planung" steht, aber `/konfiguration/billing/…` heisst,
+verwirrt jeden, der den Link liest — und irgendwann auch den, der sie pflegt.
+
+Dazugehört **alles** in dieser Liste, sonst bleibt etwas zurück:
+
+1. **Die Datei** nach `docs/<neuer-bereich>/` verschieben, am besten mit
+   `git mv` — dann erkennt Git die Umbenennung und die Historie der Seite
+   bleibt erhalten.
+2. **Den `slug` im Frontmatter** auf den neuen Pfad setzen.
+3. **Die drei Übersetzungen** derselben Seite unter `i18n/en/…`, `i18n/fr/…`
+   und `i18n/it/…` genauso verschieben — auch dort steht der Slug im
+   Frontmatter und muss mit.
+4. **Den Bildordner** unter `static/img/` umbenennen: er heisst wie der Slug
+   mit Bindestrichen statt Schrägstrichen. Danach die Bildverweise in allen
+   vier Sprachfassungen anpassen.
+5. **Eingehende Links** suchen und umbiegen:
+   `grep -rn "alter-slug" docs i18n`
+6. **Eine Weiterleitung** in `redirects.ts` eintragen, unter
+   „Innerhalb des Wikis umbenannt":
+
+   ```ts
+   {from: '/konfiguration/billing/mieterstrom/standard-messkonzept',
+    to: '/planung/standard-messkonzept'},
+   ```
+
+7. **Den Eintrag in `sidebars.ts`** auf die neue Doc-ID ändern.
+8. **Den Schlüssel in `.translation-state.json`** umbenennen. Fehlt das, hält
+   die Pipeline die Seite für neu und übersetzt alle drei Sprachen noch einmal.
+
+Der Punkt mit der Weiterleitung ist der wichtigste. Die alte Adresse steht
+vielleicht schon in einer E-Mail, einem Angebot oder bei Google — ohne
+Weiterleitung läuft sie ins Leere, und niemand erfährt davon.
+
+---
+
+## Videos einbinden
+
+Einen YouTube-Player bindest du mit der Komponente `<Video>` ein. Schreib die
+Zeile an die Stelle, an der das Video stehen soll:
+
+```markdown
+<Video src="1K1MCABTy8M" title="Webinar Loxone Schweiz" />
+```
+
+In `src` gehört **nur die Video-ID**, nicht die ganze Adresse. Die ID ist der
+Teil hinter `v=` beziehungsweise nach `youtu.be/`:
+
+| Adresse im Browser | ID |
+| --- | --- |
+| `https://www.youtube.com/watch?v=1K1MCABTy8M` | `1K1MCABTy8M` |
+| `https://youtu.be/1K1MCABTy8M?si=T3VwzDvN-XjnJKJF` | `1K1MCABTy8M` |
+
+Das `?si=…` am Ende einer geteilten Adresse ist eine Empfehlungs-Markierung von
+YouTube und gehört nicht ins Wiki. Alles ab dem Fragezeichen fällt weg.
+
+> **Nicht die volle Adresse einsetzen.** `<Video src="https://youtu.be/…" />`
+> baut zwar die Seite, zeigt aber kein Video: eine Teilen-Adresse lässt sich
+> nicht einbetten. Mit der blossen ID erzeugt die Komponente die richtige
+> Einbettungsadresse selbst — und zwar die cookiefreie Variante.
+
+`title` ist der Name des Videos. Er wird Screenreadern vorgelesen; nimm den
+echten Titel vom YouTube-Kanal und nicht „Video".
+
+---
+
+## Google Tabellen einbetten
+
+Einen Ausschnitt einer Google Tabelle bindest du mit `<Embed>` ein. So sieht es
+auf der Pico-Seite aus — gezeigt wird dort nur der Bereich `A1:B26`:
+
+```jsx
+<Embed
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmxJQ…hh/pubhtml?gid=0&range=A1:B26&single=true&widget=false&headers=false&chrome=false"
+  height="631px"
+  title="Technische Daten der Pico Ladestation" />
+```
+
+### Die Adresse zusammensetzen
+
+1. In der Tabelle **Datei → Freigeben → Im Web veröffentlichen**.
+2. Das gewünschte Tabellenblatt wählen, als Format **Webseite**, dann
+   **Veröffentlichen**.
+3. Du bekommst eine Adresse, die auf `/pubhtml` endet. An diese hängst du die
+   Parameter an — der erste mit `?`, alle weiteren mit `&`.
+
+| Parameter | Wirkung |
+| --- | --- |
+| `gid=0` | welches Tabellenblatt. Die Nummer steht in der normalen Adresse der Tabelle hinter `gid=` |
+| `range=A1:B26` | welcher Zellbereich gezeigt wird |
+| `single=true` | nur dieses eine Blatt statt aller |
+| `widget=false` | blendet die Blattregister am unteren Rand aus |
+| `headers=false` | blendet Spaltenbuchstaben und Zeilennummern aus |
+| `chrome=false` | blendet den Titel der Tabelle oben aus |
+
+Für eine Tabelle, die **nicht** im Web veröffentlicht ist, lautet der Teil vor
+dem Fragezeichen `/htmlembed` statt `/pubhtml`. Dann sieht die Einbettung aber
+nur, wer ohnehin Zugriff auf die Tabelle hat — für alle anderen bleibt der
+Rahmen leer. Im Wiki ist das fast nie gewollt.
+
+### Den Rahmen auf die Tabelle einstellen
+
+Bei einer Tabelle gehört in `height` eine **feste Höhe in Pixeln** — nicht
+`aspect`. Eine Tabelle ist nicht beliebig skalierbar: ihre Zeilen sind immer
+gleich hoch, egal wie breit das Fenster ist. Ein Seitenverhältnis macht den
+Rahmen auf einem grossen Bildschirm riesig und auf einem kleinen zu flach, und
+ohne beides stehen 75 % der Fensterhöhe da — bei sechs Zeilen sieht das nach
+einem Ladefehler aus.
+
+So kommst du an den Wert:
+
+1. Die Adresse der Einbettung im Browser direkt aufrufen.
+2. Das Fenster so weit verkleinern, bis es genau unter der letzten Zeile endet
+   (bei `/htmlembed` einschliesslich der Blattregister-Leiste unten).
+3. Diese Höhe eintragen, plus etwa 16 Pixel, wenn die Tabelle breiter ist als
+   die Textspalte und deshalb einen waagrechten Rollbalken bekommt.
+
+Mehr als **720 px** sollte kein Rahmen bekommen. Eine längere Tabelle wird
+sonst zur Wand, durch die man scrollen muss, bevor der Text weitergeht — bei
+dieser Höhe rollt stattdessen die Tabelle in ihrem Rahmen.
+
+Eine angegebene `height` gilt genau so; die Mindesthöhe von 520 px, die für
+eingebettete **Anwendungen** gilt, ist dann ausgeschaltet. `aspect` bleibt für
+Rechner und Konfiguratoren richtig, die sich mit der Breite mitskalieren.
+`title` ist Pflicht — ohne ihn ist der Rahmen für Screenreader namenlos.
+
+> **Vor dem Veröffentlichen prüfen, was in der Tabelle steht.** „Im Web
+> veröffentlichen" macht das gewählte Blatt für jeden mit der Adresse lesbar,
+> unabhängig von den Freigaben des Dokuments. Keine Kundendaten, Preise oder
+> internen Notizen auf einem veröffentlichten Blatt stehen lassen — lieber die
+> benötigten Zellen in ein eigenes Blatt kopieren und nur dieses veröffentlichen.
+
+Ändern sich die Zahlen selten, ist eine normale Markdown-Tabelle im Wiki die
+bessere Wahl: sie lädt schneller, lässt sich durchsuchen und funktioniert auch
+dann noch, wenn jemand die Freigabe der Tabelle zurückzieht.
+
+---
+
+## PDF verlinken
+
+Ein PDF wird **verlinkt, nicht eingebettet** — es gibt im Wiki keinen
+PDF-Betrachter. Schreib in den Linktext, worum es geht und dass es ein PDF ist:
+
+```markdown
+[Download Datenblatt (.pdf)](https://docs.google.com/presentation/d/1tq5HPM2mc…ks/export/pdf)
+```
+
+Liegt das Dokument in Google Drive, hängst du den passenden Export-Teil an die
+Adresse, dann lädt der Klick direkt das PDF statt zuerst Google zu öffnen:
+
+| Quelle | Endung der Adresse |
+| --- | --- |
+| Google Präsentation | `/export/pdf` |
+| Google Dokument | `/export?format=pdf` |
+| PDF-Datei in Drive | `/view?usp=sharing` — ein echter Export-Link existiert hier nicht |
+
+Die Dokument-ID ist der lange Abschnitt zwischen `/d/` und dem nächsten
+Schrägstrich. Ein Beispiel aus dem Wiki:
+
+```markdown
+[Pico Quickstarter](https://docs.google.com/document/d/1jRLrb7J9hg…Lk/export?format=pdf)
+
+[Installations- und Montageanleitung (Deutsch)](https://docs.google.com/presentation/d/1d_ejgHn…aw/export/pdf)
+
+[Konformitätserklärung](https://drive.google.com/file/d/1K-9mIHKMXTeqzOCc0-i9vRfSnFElSCnu/view?usp=drive_link)
+```
+
+Zwei Dinge dazu:
+
+- **Freigabe klären.** Ein Link, der nur intern funktioniert, führt für Partner
+  und Installateure auf eine Anmeldeseite. Steht das Dokument absichtlich nur
+  intern zur Verfügung, schreib es in den Linktext: *„(nur intern)"*.
+- **Keine leeren Linktexte.** `[](https://…)` erzeugt einen unsichtbaren Link.
+  Jeder Link braucht einen Text, der sagt, wohin er führt.
+
+---
+
+## Lokal mit VS Code arbeiten
+
+Wer mehrere Seiten am Stück bearbeitet oder das Ergebnis vorher sehen will,
+arbeitet besser lokal als im Browser. Nötig ist das nicht — für einzelne
+Korrekturen reicht der Weg über GitHub oben völlig.
+
+### Einmalig einrichten
+
+Vorausgesetzt werden [Node.js](https://nodejs.org) ab Version 20 und
+[Git](https://git-scm.com).
+
+```bash
+git clone https://github.com/eCarUp/smart-me-wiki.git
+cd smart-me-wiki
+npm install
+```
+
+### Vorschau starten
+
+```bash
+npm start
+```
+
+Die Site läuft danach auf `http://localhost:3000` und aktualisiert sich bei
+jeder Speicherung von selbst. Eine andere Sprache prüfst du mit
+`npm run start -- --locale fr`.
+
+Die eingebaute Markdown-Vorschau von VS Code taugt für dieses Wiki **nicht**:
+sie findet die Bilder nicht, zeigt keine Videos und kennt die Navigation nicht.
+Nimm VS Code zum Schreiben und den Browser daneben zum Schauen.
+
+### Wo gespeichert wird
+
+| Was | Wohin |
+| --- | --- |
+| Seitentext | `docs/<bereich>/<dateiname>.md` |
+| Bilder | `static/img/<seiten-slug-mit-bindestrichen>/` |
+| Navigation | `sidebars.ts` im obersten Ordner |
+
+Der Ordner `docs/` bildet die Bereiche des Wikis ab: eine Seite zur
+Störungsbehebung gehört nach `docs/stoerungsbehebung/`, eine zu den Produkten
+nach `docs/produkte/`. Der Dateiname ist kleingeschrieben, ohne Leerzeichen
+und ohne Umlaute — `neue-funktion.md`, nicht `Neue Funktion.md`.
+
+Der Bildordner heisst wie der `slug` der Seite, mit Bindestrichen statt
+Schrägstrichen: die Seite `/konfiguration/billing/vewa-abrechnung` hat den
+Ordner `static/img/konfiguration-billing-vewa-abrechnung/`. Im Text wird das
+Bild dann als `/img/…` eingebunden, **ohne** das führende `static`.
+
+Im Ordner `i18n/` wird nichts gespeichert und nichts geändert — siehe unten.
+
+### Neue Seite lokal anlegen
+
+1. In VS Code im Explorer den passenden Ordner unter `docs/` aufklappen.
+2. Rechtsklick → **New File**, Dateiname auf `.md` enden lassen.
+3. Den Kopfbereich einfügen (siehe oben), darunter den Text schreiben.
+4. Speichern. Die Seite ist sofort unter ihrem `slug` erreichbar, zum Beispiel
+   `http://localhost:3000/stoerungsbehebung/neue-seite`.
+5. Die Seite in `sidebars.ts` eintragen, damit sie in der Navigation auftaucht.
+6. Den Dev-Server **neu starten** — Änderungen an `sidebars.ts` übernimmt die
+   laufende Vorschau nicht zuverlässig. Hilft das nicht: `npm run clear`, dann
+   wieder `npm start`.
+
+Siehst du die neue Seite nicht in der Navigation, fehlt fast immer Schritt 5.
+
+### Vor dem Commit
+
+```bash
+npm run build
+```
+
+Der Build baut alle vier Sprachen und bricht bei einem einzigen defekten
+internen Link ab. Läuft er lokal durch, läuft er auch auf GitHub durch.
+
+### Übersetzungen lokal starten
+
+Normalerweise brauchst du das nicht: Sobald deine Änderung auf `main` liegt,
+übersetzt GitHub automatisch. Lokal lohnt es sich nur, wenn du vorher sehen
+willst, was dabei herauskommt.
+
+Die Übersetzung läuft über die Claude-Code-Kommandozeile. Die musst du
+**einmalig** installieren und dich **einmalig anmelden**:
+
+```bash
+npm install -g @anthropic-ai/claude-code
+claude auth login
+```
+
+Es öffnet sich ein Browserfenster. Danach prüfen, ob es geklappt hat:
+
+```bash
+claude auth status --text
+```
+
+Die Anmeldung gilt für deinen Benutzer, nicht für einen bestimmten Ordner —
+einmal genügt. Sie ist unabhängig davon, ob du in VS Code oder in der
+Claude-App angemeldet bist; die Kommandozeile hat ihre eigene Anmeldung.
+
+Dann übersetzen:
+
+| Befehl | Wirkung |
+| --- | --- |
+| `npm run translate` | nur geänderte und fehlende Seiten |
+| `npm run translate -- --list` | nur anzeigen, was zu tun wäre |
+| `npm run translate -- --locale fr --limit 1 --concurrency 1` | eine einzelne Seite, zum Ausprobieren |
+| `npm run translate -- --all` | alles neu, nach einer Änderung am Glossar |
+
+Fang mit der dritten Zeile an. Ein Lauf dauert pro Seite rund eine Minute, und
+wenn etwas klemmt, siehst du es bei einer Seite schneller als bei hundert.
+
+**Wenn es fehlschlägt**, steht der Grund am Ende jeder Zeile:
+
+| Meldung | Was zu tun ist |
+| --- | --- |
+| `Not logged in · Please run /login` | `claude auth login` ausführen |
+| `Die Claude-Code-CLI wurde nicht gefunden` | mit dem Befehl oben installieren |
+| `Zeitüberschreitung nach 300s` | mit `--concurrency 1` wiederholen |
+| `Die Antwort beginnt nicht mit dem Frontmatter` | die Seite wurde nicht angefasst, einfach nochmal laufen lassen |
+
+Ein fehlgeschlagener Lauf hinterlässt keinen Schaden: Nur fertig übersetzte
+Seiten werden geschrieben, der Rest bleibt, wie er war.
+
+### Hinterher prüfen
+
+```bash
+npm run translate:check
+```
+
+Vergleicht jede Übersetzung mit ihrer deutschen Seite und meldet, was dabei
+nicht stimmen kann: eine andere Gliederung, ein verschwundener Abschnitt, ein
+übersetzter Bildpfad, ein veränderter Code-Block, eine veraltete Bildvariante.
+
+Dazu den umgekehrten Fall: **einen Titel, der deutsch geblieben ist.** Seiten
+ohne Fliesstext — eine Seite, die nur einen Rechner einbettet — kommen aus dem
+Übersetzungslauf manchmal unverändert zurück, und dann steht in der
+französischen Navigation „Projektkonfigurator". Gemeldet wird nur, was auch
+deutsch aussieht (ein Umlaut oder ein Wortstamm aus einer Liste im Skript) —
+Askoma, Loxone, Modbus TCP oder Minergie heissen überall gleich und sind kein
+Befund. Trägt ein neuer Eigenname einmal einen deutschen Wortstamm, gehört er
+in `EIGENNAMEN` in `scripts/checkTranslations.ts`.
+
+> **Für die Entwicklung:** Der automatische Lauf auf GitHub braucht ein
+> Repository-Secret namens `CLAUDE_CODE_OAUTH_TOKEN`. Erzeugt wird es mit
+> `claude setup-token` und unter *Settings → Secrets and variables → Actions*
+> eingetragen. Ohne das Secret scheitert der Lauf auf GitHub mit derselben
+> Meldung „Not logged in".
+
+---
+
+## Was du **nicht** tun sollst
+
+### Niemals im Ordner `i18n/` etwas ändern
+
+Dort liegen die englischen, französischen und italienischen Fassungen. Die
+werden **automatisch erzeugt** und bei der nächsten Übersetzung überschrieben —
+deine Änderung wäre weg.
+
+Ist eine Übersetzung falsch, gibt es zwei richtige Wege:
+
+- **Der Fehler steht schon im Deutschen:** korrigiere die deutsche Seite unter
+  `docs/`. Die Übersetzung zieht automatisch nach.
+- **Ein Fachbegriff ist falsch übersetzt:** trag ihn in `glossary.md` ein. Dort
+  stehen Begriffe, die nie übersetzt werden (Produktnamen wie *Pico* oder
+  *Nimbus*) und solche mit einer festen Übersetzung (*ZEV* heisst auf
+  Französisch immer *RCP*). Das Glossar gilt ab dann für alle Seiten.
+
+### Den `slug` nicht ändern
+
+Das ist die Adresse der Seite. Bestehende Links — in E-Mails, in Angeboten, in
+Google — würden ins Leere laufen.
+
+### Sonderzeichen im Fliesstext
+
+Die Zeichen `<` und `{` haben in unserem System eine besondere Bedeutung. Wenn
+du sie als Text brauchst, schreib stattdessen `&lt;` und `&#123;`. Sonst lässt
+sich die Seite nicht mehr bauen.
+
+---
+
+## Und die Übersetzungen?
+
+Sobald deine Änderung auf `main` liegt, läuft automatisch die Übersetzung. Sie
+erzeugt einen eigenen Pull Request mit dem Titel **„Übersetzungen
+aktualisieren"**. Wer die Sprache spricht, kann kurz drüberschauen und ihn dann
+zusammenführen.
+
+Übersetzt werden nur Seiten, die sich seit der letzten Übersetzung geändert
+haben — es entsteht also kein unnötiger Aufwand.
+
+---
+
+## Wenn etwas schiefgeht
+
+Nach jeder Änderung läuft automatisch eine Prüfung. Siehst du beim Pull Request
+ein **rotes ✗** statt eines grünen Hakens, hat der Build ein Problem gefunden —
+meistens ein Link, der ins Leere zeigt, oder eines der Sonderzeichen von oben.
+
+Das ist nicht schlimm und geht nicht online. Klick auf **„Details"**, um zu
+sehen, was fehlt, oder frag im Entwicklungsteam nach.
+
+Und falls doch einmal etwas kaputtgeht: In GitHub ist jede Änderung
+nachvollziehbar und lässt sich mit einem Klick rückgängig machen. Du kannst
+nichts unwiederbringlich zerstören.
