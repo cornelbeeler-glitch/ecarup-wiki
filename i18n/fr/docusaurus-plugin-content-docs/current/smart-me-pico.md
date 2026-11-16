@@ -4,13 +4,6 @@ slug: '/smart-me-pico'
 description: 'Pico se connecte directement au cloud via WLAN ou réseau mobile.'
 sidebar_label: 'smart-me Pico'
 ---
-[smart-me Pico](#smart-me-pico)
-
-[Raccordement à eCarUp](#raccordement-à-ecarup)
-
-[Prérequis :](#prérequis-)
-
-## smart-me Pico
 
 ![Borne de recharge smart-me Pico](/img/smart-me-pico/01.png)
 
@@ -28,18 +21,18 @@ La borne de recharge dispose de la certification MID nécessaire à des fins de 
 
 [Guide de mise en service et de configuration](https://wiki.smart-me.com/konfiguration/inbetriebnahme/pico-konfiguration)
 
-## Raccordement à eCarUp
+## Connexion à eCarUp
 
 ### Prérequis :
 
-La borne murale Pico a été installée avec succès par un électricien, raccordée à Internet et mise en service avec smart-me. 
+La wallbox Pico a été installée avec succès par un électricien, connectée à Internet et mise en service avec smart-me. 
 
 1.  Connectez-vous au portail web smart-me. ([www.smart-me.com](http://www.smart-me.com))
 
 
 ![smart-me Pico – Illustration 2](/img/smart-me-pico/02.png)
 
-2\. Sélectionnez la borne murale Pico souhaitée dans votre portail smart-me, puis cliquez sur la roue dentée en haut à droite. 
+2\. Sélectionnez la wallbox Pico souhaitée dans votre portail smart-me, puis cliquez sur la roue dentée en haut à droite. 
 
 ![smart-me Pico – Illustration 3](/img/smart-me-pico/03.png)
 

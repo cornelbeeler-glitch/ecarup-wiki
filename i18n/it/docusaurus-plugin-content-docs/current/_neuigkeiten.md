@@ -20,9 +20,9 @@
 <details id="neu-bezahle-mit-twint" open>
 <summary>Novità: paga con TWINT</summary>
 
-Le stazioni di ricarica collegate al backend eCarUp possono ora essere sbloccate in modo semplice anche senza l'app eCarUp.
+Le stazioni di ricarica collegate al backend eCarUp possono ora essere sbloccate facilmente anche senza l'app eCarUp.
 
-Oltre ai collaudati metodi di pagamento come carta di debito e di credito e Google Pay o Apple Pay, da subito puoi pagare anche con TWINT. Scansiona il codice QR sulla stazione di ricarica, seleziona TWINT e la tua sessione di ricarica si avvia.
+Oltre ai collaudati metodi di pagamento come carta di debito e di credito, Google Pay o Apple Pay, da subito puoi pagare anche con TWINT. Scansiona il codice QR sulla stazione di ricarica, seleziona TWINT e la tua sessione di ricarica si avvia.
 
 [→ Scopri di più](/fahrer/sofort-bezahl-funktion)
 
@@ -35,7 +35,7 @@ Oltre ai collaudati metodi di pagamento come carta di debito e di credito e Goog
 <details id="aktualisierung-unserer-agb--datenschutzrichtlinien" open>
 <summary>Aggiornamento delle nostre CG e delle direttive sulla protezione dei dati</summary>
 
-Abbiamo modificato le nostre Condizioni generali (CG) e le dichiarazioni sulla protezione dei dati. Per regolamentare in modo giuridicamente ottimale il trattamento dei dati all'interno del nostro gruppo aziendale, i documenti sono stati integrati con un cosiddetto «Joint Controller Agreement» (JCA). Le versioni aggiornate sono consultabili online da subito.
+Abbiamo aggiornato le nostre Condizioni generali (CG) e le dichiarazioni sulla protezione dei dati. Per regolamentare in modo ottimale dal punto di vista giuridico il trattamento dei dati all'interno del nostro gruppo aziendale, i documenti sono stati integrati con un cosiddetto «Joint Controller Agreement» (JCA). Le versioni aggiornate sono consultabili online da subito.
 
 [→ Alle CG e alle direttive sulla protezione dei dati](https://web.ecarup.com/agb/)
 
@@ -44,13 +44,13 @@ Abbiamo modificato le nostre Condizioni generali (CG) e le dichiarazioni sulla p
 </details>
 
 <details id="premium-funktion-die-neuen-preispläne-sind-da">
-<summary>Funzione Premium: sono arrivati i nuovi piani tariffari!</summary>
+<summary>Funzione Premium: i nuovi piani tariffari sono arrivati!</summary>
 
 - Piani tariffari flessibili e sicuri: tariffe semplici basate sul tempo con piano standard per un conteggio affidabile.
 
-- Migliore disponibilità: penale per il blocco (incl. tempo di tolleranza) per una rotazione ottimizzata delle stazioni.
+- Migliore disponibilità: penale per l'occupazione prolungata (incl. tempo di tolleranza) per una rotazione ottimizzata delle stazioni.
 
-- Modifiche tariffarie pianificabili: le nuove tariffe valgono solo a partire dal giorno successivo. Nessuna sorpresa, pieno controllo
+- Modifiche tariffarie pianificabili: le nuove tariffe si applicano solo a partire dal giorno successivo. Nessuna sorpresa, pieno controllo
 
 [→ Scopri di più](/funktionen/preisplaene)
 
@@ -65,7 +65,7 @@ Abbiamo modificato le nostre Condizioni generali (CG) e le dichiarazioni sulla p
 
 Da subito le stazioni di ricarica per veicoli elettrici di NexBlue sono pienamente compatibili con il backend eCarUp.
 
-Utilizza la nostra guida all'integrazione gratuita per collegare la tua wallbox NexBlue a eCarUp in modo rapido e semplice e approfittare delle funzioni smart del backend.
+Utilizza la nostra guida all'integrazione gratuita per collegare in modo rapido e semplice la tua wallbox NexBlue a eCarUp e beneficiare delle funzioni smart del backend.
 
 [→ Scopri di più](/ocpp-ladestationen/nexblue)
 
@@ -76,9 +76,9 @@ Utilizza la nostra guida all'integrazione gratuita per collegare la tua wallbox 
 </details>
 
 <details id="report-csv-erweitert">
-<summary>Report (CSV esteso)</summary>
+<summary>Report (csv esteso)</summary>
 
-È stato aggiunto l'ID della transazione. In questo modo è possibile effettuare un confronto preciso tra il report delle stazioni e la cronologia del saldo (Saldoverlauf). 
+È stato aggiunto l'ID della transazione. In questo modo è possibile confrontare in modo preciso il report delle stazioni con la cronologia del saldo. 
 
 [→ Scopri di più](/stoerungsbehebung/report-mit-auszahlungsverlauf-vergleichen)
 
@@ -96,7 +96,7 @@ Attualmente i piani tariffari sono disponibili in fase beta presso partner selez
 </details>
 
 <details id="massenimport-von-rfid-karten">
-<summary>Importazione massiva di carte RFID</summary>
+<summary>Importazione massiva di tessere RFID</summary>
 
 [→ Scopri di più](/anwendungsfaelle/fahrer-flotten-onboarding)
 
@@ -151,7 +151,7 @@ Vieni reindirizzato alla pagina iniziale del Wiki
 <details id="neues-instant-payment-beta">
 <summary>Nuovo Instant Payment (beta)</summary>
 
-Instant Payment – ora con un nuovo look e funzioni migliorate. 
+Instant Payment – ora con un nuovo look e funzioni migliorate . 
 
 [→ Scopri di più](/fahrer/sofort-bezahl-funktion)
 
@@ -188,7 +188,7 @@ Ora puoi automatizzare il pagamento.
 <details id="ecarup-statistiken">
 <summary>Statistiche eCarUp</summary>
 
-Ora nel portale web sono disponibili le statistiche per gli utenti Premium. 
+Le statistiche sono ora disponibili nel portale web per gli utenti Premium. 
 
 [→ Scopri di più](/funktionen/statistiken)
 
@@ -212,7 +212,7 @@ Ora è possibile leggere la ricarica attiva, incl. utente e SOC (per le stazioni
 <details id="lizenzen-ecarup">
 <summary>Licenze eCarUp</summary>
 
-Ora la licenza annuale può essere pagata nel portale web con carta di debito / di credito. 
+Ora la licenza annuale può essere acquistata nel portale web con carta di debito o di credito. 
 
 [→ Scopri di più](/stationsbetreiber/lizenzen)
 
@@ -223,52 +223,12 @@ Ora la licenza annuale può essere pagata nel portale web con carta di debito / 
 <details id="saldoverlauf">
 <summary>Cronologia del saldo</summary>
 
-Ora nella cronologia del saldo (Saldoverlauf) sotto "Account" è possibile visualizzare tutti i trasferimenti di denaro. 
+Ora nella cronologia del saldo alla voce "Account" (Account) è possibile visualizzare tutti i trasferimenti di denaro. 
 
 [→ Scopri di più](/stationsbetreiber/webportal#cronologia-del-saldo)
 
 *29 gennaio 2025*
 
 ![eCarUp Wiki – Figura 12](/img/startseite/12.jpg)
-
-</details>
-## Contatto
-
-Il nostro supporto ti consiglia volentieri! eCarUp è il backend flessibile per tutti gli scenari di ricarica: semplice, scalabile e adatto a ogni esigenza, dal privato al business.
-
-L'iscrizione a una formazione per partner è disponibile qui: [https://web.ecarup.com/partnerschulung-ecarup/](https://web.ecarup.com/partnerschulung-ecarup/)
-
-<details id="adresse">
-<summary>Indirizzo:</summary>
-
-eCarUp AG
-
-Riedstrasse 18
-
-6343, Rotkreuz
-
-E-mail: [info@ecarup.com](mailto:info@ecarup.com)
-
-Telefono: +41 41 510 17 18 
-
-Per i conducenti:
-
-[driver@ecarup.com](mailto:driver@ecarup.com) 
-
-Supporto tecnico: 
-
-[support@ecarup.com](mailto:support@ecarup.com) / +41 41 510 17 18
-
-Supporto tecnico Germania:
-
-[support@smartred.de](mailto:support@smartred.de) / +49 (0) 7348 2503988
-
-TeamViewer:
-
-Solo previo accordo telefonico
-
-[![eCarUp Wiki – Figura 13](/img/startseite/13.jpg)](https://get.teamviewer.com/68stbb8)
-
-[Download TeamViewer per](https://get.teamviewer.com/68stbb8) eCarUp
 
 </details>

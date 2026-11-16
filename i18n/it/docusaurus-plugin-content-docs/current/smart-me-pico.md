@@ -1,24 +1,17 @@
 ---
 title: 'smart-me Pico'
 slug: '/smart-me-pico'
-description: 'Pico si collega direttamente al cloud tramite WLAN o rete mobile.'
+description: 'Pico si connette direttamente al cloud tramite WLAN o rete mobile.'
 sidebar_label: 'smart-me Pico'
 ---
-[smart-me Pico](#smart-me-pico)
-
-[Collegamento a eCarUp](#collegamento-a-ecarup)
-
-[Requisito:](#requisito)
-
-## smart-me Pico
 
 ![Stazione di ricarica smart-me Pico](/img/smart-me-pico/01.png)
 
-Pico si collega direttamente al cloud tramite WLAN o rete mobile. Lo Smart Meter integrato esporta dati di misura precisi, che vengono firmati durante le transazioni e possono essere convalidati in qualsiasi momento.
+Pico si connette direttamente al cloud tramite WLAN o rete mobile. Lo Smart Meter integrato esporta dati di misura precisi, che vengono firmati durante le transazioni e possono essere validati in qualsiasi momento.
 
 Inoltre, Pico può essere utilizzata sia per la gestione del carico statica sia per quella dinamica, compreso il bilanciamento delle fasi.
 
-La stazione di ricarica dispone della certificazione MID necessaria ai fini del conteggio.
+La stazione di ricarica dispone della necessaria certificazione MID ai fini del conteggio.
 
 
 
@@ -30,7 +23,7 @@ La stazione di ricarica dispone della certificazione MID necessaria ai fini del 
 
 ## Collegamento a eCarUp
 
-### Requisito:
+### Prerequisito:
 
 La wallbox Pico è stata installata correttamente da un elettricista, collegata a Internet e messa in servizio con smart-me. 
 
@@ -39,11 +32,11 @@ La wallbox Pico è stata installata correttamente da un elettricista, collegata 
 
 ![smart-me Pico – Figura 2](/img/smart-me-pico/02.png)
 
-2\. Seleziona la wallbox Pico desiderata nel tuo portale smart-me e clicca sulla rotella dentata in alto a destra. 
+2\. Seleziona la wallbox Pico desiderata nel tuo portale smart-me e clicca sulla rotella in alto a destra. 
 
 ![smart-me Pico – Figura 3](/img/smart-me-pico/03.png)
 
-3\. Alla voce Authentication clicca ora su eCarUP Backend, in modo che la Pico venga collegata all'omonimo account eCarUp
+3\. In Authentication clicca ora su eCarUP Backend, affinché la Pico venga collegata all'account eCarUp omonimo
 
 ![smart-me Pico – Figura 4](/img/smart-me-pico/04.png)
 

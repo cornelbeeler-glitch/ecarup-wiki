@@ -4,13 +4,6 @@ slug: '/smart-me-pico'
 description: 'Pico connects directly to the cloud via Wi-Fi or mobile network.'
 sidebar_label: 'smart-me Pico'
 ---
-[smart-me Pico](#smart-me-pico)
-
-[eCarUp connection](#ecarup-connection)
-
-[Prerequisite:](#prerequisite)
-
-## smart-me Pico
 
 ![smart-me Pico charging station](/img/smart-me-pico/01.png)
 
@@ -39,7 +32,7 @@ The Pico wallbox has been successfully installed by an electrician, connected to
 
 ![smart-me Pico – Figure 2](/img/smart-me-pico/02.png)
 
-2\. Select the desired Pico wallbox in your smart-me portal and click the gear icon at the top right. 
+2\. Select the Pico wallbox you want in your smart-me portal and click the gear icon at the top right. 
 
 ![smart-me Pico – Figure 3](/img/smart-me-pico/03.png)
 

@@ -22,7 +22,7 @@
 
 Charging stations connected to the eCarUp backend can now also be unlocked easily without the eCarUp app.
 
-In addition to the established payment options such as debit and credit card as well as Google Pay or Apple Pay, you can now also pay with TWINT. Scan the QR code on the charging station, select TWINT and your charging session starts.
+In addition to the proven payment options such as debit and credit card as well as Google Pay or Apple Pay, you can now also pay with TWINT. Scan the QR code on the charging station, select TWINT and your charging session starts.
 
 [→ Learn more](/fahrer/sofort-bezahl-funktion)
 
@@ -35,9 +35,9 @@ In addition to the established payment options such as debit and credit card as 
 <details id="aktualisierung-unserer-agb--datenschutzrichtlinien" open>
 <summary>Update to our GTC & privacy policies</summary>
 
-We have updated our General Terms and Conditions (GTC) and privacy policies. To regulate data processing within our group of companies in the best possible legal manner, the documents have been supplemented with a so-called "Joint Controller Agreement" (JCA). The updated versions are now available online.
+We have updated our General Terms and Conditions (GTC) and privacy policies. To regulate data processing within our group of companies in the best possible legal way, the documents have been supplemented with a so-called "Joint Controller Agreement" (JCA). The updated versions are now available online for review.
 
-[→ Go to the GTC & privacy policies](https://web.ecarup.com/agb/)
+[→ To the GTC & privacy policies](https://web.ecarup.com/agb/)
 
 *15 July 2026*
 
@@ -76,9 +76,9 @@ Use our free integration guide to connect your NexBlue wallbox to eCarUp quickly
 </details>
 
 <details id="report-csv-erweitert">
-<summary>Report (csv extended)</summary>
+<summary>Report (CSV extended)</summary>
 
-The transaction ID has been added. This allows a clean reconciliation between the stations report and the balance history. 
+The transaction ID has been added. This allows a clean reconciliation between the station report and the balance history (Saldoverlauf). 
 
 [→ Learn more](/stoerungsbehebung/report-mit-auszahlungsverlauf-vergleichen)
 
@@ -107,7 +107,7 @@ The price plans are currently available in the beta phase to selected partners.
 <details id="lizenzen">
 <summary>Licences</summary>
 
-Additional licences can now be added to the existing subscription. 
+Additional licences can now be added to an existing subscription. 
 
 [→ Learn more](/stationsbetreiber/lizenzen)
 
@@ -134,7 +134,7 @@ Additional licences can now be added to the existing subscription.
 <div className="row">
 <div className="col col--8">
 
-You are redirected to the wiki home page
+You are redirected to the Wiki home page
 
 *21 May 2025*
 
@@ -201,7 +201,7 @@ Statistics are now available in the web portal for Premium users.
 <details id="ecarup-api">
 <summary>eCarUp API</summary>
 
-The active charging session incl. user and SOC (for DC stations) can now be read out. 
+The active charging session, including user and SOC (for DC stations), can now be read out. 
 
 [→ Learn more](/funktionen/ecarup-api)
 
@@ -230,45 +230,5 @@ All money transfers can now be viewed in the balance history (Saldoverlauf) unde
 *29 January 2025*
 
 ![eCarUp Wiki – Figure 12](/img/startseite/12.jpg)
-
-</details>
-## Contact
-
-Our support team will be happy to advise you! eCarUp is the flexible backend for all charging scenarios: simple, scalable and suitable for every need, from private to business.
-
-You can register for a partner training here: [https://web.ecarup.com/partnerschulung-ecarup/](https://web.ecarup.com/partnerschulung-ecarup/)
-
-<details id="adresse">
-<summary>Address:</summary>
-
-eCarUp AG
-
-Riedstrasse 18
-
-6343, Rotkreuz
-
-Email: [info@ecarup.com](mailto:info@ecarup.com)
-
-Phone: +41 41 510 17 18 
-
-For drivers:
-
-[driver@ecarup.com](mailto:driver@ecarup.com) 
-
-Technical support: 
-
-[support@ecarup.com](mailto:support@ecarup.com) / +41 41 510 17 18
-
-Technical support Germany:
-
-[support@smartred.de](mailto:support@smartred.de) / +49 (0) 7348 2503988
-
-TeamViewer:
-
-Only by prior arrangement by phone
-
-[![eCarUp Wiki – Figure 13](/img/startseite/13.jpg)](https://get.teamviewer.com/68stbb8)
-
-[Download TeamViewer for](https://get.teamviewer.com/68stbb8) eCarUp
 
 </details>

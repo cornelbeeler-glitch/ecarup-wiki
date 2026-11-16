@@ -4,13 +4,6 @@ slug: '/smart-me-pico'
 description: 'Pico verbindet sich via WLAN oder Mobilfunk direkt mit der Cloud.'
 sidebar_label: 'smart-me Pico'
 ---
-[smart-me Pico](#smart-me-pico)
-
-[eCarUp- Anbindung](#ecarup--anbindung)
-
-[Voraussetzung:](#voraussetzung)
-
-## smart-me Pico
 
 ![smart-me Pico Ladestation](/img/smart-me-pico/01.png)
 
